@@ -1,4 +1,4 @@
-# Install script for directory: /home/jess/Escritorio/Alex/ej_modulos
+# Install script for directory: /home/jess/Escritorio/Pengo2/class
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

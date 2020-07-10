@@ -4,18 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jess/Escritorio/Alex/main.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/Pengo.dir/main.cpp.o"
+  "/home/jess/Escritorio/Pengo2/main.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/Pengo.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../ej_modulos"
+  "../class"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/DependInfo.cmake"
+  "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

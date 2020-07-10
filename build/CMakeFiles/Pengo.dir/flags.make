@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++1y -Wall -Wextra -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/jess/Escritorio/Alex/ej_modulos 
+CXX_INCLUDES = -I/home/jess/Escritorio/Pengo2/class 
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jess/Escritorio/Alex
+CMAKE_SOURCE_DIR = /home/jess/Escritorio/Pengo2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jess/Escritorio/Alex/build
+CMAKE_BINARY_DIR = /home/jess/Escritorio/Pengo2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jess/Escritorio/Alex/build/CMakeFiles /home/jess/Escritorio/Alex/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jess/Escritorio/Pengo2/build/CMakeFiles /home/jess/Escritorio/Pengo2/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jess/Escritorio/Alex/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jess/Escritorio/Pengo2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -136,248 +136,302 @@ libModulos/fast:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/build
 .PHONY : libModulos/fast
 
-ej_modulos/Animation.o: ej_modulos/Animation.cpp.o
+class/Animation.o: class/Animation.cpp.o
 
-.PHONY : ej_modulos/Animation.o
-
-# target to build an object file
-ej_modulos/Animation.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o
-.PHONY : ej_modulos/Animation.cpp.o
-
-ej_modulos/Animation.i: ej_modulos/Animation.cpp.i
-
-.PHONY : ej_modulos/Animation.i
-
-# target to preprocess a source file
-ej_modulos/Animation.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.i
-.PHONY : ej_modulos/Animation.cpp.i
-
-ej_modulos/Animation.s: ej_modulos/Animation.cpp.s
-
-.PHONY : ej_modulos/Animation.s
-
-# target to generate assembly for a file
-ej_modulos/Animation.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.s
-.PHONY : ej_modulos/Animation.cpp.s
-
-ej_modulos/Block.o: ej_modulos/Block.cpp.o
-
-.PHONY : ej_modulos/Block.o
+.PHONY : class/Animation.o
 
 # target to build an object file
-ej_modulos/Block.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o
-.PHONY : ej_modulos/Block.cpp.o
+class/Animation.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animation.cpp.o
+.PHONY : class/Animation.cpp.o
 
-ej_modulos/Block.i: ej_modulos/Block.cpp.i
+class/Animation.i: class/Animation.cpp.i
 
-.PHONY : ej_modulos/Block.i
+.PHONY : class/Animation.i
 
 # target to preprocess a source file
-ej_modulos/Block.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.i
-.PHONY : ej_modulos/Block.cpp.i
+class/Animation.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animation.cpp.i
+.PHONY : class/Animation.cpp.i
 
-ej_modulos/Block.s: ej_modulos/Block.cpp.s
+class/Animation.s: class/Animation.cpp.s
 
-.PHONY : ej_modulos/Block.s
+.PHONY : class/Animation.s
 
 # target to generate assembly for a file
-ej_modulos/Block.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.s
-.PHONY : ej_modulos/Block.cpp.s
+class/Animation.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animation.cpp.s
+.PHONY : class/Animation.cpp.s
 
-ej_modulos/Character.o: ej_modulos/Character.cpp.o
+class/Block.o: class/Block.cpp.o
 
-.PHONY : ej_modulos/Character.o
+.PHONY : class/Block.o
 
 # target to build an object file
-ej_modulos/Character.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o
-.PHONY : ej_modulos/Character.cpp.o
+class/Block.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Block.cpp.o
+.PHONY : class/Block.cpp.o
 
-ej_modulos/Character.i: ej_modulos/Character.cpp.i
+class/Block.i: class/Block.cpp.i
 
-.PHONY : ej_modulos/Character.i
+.PHONY : class/Block.i
 
 # target to preprocess a source file
-ej_modulos/Character.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.i
-.PHONY : ej_modulos/Character.cpp.i
+class/Block.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Block.cpp.i
+.PHONY : class/Block.cpp.i
 
-ej_modulos/Character.s: ej_modulos/Character.cpp.s
+class/Block.s: class/Block.cpp.s
 
-.PHONY : ej_modulos/Character.s
+.PHONY : class/Block.s
 
 # target to generate assembly for a file
-ej_modulos/Character.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.s
-.PHONY : ej_modulos/Character.cpp.s
+class/Block.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Block.cpp.s
+.PHONY : class/Block.cpp.s
 
-ej_modulos/Collision.o: ej_modulos/Collision.cpp.o
+class/Character.o: class/Character.cpp.o
 
-.PHONY : ej_modulos/Collision.o
+.PHONY : class/Character.o
 
 # target to build an object file
-ej_modulos/Collision.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o
-.PHONY : ej_modulos/Collision.cpp.o
+class/Character.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Character.cpp.o
+.PHONY : class/Character.cpp.o
 
-ej_modulos/Collision.i: ej_modulos/Collision.cpp.i
+class/Character.i: class/Character.cpp.i
 
-.PHONY : ej_modulos/Collision.i
+.PHONY : class/Character.i
 
 # target to preprocess a source file
-ej_modulos/Collision.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.i
-.PHONY : ej_modulos/Collision.cpp.i
+class/Character.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Character.cpp.i
+.PHONY : class/Character.cpp.i
 
-ej_modulos/Collision.s: ej_modulos/Collision.cpp.s
+class/Character.s: class/Character.cpp.s
 
-.PHONY : ej_modulos/Collision.s
+.PHONY : class/Character.s
 
 # target to generate assembly for a file
-ej_modulos/Collision.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.s
-.PHONY : ej_modulos/Collision.cpp.s
+class/Character.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Character.cpp.s
+.PHONY : class/Character.cpp.s
 
-ej_modulos/Game.o: ej_modulos/Game.cpp.o
+class/Collision.o: class/Collision.cpp.o
 
-.PHONY : ej_modulos/Game.o
+.PHONY : class/Collision.o
 
 # target to build an object file
-ej_modulos/Game.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o
-.PHONY : ej_modulos/Game.cpp.o
+class/Collision.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Collision.cpp.o
+.PHONY : class/Collision.cpp.o
 
-ej_modulos/Game.i: ej_modulos/Game.cpp.i
+class/Collision.i: class/Collision.cpp.i
 
-.PHONY : ej_modulos/Game.i
+.PHONY : class/Collision.i
 
 # target to preprocess a source file
-ej_modulos/Game.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.i
-.PHONY : ej_modulos/Game.cpp.i
+class/Collision.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Collision.cpp.i
+.PHONY : class/Collision.cpp.i
 
-ej_modulos/Game.s: ej_modulos/Game.cpp.s
+class/Collision.s: class/Collision.cpp.s
 
-.PHONY : ej_modulos/Game.s
+.PHONY : class/Collision.s
 
 # target to generate assembly for a file
-ej_modulos/Game.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.s
-.PHONY : ej_modulos/Game.cpp.s
+class/Collision.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Collision.cpp.s
+.PHONY : class/Collision.cpp.s
 
-ej_modulos/IceBlock.o: ej_modulos/IceBlock.cpp.o
+class/Game.o: class/Game.cpp.o
 
-.PHONY : ej_modulos/IceBlock.o
+.PHONY : class/Game.o
 
 # target to build an object file
-ej_modulos/IceBlock.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o
-.PHONY : ej_modulos/IceBlock.cpp.o
+class/Game.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Game.cpp.o
+.PHONY : class/Game.cpp.o
 
-ej_modulos/IceBlock.i: ej_modulos/IceBlock.cpp.i
+class/Game.i: class/Game.cpp.i
 
-.PHONY : ej_modulos/IceBlock.i
+.PHONY : class/Game.i
 
 # target to preprocess a source file
-ej_modulos/IceBlock.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.i
-.PHONY : ej_modulos/IceBlock.cpp.i
+class/Game.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Game.cpp.i
+.PHONY : class/Game.cpp.i
 
-ej_modulos/IceBlock.s: ej_modulos/IceBlock.cpp.s
+class/Game.s: class/Game.cpp.s
 
-.PHONY : ej_modulos/IceBlock.s
+.PHONY : class/Game.s
 
 # target to generate assembly for a file
-ej_modulos/IceBlock.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.s
-.PHONY : ej_modulos/IceBlock.cpp.s
+class/Game.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Game.cpp.s
+.PHONY : class/Game.cpp.s
 
-ej_modulos/Labyrinth.o: ej_modulos/Labyrinth.cpp.o
+class/IceBlock.o: class/IceBlock.cpp.o
 
-.PHONY : ej_modulos/Labyrinth.o
+.PHONY : class/IceBlock.o
 
 # target to build an object file
-ej_modulos/Labyrinth.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o
-.PHONY : ej_modulos/Labyrinth.cpp.o
+class/IceBlock.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/IceBlock.cpp.o
+.PHONY : class/IceBlock.cpp.o
 
-ej_modulos/Labyrinth.i: ej_modulos/Labyrinth.cpp.i
+class/IceBlock.i: class/IceBlock.cpp.i
 
-.PHONY : ej_modulos/Labyrinth.i
+.PHONY : class/IceBlock.i
 
 # target to preprocess a source file
-ej_modulos/Labyrinth.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.i
-.PHONY : ej_modulos/Labyrinth.cpp.i
+class/IceBlock.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/IceBlock.cpp.i
+.PHONY : class/IceBlock.cpp.i
 
-ej_modulos/Labyrinth.s: ej_modulos/Labyrinth.cpp.s
+class/IceBlock.s: class/IceBlock.cpp.s
 
-.PHONY : ej_modulos/Labyrinth.s
+.PHONY : class/IceBlock.s
 
 # target to generate assembly for a file
-ej_modulos/Labyrinth.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.s
-.PHONY : ej_modulos/Labyrinth.cpp.s
+class/IceBlock.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/IceBlock.cpp.s
+.PHONY : class/IceBlock.cpp.s
 
-ej_modulos/Pengo.o: ej_modulos/Pengo.cpp.o
+class/Labyrinth.o: class/Labyrinth.cpp.o
 
-.PHONY : ej_modulos/Pengo.o
+.PHONY : class/Labyrinth.o
 
 # target to build an object file
-ej_modulos/Pengo.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o
-.PHONY : ej_modulos/Pengo.cpp.o
+class/Labyrinth.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o
+.PHONY : class/Labyrinth.cpp.o
 
-ej_modulos/Pengo.i: ej_modulos/Pengo.cpp.i
+class/Labyrinth.i: class/Labyrinth.cpp.i
 
-.PHONY : ej_modulos/Pengo.i
+.PHONY : class/Labyrinth.i
 
 # target to preprocess a source file
-ej_modulos/Pengo.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.i
-.PHONY : ej_modulos/Pengo.cpp.i
+class/Labyrinth.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Labyrinth.cpp.i
+.PHONY : class/Labyrinth.cpp.i
 
-ej_modulos/Pengo.s: ej_modulos/Pengo.cpp.s
+class/Labyrinth.s: class/Labyrinth.cpp.s
 
-.PHONY : ej_modulos/Pengo.s
+.PHONY : class/Labyrinth.s
 
 # target to generate assembly for a file
-ej_modulos/Pengo.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.s
-.PHONY : ej_modulos/Pengo.cpp.s
+class/Labyrinth.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Labyrinth.cpp.s
+.PHONY : class/Labyrinth.cpp.s
 
-ej_modulos/SnoBee.o: ej_modulos/SnoBee.cpp.o
+class/Map.o: class/Map.cpp.o
 
-.PHONY : ej_modulos/SnoBee.o
+.PHONY : class/Map.o
 
 # target to build an object file
-ej_modulos/SnoBee.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o
-.PHONY : ej_modulos/SnoBee.cpp.o
+class/Map.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Map.cpp.o
+.PHONY : class/Map.cpp.o
 
-ej_modulos/SnoBee.i: ej_modulos/SnoBee.cpp.i
+class/Map.i: class/Map.cpp.i
 
-.PHONY : ej_modulos/SnoBee.i
+.PHONY : class/Map.i
 
 # target to preprocess a source file
-ej_modulos/SnoBee.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.i
-.PHONY : ej_modulos/SnoBee.cpp.i
+class/Map.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Map.cpp.i
+.PHONY : class/Map.cpp.i
 
-ej_modulos/SnoBee.s: ej_modulos/SnoBee.cpp.s
+class/Map.s: class/Map.cpp.s
 
-.PHONY : ej_modulos/SnoBee.s
+.PHONY : class/Map.s
 
 # target to generate assembly for a file
-ej_modulos/SnoBee.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.s
-.PHONY : ej_modulos/SnoBee.cpp.s
+class/Map.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Map.cpp.s
+.PHONY : class/Map.cpp.s
+
+class/Pengo.o: class/Pengo.cpp.o
+
+.PHONY : class/Pengo.o
+
+# target to build an object file
+class/Pengo.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Pengo.cpp.o
+.PHONY : class/Pengo.cpp.o
+
+class/Pengo.i: class/Pengo.cpp.i
+
+.PHONY : class/Pengo.i
+
+# target to preprocess a source file
+class/Pengo.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Pengo.cpp.i
+.PHONY : class/Pengo.cpp.i
+
+class/Pengo.s: class/Pengo.cpp.s
+
+.PHONY : class/Pengo.s
+
+# target to generate assembly for a file
+class/Pengo.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Pengo.cpp.s
+.PHONY : class/Pengo.cpp.s
+
+class/SnoBee.o: class/SnoBee.cpp.o
+
+.PHONY : class/SnoBee.o
+
+# target to build an object file
+class/SnoBee.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
+.PHONY : class/SnoBee.cpp.o
+
+class/SnoBee.i: class/SnoBee.cpp.i
+
+.PHONY : class/SnoBee.i
+
+# target to preprocess a source file
+class/SnoBee.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/SnoBee.cpp.i
+.PHONY : class/SnoBee.cpp.i
+
+class/SnoBee.s: class/SnoBee.cpp.s
+
+.PHONY : class/SnoBee.s
+
+# target to generate assembly for a file
+class/SnoBee.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/SnoBee.cpp.s
+.PHONY : class/SnoBee.cpp.s
+
+class/tinyxml2.o: class/tinyxml2.cpp.o
+
+.PHONY : class/tinyxml2.o
+
+# target to build an object file
+class/tinyxml2.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o
+.PHONY : class/tinyxml2.cpp.o
+
+class/tinyxml2.i: class/tinyxml2.cpp.i
+
+.PHONY : class/tinyxml2.i
+
+# target to preprocess a source file
+class/tinyxml2.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/tinyxml2.cpp.i
+.PHONY : class/tinyxml2.cpp.i
+
+class/tinyxml2.s: class/tinyxml2.cpp.s
+
+.PHONY : class/tinyxml2.s
+
+# target to generate assembly for a file
+class/tinyxml2.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/tinyxml2.cpp.s
+.PHONY : class/tinyxml2.cpp.s
 
 main.o: main.cpp.o
 
@@ -416,33 +470,39 @@ help:
 	@echo "... Pengo"
 	@echo "... edit_cache"
 	@echo "... libModulos"
-	@echo "... ej_modulos/Animation.o"
-	@echo "... ej_modulos/Animation.i"
-	@echo "... ej_modulos/Animation.s"
-	@echo "... ej_modulos/Block.o"
-	@echo "... ej_modulos/Block.i"
-	@echo "... ej_modulos/Block.s"
-	@echo "... ej_modulos/Character.o"
-	@echo "... ej_modulos/Character.i"
-	@echo "... ej_modulos/Character.s"
-	@echo "... ej_modulos/Collision.o"
-	@echo "... ej_modulos/Collision.i"
-	@echo "... ej_modulos/Collision.s"
-	@echo "... ej_modulos/Game.o"
-	@echo "... ej_modulos/Game.i"
-	@echo "... ej_modulos/Game.s"
-	@echo "... ej_modulos/IceBlock.o"
-	@echo "... ej_modulos/IceBlock.i"
-	@echo "... ej_modulos/IceBlock.s"
-	@echo "... ej_modulos/Labyrinth.o"
-	@echo "... ej_modulos/Labyrinth.i"
-	@echo "... ej_modulos/Labyrinth.s"
-	@echo "... ej_modulos/Pengo.o"
-	@echo "... ej_modulos/Pengo.i"
-	@echo "... ej_modulos/Pengo.s"
-	@echo "... ej_modulos/SnoBee.o"
-	@echo "... ej_modulos/SnoBee.i"
-	@echo "... ej_modulos/SnoBee.s"
+	@echo "... class/Animation.o"
+	@echo "... class/Animation.i"
+	@echo "... class/Animation.s"
+	@echo "... class/Block.o"
+	@echo "... class/Block.i"
+	@echo "... class/Block.s"
+	@echo "... class/Character.o"
+	@echo "... class/Character.i"
+	@echo "... class/Character.s"
+	@echo "... class/Collision.o"
+	@echo "... class/Collision.i"
+	@echo "... class/Collision.s"
+	@echo "... class/Game.o"
+	@echo "... class/Game.i"
+	@echo "... class/Game.s"
+	@echo "... class/IceBlock.o"
+	@echo "... class/IceBlock.i"
+	@echo "... class/IceBlock.s"
+	@echo "... class/Labyrinth.o"
+	@echo "... class/Labyrinth.i"
+	@echo "... class/Labyrinth.s"
+	@echo "... class/Map.o"
+	@echo "... class/Map.i"
+	@echo "... class/Map.s"
+	@echo "... class/Pengo.o"
+	@echo "... class/Pengo.i"
+	@echo "... class/Pengo.s"
+	@echo "... class/SnoBee.o"
+	@echo "... class/SnoBee.i"
+	@echo "... class/SnoBee.s"
+	@echo "... class/tinyxml2.o"
+	@echo "... class/tinyxml2.i"
+	@echo "... class/tinyxml2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -4,21 +4,23 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jess/Escritorio/Alex/ej_modulos/Animation.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o"
-  "/home/jess/Escritorio/Alex/ej_modulos/Block.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o"
-  "/home/jess/Escritorio/Alex/ej_modulos/Character.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o"
-  "/home/jess/Escritorio/Alex/ej_modulos/Collision.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o"
-  "/home/jess/Escritorio/Alex/ej_modulos/Game.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o"
-  "/home/jess/Escritorio/Alex/ej_modulos/IceBlock.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o"
-  "/home/jess/Escritorio/Alex/ej_modulos/Labyrinth.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o"
-  "/home/jess/Escritorio/Alex/ej_modulos/Pengo.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o"
-  "/home/jess/Escritorio/Alex/ej_modulos/SnoBee.cpp" "/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/Animation.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Animation.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/Block.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Block.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/Character.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Character.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/Collision.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Collision.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/Game.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Game.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/IceBlock.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/IceBlock.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/Labyrinth.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/Map.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Map.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/Pengo.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Pengo.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/SnoBee.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/SnoBee.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/tinyxml2.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../ej_modulos"
+  "../class"
   )
 
 # Targets to which this target links.
