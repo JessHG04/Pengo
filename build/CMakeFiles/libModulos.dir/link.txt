@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibModulos.a  CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o
+/usr/bin/ranlib liblibModulos.a

@@ -1,0 +1,6 @@
+/home/jess/Escritorio/Alex/build/CMakeFiles/rebuild_cache.dir
+/home/jess/Escritorio/Alex/build/CMakeFiles/Pengo.dir
+/home/jess/Escritorio/Alex/build/CMakeFiles/edit_cache.dir
+/home/jess/Escritorio/Alex/build/CMakeFiles/libModulos.dir
+/home/jess/Escritorio/Alex/build/ej_modulos/CMakeFiles/edit_cache.dir
+/home/jess/Escritorio/Alex/build/ej_modulos/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,52 @@
+[
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/Pengo.dir/main.cpp.o -c /home/jess/Escritorio/Alex/main.cpp",
+  "file": "/home/jess/Escritorio/Alex/main.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/Animation.cpp.o -c /home/jess/Escritorio/Alex/ej_modulos/Animation.cpp",
+  "file": "/home/jess/Escritorio/Alex/ej_modulos/Animation.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/IceBlock.cpp.o -c /home/jess/Escritorio/Alex/ej_modulos/IceBlock.cpp",
+  "file": "/home/jess/Escritorio/Alex/ej_modulos/IceBlock.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/Block.cpp.o -c /home/jess/Escritorio/Alex/ej_modulos/Block.cpp",
+  "file": "/home/jess/Escritorio/Alex/ej_modulos/Block.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/Character.cpp.o -c /home/jess/Escritorio/Alex/ej_modulos/Character.cpp",
+  "file": "/home/jess/Escritorio/Alex/ej_modulos/Character.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/Pengo.cpp.o -c /home/jess/Escritorio/Alex/ej_modulos/Pengo.cpp",
+  "file": "/home/jess/Escritorio/Alex/ej_modulos/Pengo.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/Game.cpp.o -c /home/jess/Escritorio/Alex/ej_modulos/Game.cpp",
+  "file": "/home/jess/Escritorio/Alex/ej_modulos/Game.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/SnoBee.cpp.o -c /home/jess/Escritorio/Alex/ej_modulos/SnoBee.cpp",
+  "file": "/home/jess/Escritorio/Alex/ej_modulos/SnoBee.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/Labyrinth.cpp.o -c /home/jess/Escritorio/Alex/ej_modulos/Labyrinth.cpp",
+  "file": "/home/jess/Escritorio/Alex/ej_modulos/Labyrinth.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Alex/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Alex/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/Collision.cpp.o -c /home/jess/Escritorio/Alex/ej_modulos/Collision.cpp",
+  "file": "/home/jess/Escritorio/Alex/ej_modulos/Collision.cpp"
+}
+]
