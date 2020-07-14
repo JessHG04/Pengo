@@ -125,7 +125,7 @@ void Map::ReinicioNivel(){
         for(int y = 0; y < 13; y++){
             blocks[x][y] = restartBlocks[x][y];
         }
-    }
+    }*/
 }
 
 /*
@@ -194,7 +194,7 @@ void Map::drawBloques(sf::RenderWindow &ventana){
     }
 
 }*/
-/*
+
 Map::~Map(){
     
-}*/
+}
