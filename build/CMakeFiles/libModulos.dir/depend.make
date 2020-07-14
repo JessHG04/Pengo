@@ -12,7 +12,7 @@ CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Block.h
 CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Character.cpp
 CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Character.h
 CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/IceBlock.h
-CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Labyrinth.h
+CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Map.h
 
 CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Animation.h
 CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Block.h
@@ -20,7 +20,7 @@ CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Character.h
 CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Collision.cpp
 CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Collision.h
 CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/IceBlock.h
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Labyrinth.h
+CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Map.h
 CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Pengo.h
 CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/SnoBee.h
 
@@ -31,31 +31,24 @@ CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Collision.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Game.cpp
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Game.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/IceBlock.h
-CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Labyrinth.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Map.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Pengo.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/SnoBee.h
-CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/tinyxml2.h
 
 CMakeFiles/libModulos.dir/class/IceBlock.cpp.o: ../class/Block.h
 CMakeFiles/libModulos.dir/class/IceBlock.cpp.o: ../class/IceBlock.cpp
 CMakeFiles/libModulos.dir/class/IceBlock.cpp.o: ../class/IceBlock.h
 
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o: ../class/Block.h
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o: ../class/IceBlock.h
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o: ../class/Labyrinth.cpp
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o: ../class/Labyrinth.h
-
 CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/Block.h
+CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/IceBlock.h
 CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/Map.cpp
 CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/Map.h
-CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/tinyxml2.h
 
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Animation.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Block.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Character.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/IceBlock.h
-CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Labyrinth.h
+CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Map.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Pengo.cpp
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Pengo.h
 
@@ -63,11 +56,8 @@ CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Animation.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Block.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Character.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/IceBlock.h
-CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Labyrinth.h
+CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Map.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Pengo.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/SnoBee.cpp
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/SnoBee.h
-
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o: ../class/tinyxml2.cpp
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o: ../class/tinyxml2.h
 

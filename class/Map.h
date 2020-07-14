@@ -1,34 +1,27 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
-#include <iostream>
-#include <stdio.h>
-#include <vector>
-#include "tinyxml2.h"
-#include "Block.h"
+#include "IceBlock.h"
 
-class Map{
-    
+class Map {
+
     private:
-        //static Map *map;
-        sf::VertexArray vertex;
-        sf::Texture tile;
-        
+        sf::Sprite *leftWall;
+        sf::Sprite *rightWall;
+        sf::Sprite *topWall;
+        sf::Sprite *bottomWall;
+        bool isHit;
+        Block ***glacier;
+        sf::Vector2u size;
+        std::vector<Block*> icicles;  // Remains of ice blocks
+
+
     public:
-        Map();
+        Map(sf::Texture* , int[15][13]);
         ~Map();
-        void readMap(int );
-        //void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-        //void drawBloques(sf::RenderWindow &);
-        void ReinicioNivel();
-        //void Vacio();
-        //void MarcarBloques(int );
-        //void clearMap();
-        tinyxml2::XMLNode *nodo;
-        tinyxml2::XMLElement *data;
-        int blocks [15][13];
-        int restartBlocks [15][13];
-        //std::vector<std::vector<Block*>> bloques;
-        //std::vector<std::vector<Block*>> bloquesReinicio;
-        //std::vector<std::vector<Block*>> borde;
+        void Update(float deltaTime);
+        void Draw(sf::RenderWindow &);
+        bool checkPosition(sf::Vector2i );
+        void pengoPush(sf::Vector2i ,int ,bool );
+        Block* getBlock(unsigned int, unsigned int);
+        sf::Vector2i getFreePosition();
 };

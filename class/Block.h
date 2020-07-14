@@ -15,7 +15,7 @@ class Block {
 
 
     public:
-        Block(sf::Texture* ,unsigned int ,unsigned int );
+        Block(sf::Texture* , int , int );
         virtual ~Block();
         virtual void Update(float deltaTime);
         void Draw(sf::RenderWindow &);

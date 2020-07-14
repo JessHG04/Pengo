@@ -298,33 +298,6 @@ class/IceBlock.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/IceBlock.cpp.s
 .PHONY : class/IceBlock.cpp.s
 
-class/Labyrinth.o: class/Labyrinth.cpp.o
-
-.PHONY : class/Labyrinth.o
-
-# target to build an object file
-class/Labyrinth.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o
-.PHONY : class/Labyrinth.cpp.o
-
-class/Labyrinth.i: class/Labyrinth.cpp.i
-
-.PHONY : class/Labyrinth.i
-
-# target to preprocess a source file
-class/Labyrinth.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Labyrinth.cpp.i
-.PHONY : class/Labyrinth.cpp.i
-
-class/Labyrinth.s: class/Labyrinth.cpp.s
-
-.PHONY : class/Labyrinth.s
-
-# target to generate assembly for a file
-class/Labyrinth.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Labyrinth.cpp.s
-.PHONY : class/Labyrinth.cpp.s
-
 class/Map.o: class/Map.cpp.o
 
 .PHONY : class/Map.o
@@ -406,33 +379,6 @@ class/SnoBee.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/SnoBee.cpp.s
 .PHONY : class/SnoBee.cpp.s
 
-class/tinyxml2.o: class/tinyxml2.cpp.o
-
-.PHONY : class/tinyxml2.o
-
-# target to build an object file
-class/tinyxml2.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o
-.PHONY : class/tinyxml2.cpp.o
-
-class/tinyxml2.i: class/tinyxml2.cpp.i
-
-.PHONY : class/tinyxml2.i
-
-# target to preprocess a source file
-class/tinyxml2.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/tinyxml2.cpp.i
-.PHONY : class/tinyxml2.cpp.i
-
-class/tinyxml2.s: class/tinyxml2.cpp.s
-
-.PHONY : class/tinyxml2.s
-
-# target to generate assembly for a file
-class/tinyxml2.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/tinyxml2.cpp.s
-.PHONY : class/tinyxml2.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -488,9 +434,6 @@ help:
 	@echo "... class/IceBlock.o"
 	@echo "... class/IceBlock.i"
 	@echo "... class/IceBlock.s"
-	@echo "... class/Labyrinth.o"
-	@echo "... class/Labyrinth.i"
-	@echo "... class/Labyrinth.s"
 	@echo "... class/Map.o"
 	@echo "... class/Map.i"
 	@echo "... class/Map.s"
@@ -500,9 +443,6 @@ help:
 	@echo "... class/SnoBee.o"
 	@echo "... class/SnoBee.i"
 	@echo "... class/SnoBee.s"
-	@echo "... class/tinyxml2.o"
-	@echo "... class/tinyxml2.i"
-	@echo "... class/tinyxml2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

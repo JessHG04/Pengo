@@ -2,7 +2,7 @@
 
 
 
-Block::Block(sf::Texture* texture, unsigned int x, unsigned int y) {
+Block::Block(sf::Texture* texture, int x, int y) {
 
     // Initial values
     direction  = -1;

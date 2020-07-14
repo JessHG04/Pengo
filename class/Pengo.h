@@ -18,7 +18,7 @@ class Pengo : public Character {
     public:
         Pengo(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~Pengo();
-        void Update(float ,Labyrinth* );
+        void Update(float ,Map* );
         bool loseLife();
         bool getDead();
         void restartInitialPosition();

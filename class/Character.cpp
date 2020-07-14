@@ -2,7 +2,7 @@
 
 
 
-Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) {
+Character::Character(sf::Texture *texture, float speed, float switchTime, sf::Vector2u coordPj, sf::Vector2i position) {
     this->row      = (coordPj.y > 1) ? 1 : 0;
     this->column   = 0;
     this->speed    = speed;
@@ -12,7 +12,7 @@ Character::Character(sf::Texture *texture, float speed, float changeTime, sf::Ve
     path           = 0.0f;
     this->position = position;
     body          = new sf::Sprite(*texture);
-    animation     = new Animation(texture, coordPj, changeTime, 2);
+    animation     = new Animation(texture, coordPj, switchTime, 2);
     body->setTextureRect(animation->getUVRect());
     body->setOrigin(animation->getOrigin());
     body->setPosition(16+position.y*16, 40+position.x*16);
@@ -22,7 +22,7 @@ Character::~Character() {
 
 }
 
-void Character::Update(float deltaTime, Labyrinth* labyrinth) {
+void Character::Update(float deltaTime, Map* map) {
     
 }
 

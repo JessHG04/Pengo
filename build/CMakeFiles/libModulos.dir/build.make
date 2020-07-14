@@ -225,28 +225,28 @@ CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.provides: CMakeFiles/libModulos.dir
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
 
 
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o: ../class/Labyrinth.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o -c /home/jess/Escritorio/Pengo2/class/Labyrinth.cpp
+CMakeFiles/libModulos.dir/class/Map.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/Map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/libModulos.dir/class/Map.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Map.cpp.o -c /home/jess/Escritorio/Pengo2/class/Map.cpp
 
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Labyrinth.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Labyrinth.cpp > CMakeFiles/libModulos.dir/class/Labyrinth.cpp.i
+CMakeFiles/libModulos.dir/class/Map.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Map.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Map.cpp > CMakeFiles/libModulos.dir/class/Map.cpp.i
 
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Labyrinth.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Labyrinth.cpp -o CMakeFiles/libModulos.dir/class/Labyrinth.cpp.s
+CMakeFiles/libModulos.dir/class/Map.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Map.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Map.cpp -o CMakeFiles/libModulos.dir/class/Map.cpp.s
 
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o.requires:
+CMakeFiles/libModulos.dir/class/Map.cpp.o.requires:
 
-.PHONY : CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o.requires
+.PHONY : CMakeFiles/libModulos.dir/class/Map.cpp.o.requires
 
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o.provides: CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o.provides
+CMakeFiles/libModulos.dir/class/Map.cpp.o.provides: CMakeFiles/libModulos.dir/class/Map.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Map.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/class/Map.cpp.o.provides
 
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o
+CMakeFiles/libModulos.dir/class/Map.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Map.cpp.o
 
 
 CMakeFiles/libModulos.dir/class/Collision.cpp.o: CMakeFiles/libModulos.dir/flags.make
@@ -273,54 +273,6 @@ CMakeFiles/libModulos.dir/class/Collision.cpp.o.provides: CMakeFiles/libModulos.
 CMakeFiles/libModulos.dir/class/Collision.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Collision.cpp.o
 
 
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o: ../class/tinyxml2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o -c /home/jess/Escritorio/Pengo2/class/tinyxml2.cpp
-
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/tinyxml2.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/tinyxml2.cpp > CMakeFiles/libModulos.dir/class/tinyxml2.cpp.i
-
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/tinyxml2.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/tinyxml2.cpp -o CMakeFiles/libModulos.dir/class/tinyxml2.cpp.s
-
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o.requires:
-
-.PHONY : CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o.requires
-
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o.provides: CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o.provides
-
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o
-
-
-CMakeFiles/libModulos.dir/class/Map.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/Map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/libModulos.dir/class/Map.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Map.cpp.o -c /home/jess/Escritorio/Pengo2/class/Map.cpp
-
-CMakeFiles/libModulos.dir/class/Map.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Map.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Map.cpp > CMakeFiles/libModulos.dir/class/Map.cpp.i
-
-CMakeFiles/libModulos.dir/class/Map.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Map.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Map.cpp -o CMakeFiles/libModulos.dir/class/Map.cpp.s
-
-CMakeFiles/libModulos.dir/class/Map.cpp.o.requires:
-
-.PHONY : CMakeFiles/libModulos.dir/class/Map.cpp.o.requires
-
-CMakeFiles/libModulos.dir/class/Map.cpp.o.provides: CMakeFiles/libModulos.dir/class/Map.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Map.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/class/Map.cpp.o.provides
-
-CMakeFiles/libModulos.dir/class/Map.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Map.cpp.o
-
-
 # Object files for target libModulos
 libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/class/Animation.cpp.o" \
@@ -330,10 +282,8 @@ libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/class/Pengo.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Game.cpp.o" \
 "CMakeFiles/libModulos.dir/class/SnoBee.cpp.o" \
-"CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o" \
-"CMakeFiles/libModulos.dir/class/Collision.cpp.o" \
-"CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o" \
-"CMakeFiles/libModulos.dir/class/Map.cpp.o"
+"CMakeFiles/libModulos.dir/class/Map.cpp.o" \
+"CMakeFiles/libModulos.dir/class/Collision.cpp.o"
 
 # External object files for target libModulos
 libModulos_EXTERNAL_OBJECTS =
@@ -345,13 +295,11 @@ liblibModulos.a: CMakeFiles/libModulos.dir/class/Character.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Pengo.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Game.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/class/Collision.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Map.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/class/Collision.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX static library liblibModulos.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library liblibModulos.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libModulos.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libModulos.dir/link.txt --verbose=$(VERBOSE)
 
@@ -367,10 +315,8 @@ CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Character.cp
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Pengo.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Game.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Collision.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Map.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Collision.cpp.o.requires
 
 .PHONY : CMakeFiles/libModulos.dir/requires
 

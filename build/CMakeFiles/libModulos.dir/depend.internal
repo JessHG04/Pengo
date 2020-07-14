@@ -13,7 +13,7 @@ CMakeFiles/libModulos.dir/class/Character.cpp.o
  /home/jess/Escritorio/Pengo2/class/Character.cpp
  /home/jess/Escritorio/Pengo2/class/Character.h
  /home/jess/Escritorio/Pengo2/class/IceBlock.h
- /home/jess/Escritorio/Pengo2/class/Labyrinth.h
+ /home/jess/Escritorio/Pengo2/class/Map.h
 CMakeFiles/libModulos.dir/class/Collision.cpp.o
  /home/jess/Escritorio/Pengo2/class/Animation.h
  /home/jess/Escritorio/Pengo2/class/Block.h
@@ -21,7 +21,7 @@ CMakeFiles/libModulos.dir/class/Collision.cpp.o
  /home/jess/Escritorio/Pengo2/class/Collision.cpp
  /home/jess/Escritorio/Pengo2/class/Collision.h
  /home/jess/Escritorio/Pengo2/class/IceBlock.h
- /home/jess/Escritorio/Pengo2/class/Labyrinth.h
+ /home/jess/Escritorio/Pengo2/class/Map.h
  /home/jess/Escritorio/Pengo2/class/Pengo.h
  /home/jess/Escritorio/Pengo2/class/SnoBee.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o
@@ -32,31 +32,24 @@ CMakeFiles/libModulos.dir/class/Game.cpp.o
  /home/jess/Escritorio/Pengo2/class/Game.cpp
  /home/jess/Escritorio/Pengo2/class/Game.h
  /home/jess/Escritorio/Pengo2/class/IceBlock.h
- /home/jess/Escritorio/Pengo2/class/Labyrinth.h
  /home/jess/Escritorio/Pengo2/class/Map.h
  /home/jess/Escritorio/Pengo2/class/Pengo.h
  /home/jess/Escritorio/Pengo2/class/SnoBee.h
- /home/jess/Escritorio/Pengo2/class/tinyxml2.h
 CMakeFiles/libModulos.dir/class/IceBlock.cpp.o
  /home/jess/Escritorio/Pengo2/class/Block.h
  /home/jess/Escritorio/Pengo2/class/IceBlock.cpp
  /home/jess/Escritorio/Pengo2/class/IceBlock.h
-CMakeFiles/libModulos.dir/class/Labyrinth.cpp.o
- /home/jess/Escritorio/Pengo2/class/Block.h
- /home/jess/Escritorio/Pengo2/class/IceBlock.h
- /home/jess/Escritorio/Pengo2/class/Labyrinth.cpp
- /home/jess/Escritorio/Pengo2/class/Labyrinth.h
 CMakeFiles/libModulos.dir/class/Map.cpp.o
  /home/jess/Escritorio/Pengo2/class/Block.h
+ /home/jess/Escritorio/Pengo2/class/IceBlock.h
  /home/jess/Escritorio/Pengo2/class/Map.cpp
  /home/jess/Escritorio/Pengo2/class/Map.h
- /home/jess/Escritorio/Pengo2/class/tinyxml2.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o
  /home/jess/Escritorio/Pengo2/class/Animation.h
  /home/jess/Escritorio/Pengo2/class/Block.h
  /home/jess/Escritorio/Pengo2/class/Character.h
  /home/jess/Escritorio/Pengo2/class/IceBlock.h
- /home/jess/Escritorio/Pengo2/class/Labyrinth.h
+ /home/jess/Escritorio/Pengo2/class/Map.h
  /home/jess/Escritorio/Pengo2/class/Pengo.cpp
  /home/jess/Escritorio/Pengo2/class/Pengo.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
@@ -64,10 +57,7 @@ CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
  /home/jess/Escritorio/Pengo2/class/Block.h
  /home/jess/Escritorio/Pengo2/class/Character.h
  /home/jess/Escritorio/Pengo2/class/IceBlock.h
- /home/jess/Escritorio/Pengo2/class/Labyrinth.h
+ /home/jess/Escritorio/Pengo2/class/Map.h
  /home/jess/Escritorio/Pengo2/class/Pengo.h
  /home/jess/Escritorio/Pengo2/class/SnoBee.cpp
  /home/jess/Escritorio/Pengo2/class/SnoBee.h
-CMakeFiles/libModulos.dir/class/tinyxml2.cpp.o
- /home/jess/Escritorio/Pengo2/class/tinyxml2.cpp
- /home/jess/Escritorio/Pengo2/class/tinyxml2.h

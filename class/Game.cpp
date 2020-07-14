@@ -10,8 +10,10 @@ Game* Game::getInstance() {
 }
 
 Game::Game() {
-    // Loading textures...
-    if (!spriteSheet.loadFromFile("resources/SpriteSheet.png")) {
+    window = new sf::RenderWindow(sf::VideoMode(19*16, 22*16), "Pengo");
+    window->setFramerateLimit(60);
+    
+    if (!spriteSheet.loadFromFile("resources/Character.png")) {
         std::cout << "Failed loading sprite sheet..." << std::endl;
         exit(0);
     }
@@ -23,10 +25,9 @@ Game::Game() {
     // Initialize variables...
     size.x     = 15;
     size.y     = 13;
-    window     = new sf::RenderWindow(sf::VideoMode(19*16, 22*16), "Pengo");
-    window->setFramerateLimit(60);
+    
     RandomMaps();
-    labyrinth       = labyrinth1;
+    map       = map1;
     pengo           = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
     this->addSwarm(level1);
     collision       = new Collision();
@@ -49,22 +50,22 @@ Game::~Game() {
     }
     delete collision;
     swarm.clear();
-    delete labyrinth1;
-    delete labyrinth2;
+    delete map1;
+    delete map2;
     delete window;
     delete gameInstance;
     pengo        = NULL;
-    labyrinth    = NULL;
-    labyrinth1   = NULL;
-    labyrinth2   = NULL;
-    labyrinth3   = NULL;
-    labyrinth4   = NULL;
-    labyrinth5   = NULL;
-    labyrinth6   = NULL;
-    labyrinth7   = NULL;
-    labyrinth8   = NULL;
-    labyrinth9   = NULL;
-    labyrinth10   = NULL;
+    map    = NULL;
+    map1   = NULL;
+    map2   = NULL;
+    map3   = NULL;
+    map4   = NULL;
+    map5   = NULL;
+    map6   = NULL;
+    map7   = NULL;
+    map8   = NULL;
+    map9   = NULL;
+    map10   = NULL;
     window       = NULL;
     gameInstance = NULL;
     collision    = NULL;
@@ -89,7 +90,7 @@ void Game::GameLoop() {
 
         } else if (pengo->getStunned()  &&  !pengo->getGodMode()) {
 
-            pengo->Update(deltaTime, labyrinth);
+            pengo->Update(deltaTime, map);
             if (levelClock.getElapsedTime().asSeconds() >= 2.45f)
                 this->restoreLevel();
 
@@ -107,7 +108,7 @@ void Game::GameLoop() {
             } else {
 
                 // Update objects...
-                pengo->Update(deltaTime, labyrinth);
+                pengo->Update(deltaTime, map);
                 GameFunctionality();
                 if (pengo->getStunned()  &&  pengo->getGodMode()  &&  levelClock.getElapsedTime().asSeconds() >= 1.15f)
                     pengo->restartPosition();
@@ -185,10 +186,10 @@ void Game::EventsLoop() {
 
 
 void Game::GameFunctionality() {
-    labyrinth->Update(deltaTime);
+    map->Update(deltaTime);
     for (SnoBee* snobee : swarm) {
         if (snobee  &&  !snobee->getDead()) {
-            snobee->Update(deltaTime, labyrinth);
+            snobee->Update(deltaTime, map);
 
             // Check collision snobee-pengo
             if (collision->checkCollision(snobee->getSprite(), pengo->getSprite(), 10.0f)) {
@@ -200,7 +201,7 @@ void Game::GameFunctionality() {
             for (unsigned int i=0; i<size.x; i++) {
                 Block* _block;
                 for (unsigned int j=0; j<size.y; j++) {
-                    _block = labyrinth->getBlock(i, j);
+                    _block = map->getBlock(i, j);
 
                     // If we smashes Sno-Bee add other one
                     if (_block  &&  _block->getDirection() > -1  &&  snobee->getFree()  &&  collision->checkCollision(_block->getSprite(), snobee->getSprite(), 20.f)) {
@@ -224,7 +225,7 @@ void Game::Draw() {
     window->clear(sf::Color::Black);
 
     // Print objects...
-    labyrinth->Draw(*window);
+    map->Draw(*window);
     pengo->Draw(*window);
     for (SnoBee* snobee : swarm) {
         if (snobee  &&  !snobee->getDead())
@@ -261,7 +262,7 @@ void Game::addSwarm(int level[15][13]) {
 void Game::addSnoBee() {
 
     if (swarm.size() < snoBeesPerLevel) {
-        sf::Vector2i _newPosition = labyrinth->getFreePosition();
+        sf::Vector2i _newPosition = map->getFreePosition();
 
         swarm.push_back(new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0, 2), _newPosition));
     }
@@ -291,53 +292,53 @@ void Game::restoreLevel() {
 
     if(level == 1) {
         this->addSwarm(level1);
-        labyrinth1 = new Labyrinth(&tileset, level1);
-        labyrinth = labyrinth1;
+        map1 = new Map(&tileset, level1);
+        map = map1;
     }
     if(level == 2) {
         this->addSwarm(level2);
-        labyrinth2 = new Labyrinth(&tileset, level2);
-        labyrinth = labyrinth2;
+        map2 = new Map(&tileset, level2);
+        map = map2;
     }
     if(level == 3) {
         this->addSwarm(level3);
-        labyrinth3 = new Labyrinth(&tileset, level3);
-        labyrinth = labyrinth3;
+        map3 = new Map(&tileset, level3);
+        map = map3;
     }
     if(level == 4) {
         this->addSwarm(level4);
-        labyrinth4 = new Labyrinth(&tileset, level4);
-        labyrinth = labyrinth4;
+        map4 = new Map(&tileset, level4);
+        map = map4;
     }
     if(level == 5) {
         this->addSwarm(level5);
-        labyrinth5 = new Labyrinth(&tileset, level5);
-        labyrinth = labyrinth5;
+        map5 = new Map(&tileset, level5);
+        map = map5;
     }
     if(level == 6) {
         this->addSwarm(level6);
-        labyrinth6 = new Labyrinth(&tileset, level6);
-        labyrinth = labyrinth6;
+        map6 = new Map(&tileset, level6);
+        map = map6;
     }
     if(level == 7) {
         this->addSwarm(level7);
-        labyrinth7 = new Labyrinth(&tileset, level7);
-        labyrinth = labyrinth7;
+        map7 = new Map(&tileset, level7);
+        map = map7;
     }
     if(level == 8) {
         this->addSwarm(level8);
-        labyrinth8 = new Labyrinth(&tileset, level8);
-        labyrinth = labyrinth8;
+        map8 = new Map(&tileset, level8);
+        map = map8;
     }
     if(level == 9) {
         this->addSwarm(level9);
-        labyrinth9 = new Labyrinth(&tileset, level9);
-        labyrinth = labyrinth9;
+        map9 = new Map(&tileset, level9);
+        map = map9;
     }
     if(level == 10) {
         this->addSwarm(level10);
-        labyrinth10 = new Labyrinth(&tileset, level10);
-        labyrinth = labyrinth10;
+        map10 = new Map(&tileset, level10);
+        map = map10;
     }
     pengo->restartInitialPosition();
 }
@@ -367,7 +368,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth1 = new Labyrinth(&tileset, level1);
+    map1 = new Map(&tileset, level1);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -384,7 +385,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth2 = new Labyrinth(&tileset, level2);
+    map2 = new Map(&tileset, level2);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -401,7 +402,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth3 = new Labyrinth(&tileset, level3);
+    map3 = new Map(&tileset, level3);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -418,7 +419,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth4 = new Labyrinth(&tileset, level4);
+    map4 = new Map(&tileset, level4);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -435,7 +436,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth5 = new Labyrinth(&tileset, level5);
+    map5 = new Map(&tileset, level5);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -452,7 +453,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth6 = new Labyrinth(&tileset, level6);
+    map6 = new Map(&tileset, level6);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -469,7 +470,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth7 = new Labyrinth(&tileset, level7);
+    map7 = new Map(&tileset, level7);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -486,7 +487,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth8 = new Labyrinth(&tileset, level8);
+    map8 = new Map(&tileset, level8);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -503,7 +504,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth9 = new Labyrinth(&tileset, level9);
+    map9 = new Map(&tileset, level9);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -520,5 +521,5 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    labyrinth10 = new Labyrinth(&tileset, level10);
+    map10 = new Map(&tileset, level10);
 }

@@ -23,7 +23,7 @@ Pengo::~Pengo() {
 
 
 
-void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
+void Pengo::Update(float deltaTime, Map* map) {
     sf::Vector2i _auxPosition = position;
     
     if (lifes > 0  &&  (!isWalking && !isPushing && !isStunned)) {
@@ -46,12 +46,12 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
             isPushing = true;
             push      = true;
-            animation->setChangeTime(0.13f);
+            animation->setSwitchTime(0.13f);
             row = 1;
             auxClock.restart();
         }
         
-        if (labyrinth->checkPosition(position)) {
+        if (map->checkPosition(position)) {
             isBlocked = false;
         } else {
             isBlocked = true;
@@ -90,18 +90,18 @@ void Pengo::Update(float deltaTime, Labyrinth* labyrinth) {
         if (auxClock.getElapsedTime().asSeconds() >= 0.4f) {
             isPushing = false;
             row = 0;
-            animation->setChangeTime(0.2f);
+            animation->setSwitchTime(0.2f);
         }
 
         if (push) {
             if (column == 4)
-                labyrinth->pengoPush(sf::Vector2i(position.x-1, position.y), 0, true);
+                map->pengoPush(sf::Vector2i(position.x-1, position.y), 0, true);
             else if (column == 6)
-                labyrinth->pengoPush(sf::Vector2i(position.x, position.y+1), 1, true);
+                map->pengoPush(sf::Vector2i(position.x, position.y+1), 1, true);
             else if (column == 0)
-                labyrinth->pengoPush(sf::Vector2i(position.x+1, position.y), 2, true);
+                map->pengoPush(sf::Vector2i(position.x+1, position.y), 2, true);
             else if (column == 2)
-                labyrinth->pengoPush(sf::Vector2i(position.x, position.y-1), 3, true);
+                map->pengoPush(sf::Vector2i(position.x, position.y-1), 3, true);
             push = false;
         }
 

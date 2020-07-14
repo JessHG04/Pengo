@@ -1,200 +1,225 @@
 #include "Map.h"
 
-Map::Map(){
+
+
+Map::Map(sf::Texture* tileset, int level[15][13]) {
+    isHit = false;
+
+    // Build the walls and put them on screen...
+    leftWall   = new sf::Sprite(*tileset);
+    rightWall  = new sf::Sprite(*tileset);
+    topWall    = new sf::Sprite(*tileset);
+    bottomWall = new sf::Sprite(*tileset);
+
+    leftWall->setTextureRect(sf::IntRect(8, 16, 8, 256));
+    rightWall->setTextureRect(sf::IntRect(8, 16, 8, 256));
+    topWall->setTextureRect(sf::IntRect(0, 8, 224, 8));
+    bottomWall->setTextureRect(sf::IntRect(0, 8, 224, 8));
+
+    leftWall->setPosition(0, 24);
+    leftWall->setOrigin(4, 0);
+    leftWall->setScale(-1, 1);
+    leftWall->setOrigin(8, 0);
+    rightWall->setPosition(216, 24);
+    topWall->setPosition(0, 24);
+    topWall->setOrigin(0, 4);
+    topWall->setScale(1, -1);
+    topWall->setOrigin(0, 8);
+    bottomWall->setPosition(0, 272);
+
+
+    // Reserve momory for the matrix...
+    size.x = 15;  size.y = 13;
+    glacier = new Block**[size.x];
+    for (unsigned int i=0; i<size.x; i++) {
+        glacier[i] = new Block*[size.y];
+    }
+    
+    // Put all the ice blocks...
+    for (unsigned int i=0; i<size.x; i++) {
+        for (unsigned int j=0; j<size.y; j++) {
+            if (level[i][j] == 1) {
+                glacier[i][j] = new IceBlock(tileset, j, i);
+            } else {
+                glacier[i][j] = NULL;
+            }
+        }
+    }
+
+    // Important position...
+    for (int i=0; i<int(size.x); i++)
+        for (int j=0; j<int(size.y); j++)
+            if (glacier[i][j])
+                glacier[i][j]->setPosition(sf::Vector2i(i, j));
+
 }
 
-void Map::readMap(int nivel){
-    //bloques.clear();
-    //bloquesReinicio.clear();
-    //borde.clear();
 
-    tinyxml2::XMLDocument doc;
-    doc.LoadFile("resources/Mapas/MapaBloques.tmx");
 
-    tinyxml2::XMLElement *mapp = doc.FirstChildElement("map");
-
-    //Creación de cada bloque
-    this->nodo = mapp->FirstChildElement("objectgroup");
-    this->data = nodo->FirstChildElement("object");
-    int tipo2 = nivel;
-    
-    if(nivel == 10){
-        tipo2 = 1;
-    }
-    int tipo = 1;
-    int xaux  = 48;
-    int yaux = 64;
-    int num = rand()%2;
-    int aux [15][13];
-    //Block *baux = NULL;
-    
-    for(int x = 0; x < 15; x++ ){
-        for(int y = 0; y < 13; y++){
-            if(this->data != NULL){
-                data->QueryIntAttribute("type", &tipo);
-                data->QueryIntAttribute("x", &xaux);
-                data->QueryIntAttribute("y", &yaux);
-                //baux = new Block(tipo, xaux, yaux);
-                if((xaux == 104 && yaux == 296) || (xaux == 200 && yaux == 248) || (xaux == 136 && yaux == 184)){ //Huevos
-                    //baux = new Block(tipo2, xaux, yaux);
-                    //aux.push_back(baux);
-                    //aux[x][y] = tipo;
-                    //this->data = data->NextSiblingElement("object");
-                }else if((xaux == 152 && yaux == 120) || (xaux == 88 && yaux == 232) || (xaux == 216 && yaux == 232)){ //Bloques estrella
-                    //tipo = 10;
-                    //baux = new Block(tipo, xaux, yaux);
-                    //aux.push_back(baux);
-                    //this->data = data->NextSiblingElement("object");
-                }else{
-                    if(num == 0){                   
-                        if((xaux == 152 && yaux == 184) || (xaux == 88 && yaux == 72) || (xaux == 104 && yaux == 72) || (xaux == 120 && yaux == 72) || (xaux == 104 && yaux == 88) || (xaux == 200 && yaux == 120) || (xaux == 200 && yaux == 104) || (xaux == 216 && yaux == 120) || (xaux == 200 && yaux == 136) || (xaux == 184 && yaux == 120) || (xaux == 56 && yaux == 184) || (xaux == 56 && yaux == 168) || (xaux == 72 && yaux == 184) || (xaux == 56 && yaux == 200) || (xaux == 133 && yaux == 168) || (xaux == 136 && yaux == 200) || (xaux == 120 && yaux == 184) || (xaux == 200 && yaux == 232) || (xaux == 216 && yaux == 248) || (xaux == 200 && yaux == 264) || (xaux == 184 && yaux == 248) || (xaux == 104 && yaux == 280) || (xaux == 120 && yaux == 196)|| (xaux == 88 && yaux == 296)){ //No quiero que se generen bloques ahí
-                            //aux.push_back(NULL);
-                            blocks[x][y] = 0;
-                            restartBlocks[x][y] = 0;
-                        }else{
-                            blocks[x][y] = num;
-                            restartBlocks[x][y] = num;
-                        }
-                        this->data = data->NextSiblingElement("object");
-                    }else{
-                        //aux.push_back(NULL);
-                        this->data = data->NextSiblingElement("object");
-                    }
-                }
-                num = rand()%2;
-                //std::cout << "Numero aleatorio: " << num << std::endl;
-            }
-            //baux = NULL;
+Map::~Map() {
+    delete leftWall;
+    leftWall = NULL;
+    delete rightWall;
+    rightWall = NULL;
+    delete topWall;
+    topWall = NULL;
+    delete bottomWall;
+    bottomWall = NULL;
+    for (unsigned int i=0; i<size.x; i++) {
+        for (unsigned int j=0; j<size.y; j++) {
+            if (glacier[i][j])
+                delete glacier[i][j];
         }
-        //bloques.push_back(aux);
-        //bloquesReinicio.push_back(aux);
-        //aux.clear();
+        delete[] glacier[i];
     }
-    
-    //Creacion del borde
-    /*this->nodo = nodo->NextSiblingElement("objectgroup");
-    this->data = nodo->FirstChildElement("object");
-    for(int x = 0; x < 17; x++ ){
-        for(int y = 0; y < 15; y++){
-            if(this->data != NULL){
-                if(x == 0 || x == 16 || y == 0 || y == 14){
-                    data->QueryIntAttribute("type", &tipo);
-                    data->QueryIntAttribute("x", &xaux);
-                    data->QueryIntAttribute("y", &yaux);
-                    baux = new Block(tipo, xaux, yaux);
-                    aux.push_back(baux);
-                    this->data = data->NextSiblingElement("object");
-                }
-                else{
-                    aux.push_back(NULL);
-                }
-            }
+    delete[] glacier;
+    glacier = NULL;
+    for (Block* block : icicles) {
+        if (block != NULL) {
+            delete block;
+            block = NULL;
         }
-        borde.push_back(aux);
-        aux.clear();
-    }*/
+    }
+    icicles.clear();
 }
 
-void Map::ReinicioNivel(){
-    /*std::vector<Block*> aux;
-    Block *baux = NULL;
-    int tipo = 1;
-    int xaux  = 48;
-    int yaux = 64;
-    
-    bloques.clear();
-    aux.clear();
-    /*if(bloques.empty()){
-        for(int x = 0; x < bloquesReinicio.size(); x++){
-            for(int y = 0; y < bloquesReinicio[x].size(); y++){
-                if(bloquesReinicio[x][y]!=NULL){
-                    tipo = bloquesReinicio[x][y].getType();
-                    xaux = (bloquesReinicio[x][y].getSprite()->getPosition().x) - 8;
-                    yaux = (bloquesReinicio[x][y].getSprite()->getPosition().y) - 8;
-                    baux = new Block(tipo, xaux, yaux);
-                    aux.push_back(baux);
-                }else{
-                    aux.push_back(NULL);
+
+
+void Map::Update(float deltaTime) {
+
+    // Update the position for each block...
+    for (int i=0; i<int(size.x); i++)
+        for (int j=0; j<int(size.y); j++)
+            if (glacier[i][j]  &&  glacier[i][j]->getCanCollide()) {
+                sf::Vector2i _pos = glacier[i][j]->getPosition();
+                int _x = _pos.x, _y = _pos.y;
+
+                if (i != _x  ||  j != _y) {
+                    glacier[_x][_y] = glacier[i][j];
+                    glacier[i][j]   = NULL;
+                }
+                
+            }
+
+
+    // Update each block...
+    for (unsigned int i=0; i<size.x; i++)
+        for (unsigned int j=0; j<size.y; j++)
+            if (glacier[i][j]) {
+
+                if (glacier[i][j]->getCanCollide()) {
+                    sf::Vector2i _pos = glacier[i][j]->getPosition();
+
+                    this->pengoPush(_pos, glacier[i][j]->getDirection(), false);
+                    glacier[i][j]->dontCollide();
+                }
+                glacier[i][j]->Update(deltaTime);
+            }
+
+
+    // Delete the ice block falling...
+    for (Block* block : icicles) {
+        if (block) {
+            if (IceBlock* ice = dynamic_cast<IceBlock*>(block)) {
+                if (ice->getBroke()) {
+                //    delete block;
+                    block = NULL;
+                } else {
+                    block->Update(deltaTime);
                 }
             }
-            bloques.push_back(aux);
-            aux.clear();
         }
     }
-    for(int x = 0; x<15; x++){
-        for(int y = 0; y < 13; y++){
-            blocks[x][y] = restartBlocks[x][y];
-        }
-    }*/
 }
 
-/*
-void Map::Vacio(){
-    //bloques.clear();
+
+
+void Map::Draw(sf::RenderWindow &window) {
+    window.draw(*leftWall);
+    window.draw(*rightWall);
+    window.draw(*topWall);
+    window.draw(*bottomWall);
+    for (unsigned int i=0; i<size.x; i++) {
+        for (unsigned int j=0; j<size.y; j++) {
+            if (glacier[i][j])
+                glacier[i][j]->Draw(window);
+        }
+    }
+
+    for (Block* block : icicles) {
+        if (block) {
+            if (IceBlock* ice = dynamic_cast<IceBlock*>(block))
+                if (!ice->getBroke())
+                    block->Draw(window);
+        }
+    }
 }
 
-void Map::clearMap(){
-    /*for(int x = 0; x < bloquesReinicio.size(); x++){
-        for(int y = 0; y < bloquesReinicio[x].size(); y++){
-            if(bloquesReinicio[x][y]!= NULL){
-                delete bloquesReinicio[x][y];
-            }
-        }
-    }*/
-    /*
-    for(int x = 0; x < bloques.size(); x++){
-        for(int y = 0; y < bloques[x].size(); y++){
-            if(bloques[x][y]!= NULL){
-                delete bloques[x][y];
-            }
-        }
-    }
-    
-    for(int x = 0; x < borde.size(); x++){
-        for(int y = 0; y < borde[x].size(); y++){
-            if(borde[x][y]!= NULL){
-                delete borde[x][y];
-            }
-        }
-    }
-    bloques.clear();
-    bloquesReinicio.clear();
-    borde.clear();
-    nodo = NULL;
-    data = NULL;
-    //std::cout << bloques.size() << bloquesReinicio.size() << borde.size() << std::endl;
-}*/
-/*
-void Map::draw(sf::RenderTarget& target, sf::RenderStates states) const{
-    states.transform *= getTransform();
-    states.texture = &tile;
-    target.draw(vertex,states);
-}*/
-/*
-void Map::drawBloques(sf::RenderWindow &ventana){
-    //sf::Sprite *sprit;
-    for(int x = 0; x < bloques.size(); x++){
-        for(int y = 0; y < bloques[0].size(); y++){
-            if(bloques[x][y]!= NULL){
-                ventana.draw(bloques[x][y]->getSprite());
-            }
+
+
+bool Map::checkPosition(sf::Vector2i position) {
+    bool _avaliable = false;
+    int _x = position.x, _y = position.y;
+
+    // Check the walls...
+    if (_x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)) {
+        if (glacier[_x][_y] == NULL) {
+            _avaliable = true;
         }
     }
 
-    for(int x = 0; x < borde.size(); x++){
-        for(int y = 0; y < borde[0].size(); y++){
-            /*if(!borde[x][y].getVacio()){
-                sprit = borde[x][y].getSprite();
-                ventana.draw(*sprit);
-            }*/
-            /*if(borde[x][y]!= NULL){
-                ventana.draw(borde[x][y]->getSprite());
+    return _avaliable;
+}
+
+
+
+void Map::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
+    int _x = position.x, _y = position.y;
+
+    // Check a block position...
+    if (!this->checkPosition(position)  &&  _x >= 0  &&  _x < int(size.x)  &&  _y >= 0  &&  _y < int(size.y)) {
+        sf::Vector2i _nextPosition = position;
+
+        // Calculate the following position from block...
+        if (direction == 0)
+            _nextPosition.x--;
+        else if (direction == 1)
+            _nextPosition.y++;
+        else if (direction == 2)
+            _nextPosition.x++;
+        else if (direction == 3)
+            _nextPosition.y--;
+
+        // Move the block or break it if cotains ice...
+        if (this->checkPosition(_nextPosition)) {
+            glacier[_x][_y]->setDirection(direction);
+        } else if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
+            if (breakIt) {
+                ice->breakDown();
+                icicles.push_back(glacier[_x][_y]);
+                glacier[_x][_y] = NULL;
+            } else {
+                glacier[_x][_y]->setDirection(-1);
             }
         }
     }
+}
 
-}*/
 
-Map::~Map(){
-    
+
+Block* Map::getBlock(unsigned int x, unsigned int y) {
+    return glacier[x][y];
+}
+
+
+
+sf::Vector2i Map::getFreePosition() {
+    sf::Vector2i _freePosition(0, 0);
+
+    do {
+        _freePosition.x = rand()%15,
+        _freePosition.y = rand()%13;
+    } while (!this->checkPosition(_freePosition));
+
+    return _freePosition;
 }

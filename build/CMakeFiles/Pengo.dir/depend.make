@@ -7,10 +7,8 @@ CMakeFiles/Pengo.dir/main.cpp.o: ../class/Character.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/Collision.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/Game.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/IceBlock.h
-CMakeFiles/Pengo.dir/main.cpp.o: ../class/Labyrinth.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/Map.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/Pengo.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/SnoBee.h
-CMakeFiles/Pengo.dir/main.cpp.o: ../class/tinyxml2.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../main.cpp
 

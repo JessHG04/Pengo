@@ -26,7 +26,7 @@ SnoBee::~SnoBee() {
 
 
 // IA SnoBees...
-void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
+void SnoBee::Update(float deltaTime, Map* map) {
     std::vector<sf::Vector2i> _movement;
     std::vector<int> _orientation;
     int _index = -1, _random;
@@ -34,19 +34,19 @@ void SnoBee::Update(float deltaTime, Labyrinth* labyrinth) {
     if (!isWalking  &&  !isStatic  &&  bomb == NULL) {
 
         // Check avaliable positions
-        if (labyrinth->checkPosition(sf::Vector2i(position.x-1, position.y))) {
+        if (map->checkPosition(sf::Vector2i(position.x-1, position.y))) {
             _movement.push_back(sf::Vector2i(position.x-1, position.y));
             _orientation.push_back(0);
         }
-        if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y+1))) {
+        if (map->checkPosition(sf::Vector2i(position.x, position.y+1))) {
             _movement.push_back(sf::Vector2i(position.x, position.y+1));
             _orientation.push_back(1);
         }
-        if (labyrinth->checkPosition(sf::Vector2i(position.x+1, position.y))) {
+        if (map->checkPosition(sf::Vector2i(position.x+1, position.y))) {
             _movement.push_back(sf::Vector2i(position.x+1, position.y));
             _orientation.push_back(2);
         }
-        if (labyrinth->checkPosition(sf::Vector2i(position.x, position.y-1))) {
+        if (map->checkPosition(sf::Vector2i(position.x, position.y-1))) {
             _movement.push_back(sf::Vector2i(position.x, position.y-1));
             _orientation.push_back(3);
         }

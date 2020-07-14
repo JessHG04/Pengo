@@ -2,7 +2,7 @@
 
 
 
-IceBlock::IceBlock(sf::Texture* texture, unsigned int x, unsigned int y) : Block(texture, x, y) {
+IceBlock::IceBlock(sf::Texture* texture, int x, int y) : Block(texture, x, y) {
 
     // Initial values
     isBreaking = false;

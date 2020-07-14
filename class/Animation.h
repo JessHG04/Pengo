@@ -5,19 +5,18 @@ class Animation {
 
     private:
         sf::IntRect uvRect;
-        float changeTime;
+        float switchTime;
         float totalTime;
-        sf::Vector2u actualCoord;   // Actual coordinates of rectangle
-        sf::Vector2u coordPj;       // Pj located on the texture
-        sf::Vector2u range;         // Number of rectangle to draw
-
+        sf::Vector2u actualCoord;
+        sf::Vector2u coordPj;
+        sf::Vector2u range;
 
     public:
         Animation(sf::Texture* ,sf::Vector2u ,float ,int );
-        ~Animation();
-        void Update(unsigned int ,unsigned int ,float );
-        sf::IntRect getUVRect();
-        sf::Vector2f getOrigin();
-        void setChangeTime(float );
-        void setCoordPj(sf::Vector2u );
+        void Update(int, int, float );
+        ~Animation()                    { };
+        sf::IntRect getUVRect()         {return uvRect;};
+        sf::Vector2f getOrigin()        {return sf::Vector2f(uvRect.width/2, uvRect.height/2);};
+        void setSwitchTime(float )      {this->switchTime = switchTime;};
+        void setCoordPj(sf::Vector2u )  {this->coordPj = coordPj;};
 };

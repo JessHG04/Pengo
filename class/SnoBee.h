@@ -17,7 +17,7 @@ class SnoBee : public Character {
     public:
         SnoBee(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~SnoBee();
-        void Update(float ,Labyrinth* );
+        void Update(float ,Map* );
         void getSmashed(Block* );
         bool getFree();
         bool getDead();
