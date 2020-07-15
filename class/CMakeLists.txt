@@ -8,7 +8,6 @@ target_sources(libModulos PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Game.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/SnoBee.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/Map.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Collision.cpp"
 )
 
 #Y donde se encuentran los .h

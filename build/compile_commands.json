@@ -43,10 +43,5 @@
   "directory": "/home/jess/Escritorio/Pengo2/build",
   "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Map.cpp.o -c /home/jess/Escritorio/Pengo2/class/Map.cpp",
   "file": "/home/jess/Escritorio/Pengo2/class/Map.cpp"
-},
-{
-  "directory": "/home/jess/Escritorio/Pengo2/build",
-  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Collision.cpp.o -c /home/jess/Escritorio/Pengo2/class/Collision.cpp",
-  "file": "/home/jess/Escritorio/Pengo2/class/Collision.cpp"
 }
 ]

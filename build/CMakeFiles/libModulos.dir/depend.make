@@ -14,20 +14,9 @@ CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Character.h
 CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/IceBlock.h
 CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Map.h
 
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Animation.h
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Block.h
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Character.h
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Collision.cpp
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Collision.h
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/IceBlock.h
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Map.h
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Pengo.h
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/SnoBee.h
-
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Animation.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Block.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Character.h
-CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Collision.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Game.cpp
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Game.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/IceBlock.h

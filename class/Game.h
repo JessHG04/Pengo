@@ -9,7 +9,6 @@
 #include "Pengo.h"
 #include "Map.h"
 #include "SnoBee.h"
-#include "Collision.h"
 
 
 class Game {
@@ -25,7 +24,7 @@ class Game {
         void EventsLoop();
         void GameFunctionality();
         void Draw();
-        void addSwarm(int[15][13]);
+        void addEnemies(int[15][13]);
         void addSnoBee();
         bool levelCompleted();
         void restoreLevel();
@@ -51,10 +50,8 @@ class Game {
         float deltaTime;
         sf::Event event;
         sf::Texture spriteSheet, tileset;
-        sf::Vector2u size;
-        std::vector<SnoBee*> swarm;
-        unsigned int snoBeesPerLevel;
-        Collision* collision;
+        std::vector<SnoBee*> enemies;
+        int snoBeesPerLevel;
         int level;
         int maxLevels;
         bool endGame;

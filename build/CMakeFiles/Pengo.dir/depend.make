@@ -4,7 +4,6 @@
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/Animation.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/Block.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/Character.h
-CMakeFiles/Pengo.dir/main.cpp.o: ../class/Collision.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/Game.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/IceBlock.h
 CMakeFiles/Pengo.dir/main.cpp.o: ../class/Map.h

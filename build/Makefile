@@ -217,33 +217,6 @@ class/Character.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Character.cpp.s
 .PHONY : class/Character.cpp.s
 
-class/Collision.o: class/Collision.cpp.o
-
-.PHONY : class/Collision.o
-
-# target to build an object file
-class/Collision.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Collision.cpp.o
-.PHONY : class/Collision.cpp.o
-
-class/Collision.i: class/Collision.cpp.i
-
-.PHONY : class/Collision.i
-
-# target to preprocess a source file
-class/Collision.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Collision.cpp.i
-.PHONY : class/Collision.cpp.i
-
-class/Collision.s: class/Collision.cpp.s
-
-.PHONY : class/Collision.s
-
-# target to generate assembly for a file
-class/Collision.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Collision.cpp.s
-.PHONY : class/Collision.cpp.s
-
 class/Game.o: class/Game.cpp.o
 
 .PHONY : class/Game.o
@@ -425,9 +398,6 @@ help:
 	@echo "... class/Character.o"
 	@echo "... class/Character.i"
 	@echo "... class/Character.s"
-	@echo "... class/Collision.o"
-	@echo "... class/Collision.i"
-	@echo "... class/Collision.s"
 	@echo "... class/Game.o"
 	@echo "... class/Game.i"
 	@echo "... class/Game.s"

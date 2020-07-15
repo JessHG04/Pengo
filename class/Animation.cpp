@@ -37,7 +37,8 @@ void Animation::Update(int row, int column, float deltaTime) {
     // Update uvRect...
     uvRect.left = (coordPj.x*8*uvRect.width) + (actualCoord.x*uvRect.width);
     uvRect.top = (coordPj.y*4*uvRect.height) + (actualCoord.y*uvRect.height);
-
-    // Adjust the last row on the texture...
-    uvRect.top += (coordPj.y == 3) ? uvRect.height : 0;
+    
+    if(coordPj.y == 3){
+        uvRect.top += uvRect.height;
+    }
 }

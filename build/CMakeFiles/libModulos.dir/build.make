@@ -249,30 +249,6 @@ CMakeFiles/libModulos.dir/class/Map.cpp.o.provides: CMakeFiles/libModulos.dir/cl
 CMakeFiles/libModulos.dir/class/Map.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Map.cpp.o
 
 
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/class/Collision.cpp.o: ../class/Collision.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/libModulos.dir/class/Collision.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Collision.cpp.o -c /home/jess/Escritorio/Pengo2/class/Collision.cpp
-
-CMakeFiles/libModulos.dir/class/Collision.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Collision.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Collision.cpp > CMakeFiles/libModulos.dir/class/Collision.cpp.i
-
-CMakeFiles/libModulos.dir/class/Collision.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Collision.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Collision.cpp -o CMakeFiles/libModulos.dir/class/Collision.cpp.s
-
-CMakeFiles/libModulos.dir/class/Collision.cpp.o.requires:
-
-.PHONY : CMakeFiles/libModulos.dir/class/Collision.cpp.o.requires
-
-CMakeFiles/libModulos.dir/class/Collision.cpp.o.provides: CMakeFiles/libModulos.dir/class/Collision.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Collision.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/class/Collision.cpp.o.provides
-
-CMakeFiles/libModulos.dir/class/Collision.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Collision.cpp.o
-
-
 # Object files for target libModulos
 libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/class/Animation.cpp.o" \
@@ -282,8 +258,7 @@ libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/class/Pengo.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Game.cpp.o" \
 "CMakeFiles/libModulos.dir/class/SnoBee.cpp.o" \
-"CMakeFiles/libModulos.dir/class/Map.cpp.o" \
-"CMakeFiles/libModulos.dir/class/Collision.cpp.o"
+"CMakeFiles/libModulos.dir/class/Map.cpp.o"
 
 # External object files for target libModulos
 libModulos_EXTERNAL_OBJECTS =
@@ -296,10 +271,9 @@ liblibModulos.a: CMakeFiles/libModulos.dir/class/Pengo.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Game.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Map.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/class/Collision.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library liblibModulos.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library liblibModulos.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libModulos.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libModulos.dir/link.txt --verbose=$(VERBOSE)
 
@@ -316,7 +290,6 @@ CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Pengo.cpp.o.
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Game.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Map.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Collision.cpp.o.requires
 
 .PHONY : CMakeFiles/libModulos.dir/requires
 

@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jess/Escritorio/Pengo2/class/Animation.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Animation.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/Block.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Block.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/Character.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Character.cpp.o"
-  "/home/jess/Escritorio/Pengo2/class/Collision.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Collision.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/Game.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Game.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/IceBlock.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/IceBlock.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/Map.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Map.cpp.o"

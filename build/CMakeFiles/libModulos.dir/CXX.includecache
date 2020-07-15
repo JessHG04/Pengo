@@ -34,20 +34,6 @@ Animation.h
 Map.h
 /home/jess/Escritorio/Pengo2/class/Map.h
 
-/home/jess/Escritorio/Pengo2/class/Collision.cpp
-Collision.h
-/home/jess/Escritorio/Pengo2/class/Collision.h
-
-/home/jess/Escritorio/Pengo2/class/Collision.h
-math.h
--
-Pengo.h
-/home/jess/Escritorio/Pengo2/class/Pengo.h
-SnoBee.h
-/home/jess/Escritorio/Pengo2/class/SnoBee.h
-Block.h
-/home/jess/Escritorio/Pengo2/class/Block.h
-
 /home/jess/Escritorio/Pengo2/class/Game.cpp
 Game.h
 /home/jess/Escritorio/Pengo2/class/Game.h
@@ -71,8 +57,6 @@ Map.h
 /home/jess/Escritorio/Pengo2/class/Map.h
 SnoBee.h
 /home/jess/Escritorio/Pengo2/class/SnoBee.h
-Collision.h
-/home/jess/Escritorio/Pengo2/class/Collision.h
 
 /home/jess/Escritorio/Pengo2/class/IceBlock.cpp
 IceBlock.h
@@ -100,6 +84,8 @@ Pengo.h
 
 /home/jess/Escritorio/Pengo2/class/Pengo.h
 SFML/Graphics.hpp
+-
+iostream
 -
 Character.h
 /home/jess/Escritorio/Pengo2/class/Character.h

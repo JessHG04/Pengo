@@ -163,15 +163,17 @@ void Pengo::restoreLifes() {
 
 void Pengo::changeGodMode() {
     if (godMode) {
-        godMode     = false;
+        godMode = false;
         stunnedTime = 2.5f;
         animation->setCoordPj(sf::Vector2u(0, 0));
         deadAnimation->setCoordPj(sf::Vector2u(0, 0));
+        std::cout << "Modo Dios desactivado" << std::endl;
     } else {
         godMode = true;
         stunnedTime = 1.2f;
         animation->setCoordPj(sf::Vector2u(2, 0));
         deadAnimation->setCoordPj(sf::Vector2u(2, 0));
+        std::cout << "Modo Dios activado" << std::endl;
     }
 }
 

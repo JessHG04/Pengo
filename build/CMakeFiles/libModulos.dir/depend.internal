@@ -14,21 +14,10 @@ CMakeFiles/libModulos.dir/class/Character.cpp.o
  /home/jess/Escritorio/Pengo2/class/Character.h
  /home/jess/Escritorio/Pengo2/class/IceBlock.h
  /home/jess/Escritorio/Pengo2/class/Map.h
-CMakeFiles/libModulos.dir/class/Collision.cpp.o
- /home/jess/Escritorio/Pengo2/class/Animation.h
- /home/jess/Escritorio/Pengo2/class/Block.h
- /home/jess/Escritorio/Pengo2/class/Character.h
- /home/jess/Escritorio/Pengo2/class/Collision.cpp
- /home/jess/Escritorio/Pengo2/class/Collision.h
- /home/jess/Escritorio/Pengo2/class/IceBlock.h
- /home/jess/Escritorio/Pengo2/class/Map.h
- /home/jess/Escritorio/Pengo2/class/Pengo.h
- /home/jess/Escritorio/Pengo2/class/SnoBee.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o
  /home/jess/Escritorio/Pengo2/class/Animation.h
  /home/jess/Escritorio/Pengo2/class/Block.h
  /home/jess/Escritorio/Pengo2/class/Character.h
- /home/jess/Escritorio/Pengo2/class/Collision.h
  /home/jess/Escritorio/Pengo2/class/Game.cpp
  /home/jess/Escritorio/Pengo2/class/Game.h
  /home/jess/Escritorio/Pengo2/class/IceBlock.h

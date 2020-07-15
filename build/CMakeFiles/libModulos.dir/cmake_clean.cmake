@@ -7,7 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/libModulos.dir/class/Game.cpp.o"
   "CMakeFiles/libModulos.dir/class/SnoBee.cpp.o"
   "CMakeFiles/libModulos.dir/class/Map.cpp.o"
-  "CMakeFiles/libModulos.dir/class/Collision.cpp.o"
   "liblibModulos.pdb"
   "liblibModulos.a"
 )

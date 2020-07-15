@@ -175,7 +175,6 @@ void SnoBee::Update(float deltaTime, Map* map) {
 
 void SnoBee::getSmashed(Block* block) {
     bomb      = block;
-
     isStatic  = false;
     isWalking = false;
 }
