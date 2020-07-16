@@ -39,7 +39,7 @@ Map::Map(sf::Texture* tileset, int level[15][13]) {
     for (unsigned int i=0; i<size.x; i++) {
         for (unsigned int j=0; j<size.y; j++) {
             if (level[i][j] == 1) {
-                glacier[i][j] = new IceBlock(tileset, j, i);
+                glacier[i][j] = new BRoto(tileset, j, i);
             } else {
                 glacier[i][j] = NULL;
             }
@@ -120,8 +120,8 @@ void Map::Update(float deltaTime) {
     // Delete the ice block falling...
     for (Bloque* block : icicles) {
         if (block) {
-            if (IceBlock* ice = dynamic_cast<IceBlock*>(block)) {
-                if (ice->getBroke()) {
+            if (BRoto* ice = dynamic_cast<BRoto*>(block)) {
+                if (ice->getRoto()) {
                 //    delete block;
                     block = NULL;
                 } else {
@@ -148,8 +148,8 @@ void Map::Draw(sf::RenderWindow &window) {
 
     for (Bloque* block : icicles) {
         if (block) {
-            if (IceBlock* ice = dynamic_cast<IceBlock*>(block))
-                if (!ice->getBroke())
+            if (BRoto* ice = dynamic_cast<BRoto*>(block))
+                if (!ice->getRoto())
                     block->Draw(window);
         }
     }
@@ -193,9 +193,9 @@ void Map::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
         // Move the block or break it if cotains ice...
         if (this->checkPosition(_nextPosition)) {
             glacier[_x][_y]->setDireccion(direction);
-        } else if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
+        } else if (BRoto* ice = dynamic_cast<BRoto*>(glacier[_x][_y])) {
             if (breakIt) {
-                ice->breakDown();
+                ice->romper();
                 icicles.push_back(glacier[_x][_y]);
                 glacier[_x][_y] = NULL;
             } else {

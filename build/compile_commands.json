@@ -11,13 +11,13 @@
 },
 {
   "directory": "/home/jess/Escritorio/Pengo2/build",
-  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/IceBlock.cpp.o -c /home/jess/Escritorio/Pengo2/class/IceBlock.cpp",
-  "file": "/home/jess/Escritorio/Pengo2/class/IceBlock.cpp"
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Bloque.cpp.o -c /home/jess/Escritorio/Pengo2/class/Bloque.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Bloque.cpp"
 },
 {
   "directory": "/home/jess/Escritorio/Pengo2/build",
-  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Bloque.cpp.o -c /home/jess/Escritorio/Pengo2/class/Bloque.cpp",
-  "file": "/home/jess/Escritorio/Pengo2/class/Bloque.cpp"
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/BRoto.cpp.o -c /home/jess/Escritorio/Pengo2/class/BRoto.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/BRoto.cpp"
 },
 {
   "directory": "/home/jess/Escritorio/Pengo2/build",

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/libModulos.dir/class/Animacion.cpp.o"
-  "CMakeFiles/libModulos.dir/class/IceBlock.cpp.o"
   "CMakeFiles/libModulos.dir/class/Bloque.cpp.o"
+  "CMakeFiles/libModulos.dir/class/BRoto.cpp.o"
   "CMakeFiles/libModulos.dir/class/Character.cpp.o"
   "CMakeFiles/libModulos.dir/class/Pengo.cpp.o"
   "CMakeFiles/libModulos.dir/class/Game.cpp.o"

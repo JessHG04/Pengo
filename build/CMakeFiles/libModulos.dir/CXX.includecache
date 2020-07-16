@@ -16,6 +16,18 @@ SFML/Graphics.hpp
 iostream
 -
 
+/home/jess/Escritorio/Pengo2/class/BRoto.cpp
+BRoto.h
+/home/jess/Escritorio/Pengo2/class/BRoto.h
+
+/home/jess/Escritorio/Pengo2/class/BRoto.h
+SFML/Graphics.hpp
+-
+iostream
+-
+Bloque.h
+/home/jess/Escritorio/Pengo2/class/Bloque.h
+
 /home/jess/Escritorio/Pengo2/class/Bloque.cpp
 Bloque.h
 /home/jess/Escritorio/Pengo2/class/Bloque.h
@@ -51,24 +63,14 @@ Bloque.h
 /home/jess/Escritorio/Pengo2/class/Bloque.h
 Character.h
 /home/jess/Escritorio/Pengo2/class/Character.h
-IceBlock.h
-/home/jess/Escritorio/Pengo2/class/IceBlock.h
+BRoto.h
+/home/jess/Escritorio/Pengo2/class/BRoto.h
 Pengo.h
 /home/jess/Escritorio/Pengo2/class/Pengo.h
 Map.h
 /home/jess/Escritorio/Pengo2/class/Map.h
 SnoBee.h
 /home/jess/Escritorio/Pengo2/class/SnoBee.h
-
-/home/jess/Escritorio/Pengo2/class/IceBlock.cpp
-IceBlock.h
-/home/jess/Escritorio/Pengo2/class/IceBlock.h
-
-/home/jess/Escritorio/Pengo2/class/IceBlock.h
-SFML/Graphics.hpp
--
-Bloque.h
-/home/jess/Escritorio/Pengo2/class/Bloque.h
 
 /home/jess/Escritorio/Pengo2/class/Map.cpp
 Map.h
@@ -77,8 +79,8 @@ Map.h
 /home/jess/Escritorio/Pengo2/class/Map.h
 SFML/Graphics.hpp
 -
-IceBlock.h
-/home/jess/Escritorio/Pengo2/class/IceBlock.h
+BRoto.h
+/home/jess/Escritorio/Pengo2/class/BRoto.h
 
 /home/jess/Escritorio/Pengo2/class/Pengo.cpp
 Pengo.h

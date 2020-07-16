@@ -163,6 +163,33 @@ class/Animacion.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animacion.cpp.s
 .PHONY : class/Animacion.cpp.s
 
+class/BRoto.o: class/BRoto.cpp.o
+
+.PHONY : class/BRoto.o
+
+# target to build an object file
+class/BRoto.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/BRoto.cpp.o
+.PHONY : class/BRoto.cpp.o
+
+class/BRoto.i: class/BRoto.cpp.i
+
+.PHONY : class/BRoto.i
+
+# target to preprocess a source file
+class/BRoto.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/BRoto.cpp.i
+.PHONY : class/BRoto.cpp.i
+
+class/BRoto.s: class/BRoto.cpp.s
+
+.PHONY : class/BRoto.s
+
+# target to generate assembly for a file
+class/BRoto.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/BRoto.cpp.s
+.PHONY : class/BRoto.cpp.s
+
 class/Bloque.o: class/Bloque.cpp.o
 
 .PHONY : class/Bloque.o
@@ -243,33 +270,6 @@ class/Game.s: class/Game.cpp.s
 class/Game.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Game.cpp.s
 .PHONY : class/Game.cpp.s
-
-class/IceBlock.o: class/IceBlock.cpp.o
-
-.PHONY : class/IceBlock.o
-
-# target to build an object file
-class/IceBlock.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/IceBlock.cpp.o
-.PHONY : class/IceBlock.cpp.o
-
-class/IceBlock.i: class/IceBlock.cpp.i
-
-.PHONY : class/IceBlock.i
-
-# target to preprocess a source file
-class/IceBlock.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/IceBlock.cpp.i
-.PHONY : class/IceBlock.cpp.i
-
-class/IceBlock.s: class/IceBlock.cpp.s
-
-.PHONY : class/IceBlock.s
-
-# target to generate assembly for a file
-class/IceBlock.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/IceBlock.cpp.s
-.PHONY : class/IceBlock.cpp.s
 
 class/Map.o: class/Map.cpp.o
 
@@ -392,6 +392,9 @@ help:
 	@echo "... class/Animacion.o"
 	@echo "... class/Animacion.i"
 	@echo "... class/Animacion.s"
+	@echo "... class/BRoto.o"
+	@echo "... class/BRoto.i"
+	@echo "... class/BRoto.s"
 	@echo "... class/Bloque.o"
 	@echo "... class/Bloque.i"
 	@echo "... class/Bloque.s"
@@ -401,9 +404,6 @@ help:
 	@echo "... class/Game.o"
 	@echo "... class/Game.i"
 	@echo "... class/Game.s"
-	@echo "... class/IceBlock.o"
-	@echo "... class/IceBlock.i"
-	@echo "... class/IceBlock.s"
 	@echo "... class/Map.o"
 	@echo "... class/Map.i"
 	@echo "... class/Map.s"

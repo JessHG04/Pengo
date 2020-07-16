@@ -81,33 +81,9 @@ CMakeFiles/libModulos.dir/class/Animacion.cpp.o.provides: CMakeFiles/libModulos.
 CMakeFiles/libModulos.dir/class/Animacion.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Animacion.cpp.o
 
 
-CMakeFiles/libModulos.dir/class/IceBlock.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/class/IceBlock.cpp.o: ../class/IceBlock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/class/IceBlock.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/IceBlock.cpp.o -c /home/jess/Escritorio/Pengo2/class/IceBlock.cpp
-
-CMakeFiles/libModulos.dir/class/IceBlock.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/IceBlock.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/IceBlock.cpp > CMakeFiles/libModulos.dir/class/IceBlock.cpp.i
-
-CMakeFiles/libModulos.dir/class/IceBlock.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/IceBlock.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/IceBlock.cpp -o CMakeFiles/libModulos.dir/class/IceBlock.cpp.s
-
-CMakeFiles/libModulos.dir/class/IceBlock.cpp.o.requires:
-
-.PHONY : CMakeFiles/libModulos.dir/class/IceBlock.cpp.o.requires
-
-CMakeFiles/libModulos.dir/class/IceBlock.cpp.o.provides: CMakeFiles/libModulos.dir/class/IceBlock.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/IceBlock.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/class/IceBlock.cpp.o.provides
-
-CMakeFiles/libModulos.dir/class/IceBlock.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/IceBlock.cpp.o
-
-
 CMakeFiles/libModulos.dir/class/Bloque.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/Bloque.cpp.o: ../class/Bloque.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/libModulos.dir/class/Bloque.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/class/Bloque.cpp.o"
 	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Bloque.cpp.o -c /home/jess/Escritorio/Pengo2/class/Bloque.cpp
 
 CMakeFiles/libModulos.dir/class/Bloque.cpp.i: cmake_force
@@ -127,6 +103,30 @@ CMakeFiles/libModulos.dir/class/Bloque.cpp.o.provides: CMakeFiles/libModulos.dir
 .PHONY : CMakeFiles/libModulos.dir/class/Bloque.cpp.o.provides
 
 CMakeFiles/libModulos.dir/class/Bloque.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Bloque.cpp.o
+
+
+CMakeFiles/libModulos.dir/class/BRoto.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/class/BRoto.cpp.o: ../class/BRoto.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/libModulos.dir/class/BRoto.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/BRoto.cpp.o -c /home/jess/Escritorio/Pengo2/class/BRoto.cpp
+
+CMakeFiles/libModulos.dir/class/BRoto.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/BRoto.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/BRoto.cpp > CMakeFiles/libModulos.dir/class/BRoto.cpp.i
+
+CMakeFiles/libModulos.dir/class/BRoto.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/BRoto.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/BRoto.cpp -o CMakeFiles/libModulos.dir/class/BRoto.cpp.s
+
+CMakeFiles/libModulos.dir/class/BRoto.cpp.o.requires:
+
+.PHONY : CMakeFiles/libModulos.dir/class/BRoto.cpp.o.requires
+
+CMakeFiles/libModulos.dir/class/BRoto.cpp.o.provides: CMakeFiles/libModulos.dir/class/BRoto.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/BRoto.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/class/BRoto.cpp.o.provides
+
+CMakeFiles/libModulos.dir/class/BRoto.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/BRoto.cpp.o
 
 
 CMakeFiles/libModulos.dir/class/Character.cpp.o: CMakeFiles/libModulos.dir/flags.make
@@ -252,8 +252,8 @@ CMakeFiles/libModulos.dir/class/Map.cpp.o.provides.build: CMakeFiles/libModulos.
 # Object files for target libModulos
 libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/class/Animacion.cpp.o" \
-"CMakeFiles/libModulos.dir/class/IceBlock.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Bloque.cpp.o" \
+"CMakeFiles/libModulos.dir/class/BRoto.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Character.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Pengo.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Game.cpp.o" \
@@ -264,8 +264,8 @@ libModulos_OBJECTS = \
 libModulos_EXTERNAL_OBJECTS =
 
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Animacion.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/class/IceBlock.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Bloque.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/class/BRoto.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Character.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Pengo.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Game.cpp.o
@@ -283,8 +283,8 @@ CMakeFiles/libModulos.dir/build: liblibModulos.a
 .PHONY : CMakeFiles/libModulos.dir/build
 
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Animacion.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/IceBlock.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Bloque.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/BRoto.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Character.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Pengo.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Game.cpp.o.requires

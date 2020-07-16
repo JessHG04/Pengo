@@ -5,10 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jess/Escritorio/Pengo2/class/Animacion.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Animacion.cpp.o"
+  "/home/jess/Escritorio/Pengo2/class/BRoto.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/BRoto.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/Bloque.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Bloque.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/Character.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Character.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/Game.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Game.cpp.o"
-  "/home/jess/Escritorio/Pengo2/class/IceBlock.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/IceBlock.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/Map.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Map.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/Pengo.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/Pengo.cpp.o"
   "/home/jess/Escritorio/Pengo2/class/SnoBee.cpp" "/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/class/SnoBee.cpp.o"
