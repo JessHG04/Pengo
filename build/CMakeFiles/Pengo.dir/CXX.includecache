@@ -12,8 +12,10 @@ SFML/Graphics.hpp
 iostream
 -
 
-/home/jess/Escritorio/Pengo2/class/Block.h
+/home/jess/Escritorio/Pengo2/class/Bloque.h
 SFML/Graphics.hpp
+-
+iostream
 -
 
 /home/jess/Escritorio/Pengo2/class/Character.h
@@ -29,8 +31,8 @@ SFML/Graphics.hpp
 -
 iostream
 -
-Block.h
-/home/jess/Escritorio/Pengo2/class/Block.h
+Bloque.h
+/home/jess/Escritorio/Pengo2/class/Bloque.h
 Character.h
 /home/jess/Escritorio/Pengo2/class/Character.h
 IceBlock.h
@@ -45,8 +47,8 @@ SnoBee.h
 /home/jess/Escritorio/Pengo2/class/IceBlock.h
 SFML/Graphics.hpp
 -
-Block.h
-/home/jess/Escritorio/Pengo2/class/Block.h
+Bloque.h
+/home/jess/Escritorio/Pengo2/class/Bloque.h
 
 /home/jess/Escritorio/Pengo2/class/Map.h
 SFML/Graphics.hpp

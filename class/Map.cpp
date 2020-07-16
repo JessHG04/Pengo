@@ -30,9 +30,9 @@ Map::Map(sf::Texture* tileset, int level[15][13]) {
 
     // Reserve momory for the matrix...
     size.x = 15;  size.y = 13;
-    glacier = new Block**[size.x];
+    glacier = new Bloque**[size.x];
     for (unsigned int i=0; i<size.x; i++) {
-        glacier[i] = new Block*[size.y];
+        glacier[i] = new Bloque*[size.y];
     }
     
     // Put all the ice blocks...
@@ -50,7 +50,7 @@ Map::Map(sf::Texture* tileset, int level[15][13]) {
     for (int i=0; i<int(size.x); i++)
         for (int j=0; j<int(size.y); j++)
             if (glacier[i][j])
-                glacier[i][j]->setPosition(sf::Vector2i(i, j));
+                glacier[i][j]->setPosicion(sf::Vector2i(i, j));
 
 }
 
@@ -74,7 +74,7 @@ Map::~Map() {
     }
     delete[] glacier;
     glacier = NULL;
-    for (Block* block : icicles) {
+    for (Bloque* block : icicles) {
         if (block != NULL) {
             delete block;
             block = NULL;
@@ -90,8 +90,8 @@ void Map::Update(float deltaTime) {
     // Update the position for each block...
     for (int i=0; i<int(size.x); i++)
         for (int j=0; j<int(size.y); j++)
-            if (glacier[i][j]  &&  glacier[i][j]->getCanCollide()) {
-                sf::Vector2i _pos = glacier[i][j]->getPosition();
+            if (glacier[i][j]  &&  glacier[i][j]->getMovimiento()) {
+                sf::Vector2i _pos = glacier[i][j]->getPosicion();
                 int _x = _pos.x, _y = _pos.y;
 
                 if (i != _x  ||  j != _y) {
@@ -107,18 +107,18 @@ void Map::Update(float deltaTime) {
         for (unsigned int j=0; j<size.y; j++)
             if (glacier[i][j]) {
 
-                if (glacier[i][j]->getCanCollide()) {
-                    sf::Vector2i _pos = glacier[i][j]->getPosition();
+                if (glacier[i][j]->getMovimiento()) {
+                    sf::Vector2i _pos = glacier[i][j]->getPosicion();
 
-                    this->pengoPush(_pos, glacier[i][j]->getDirection(), false);
-                    glacier[i][j]->dontCollide();
+                    this->pengoPush(_pos, glacier[i][j]->getDireccion(), false);
+                    glacier[i][j]->parar();
                 }
                 glacier[i][j]->Update(deltaTime);
             }
 
 
     // Delete the ice block falling...
-    for (Block* block : icicles) {
+    for (Bloque* block : icicles) {
         if (block) {
             if (IceBlock* ice = dynamic_cast<IceBlock*>(block)) {
                 if (ice->getBroke()) {
@@ -146,7 +146,7 @@ void Map::Draw(sf::RenderWindow &window) {
         }
     }
 
-    for (Block* block : icicles) {
+    for (Bloque* block : icicles) {
         if (block) {
             if (IceBlock* ice = dynamic_cast<IceBlock*>(block))
                 if (!ice->getBroke())
@@ -192,14 +192,14 @@ void Map::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
 
         // Move the block or break it if cotains ice...
         if (this->checkPosition(_nextPosition)) {
-            glacier[_x][_y]->setDirection(direction);
+            glacier[_x][_y]->setDireccion(direction);
         } else if (IceBlock* ice = dynamic_cast<IceBlock*>(glacier[_x][_y])) {
             if (breakIt) {
                 ice->breakDown();
                 icicles.push_back(glacier[_x][_y]);
                 glacier[_x][_y] = NULL;
             } else {
-                glacier[_x][_y]->setDirection(-1);
+                glacier[_x][_y]->setDireccion(-1);
             }
         }
     }
@@ -207,7 +207,7 @@ void Map::pengoPush(sf::Vector2i position, int direction, bool breakIt) {
 
 
 
-Block* Map::getBlock(unsigned int x, unsigned int y) {
+Bloque* Map::getBlock(unsigned int x, unsigned int y) {
     return glacier[x][y];
 }
 

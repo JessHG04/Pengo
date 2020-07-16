@@ -163,32 +163,32 @@ class/Animacion.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animacion.cpp.s
 .PHONY : class/Animacion.cpp.s
 
-class/Block.o: class/Block.cpp.o
+class/Bloque.o: class/Bloque.cpp.o
 
-.PHONY : class/Block.o
+.PHONY : class/Bloque.o
 
 # target to build an object file
-class/Block.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Block.cpp.o
-.PHONY : class/Block.cpp.o
+class/Bloque.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Bloque.cpp.o
+.PHONY : class/Bloque.cpp.o
 
-class/Block.i: class/Block.cpp.i
+class/Bloque.i: class/Bloque.cpp.i
 
-.PHONY : class/Block.i
+.PHONY : class/Bloque.i
 
 # target to preprocess a source file
-class/Block.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Block.cpp.i
-.PHONY : class/Block.cpp.i
+class/Bloque.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Bloque.cpp.i
+.PHONY : class/Bloque.cpp.i
 
-class/Block.s: class/Block.cpp.s
+class/Bloque.s: class/Bloque.cpp.s
 
-.PHONY : class/Block.s
+.PHONY : class/Bloque.s
 
 # target to generate assembly for a file
-class/Block.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Block.cpp.s
-.PHONY : class/Block.cpp.s
+class/Bloque.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Bloque.cpp.s
+.PHONY : class/Bloque.cpp.s
 
 class/Character.o: class/Character.cpp.o
 
@@ -392,9 +392,9 @@ help:
 	@echo "... class/Animacion.o"
 	@echo "... class/Animacion.i"
 	@echo "... class/Animacion.s"
-	@echo "... class/Block.o"
-	@echo "... class/Block.i"
-	@echo "... class/Block.s"
+	@echo "... class/Bloque.o"
+	@echo "... class/Bloque.i"
+	@echo "... class/Bloque.s"
 	@echo "... class/Character.o"
 	@echo "... class/Character.i"
 	@echo "... class/Character.s"

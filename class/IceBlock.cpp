@@ -2,21 +2,21 @@
 
 
 
-IceBlock::IceBlock(sf::Texture* texture, int x, int y) : Block(texture, x, y) {
+IceBlock::IceBlock(sf::Texture* texture, int x, int y) : Bloque(texture, x, y) {
 
     // Initial values
     isBreaking = false;
     isBroke    = false;
-    path       = 0.0f;
+    recorrido       = 0.0f;
 }
 
 
 
 IceBlock::~IceBlock() {
-    delete block;
-    block = NULL;
-    delete position;
-    position = NULL;
+    delete sprite;
+    sprite = NULL;
+    delete posicion;
+    posicion = NULL;
 }
 
 
@@ -24,51 +24,51 @@ IceBlock::~IceBlock() {
 void IceBlock::Update(float deltaTime) {
     if (!isBroke  &&  !isBreaking) {
 
-        if (direction > -1) {
-            float _displacement = speed*deltaTime;
+        if (direccion > -1) {
+            float _displacement = velocidad*deltaTime;
 
             // Calculate the block position
-            if (_displacement+path >= 16.0f) {
-                _displacement  = 16.0f - path;
-                path           = 0.0f;
-                canCollide     = true;
+            if (_displacement+recorrido >= 16.0f) {
+                _displacement  = 16.0f - recorrido;
+                recorrido           = 0.0f;
+                movimiento     = true;
 
-                if (direction == 0) {
-                    position->x--;
-                } else if (direction == 1) {
-                    position->y++;
-                } else if (direction == 2) {
-                    position->x++;
-                } else if (direction == 3) {
-                    position->y--;
+                if (direccion == 0) {
+                    posicion->x--;
+                } else if (direccion == 1) {
+                    posicion->y++;
+                } else if (direccion == 2) {
+                    posicion->x++;
+                } else if (direccion == 3) {
+                    posicion->y--;
                 }
 
             } else {
-                path += _displacement;
-                canCollide = false;
+                recorrido += _displacement;
+                movimiento = false;
             }
 
-            switch (direction) {
+            switch (direccion) {
                 case 0:
-                    block->move(0, -_displacement);
+                    sprite->move(0, -_displacement);
                     break;
                 case 1:
-                    block->move(_displacement, 0);
+                    sprite->move(_displacement, 0);
                     break;
                 case 2:
-                    block->move(0, _displacement);
+                    sprite->move(0, _displacement);
                     break;
                 case 3:
-                    block->move(-_displacement, 0);
+                    sprite->move(-_displacement, 0);
                     break;
             }
         }
     } else if (isBreaking) {
         if (clock.getElapsedTime().asSeconds() > 0.05f) {
-            sf::IntRect _cutout = block->getTextureRect();
+            sf::IntRect _cutout = sprite->getTextureRect();
             _cutout.left += 16;
             if (_cutout.left <= 160) {
-                block->setTextureRect(_cutout);
+                sprite->setTextureRect(_cutout);
             } else {
                 isBreaking = false;
                 isBroke    = true;

@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "Block.h"
+#include "Bloque.h"
 #include "Character.h"
 #include "IceBlock.h"
 #include "Pengo.h"

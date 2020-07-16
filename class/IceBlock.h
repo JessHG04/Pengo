@@ -1,9 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Block.h"
+#include "Bloque.h"
 
 
-class IceBlock : public Block {
+class IceBlock : public Bloque {
 
     private:
         bool isBreaking;

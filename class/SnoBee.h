@@ -10,14 +10,14 @@ class SnoBee : public Character {
         int direction; // 0:Up - 1:Right - 2:Down - 3:Left
         bool isStatic;
         bool isDead;
-        Block* bomb;
+        Bloque* bomb;
 
 
     public:
         SnoBee(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~SnoBee();
         void Update(float ,Map* );
-        void getSmashed(Block* );
+        void getSmashed(Bloque* );
         bool getFree();
         bool getDead();
 };

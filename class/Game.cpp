@@ -110,7 +110,7 @@ void Game::EventsLoop() {
 
 
 void Game::GameFunctionality() {
-    Block* _block;
+    Bloque* _block;
     map->Update(deltaTime);
     for(int x = 0; x < enemies.size(); x++) {
         if(enemies[x]  &&  !enemies[x]->getDead()) {
@@ -122,7 +122,7 @@ void Game::GameFunctionality() {
             for(int y = 0; y < 15; y++) {
                 for(int z = 0; z < 13; z++) {
                     _block = map->getBlock(y, z);
-                    if(_block  &&  _block->getDirection() > -1  &&  enemies[x]->getFree()){
+                    if(_block  &&  _block->getDireccion() > -1  &&  enemies[x]->getFree()){
                            if(enemies[x]->getSprite()->getGlobalBounds().intersects(_block->getSprite()->getGlobalBounds())){
                                 enemies[x]->getSmashed(_block);
                                 this->addSnoBee();

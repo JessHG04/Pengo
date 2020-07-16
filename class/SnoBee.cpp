@@ -131,10 +131,10 @@ void SnoBee::Update(float deltaTime, Map* map) {
         sf::Vector2f _position;
 
         // Suffer the hit...
-        if (bomb->getDirection() > -1) {
+        if (bomb->getDireccion() > -1) {
 
             // direction movement...
-            switch (bomb->getDirection()) {
+            switch (bomb->getDireccion()) {
                 case 0:
                     column = 0;
                     _displacement.y = -10;
@@ -173,7 +173,7 @@ void SnoBee::Update(float deltaTime, Map* map) {
 
 
 
-void SnoBee::getSmashed(Block* block) {
+void SnoBee::getSmashed(Bloque* block) {
     bomb      = block;
     isStatic  = false;
     isWalking = false;
