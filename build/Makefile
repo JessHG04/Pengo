@@ -136,32 +136,32 @@ libModulos/fast:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/build
 .PHONY : libModulos/fast
 
-class/Animation.o: class/Animation.cpp.o
+class/Animacion.o: class/Animacion.cpp.o
 
-.PHONY : class/Animation.o
+.PHONY : class/Animacion.o
 
 # target to build an object file
-class/Animation.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animation.cpp.o
-.PHONY : class/Animation.cpp.o
+class/Animacion.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animacion.cpp.o
+.PHONY : class/Animacion.cpp.o
 
-class/Animation.i: class/Animation.cpp.i
+class/Animacion.i: class/Animacion.cpp.i
 
-.PHONY : class/Animation.i
+.PHONY : class/Animacion.i
 
 # target to preprocess a source file
-class/Animation.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animation.cpp.i
-.PHONY : class/Animation.cpp.i
+class/Animacion.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animacion.cpp.i
+.PHONY : class/Animacion.cpp.i
 
-class/Animation.s: class/Animation.cpp.s
+class/Animacion.s: class/Animacion.cpp.s
 
-.PHONY : class/Animation.s
+.PHONY : class/Animacion.s
 
 # target to generate assembly for a file
-class/Animation.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animation.cpp.s
-.PHONY : class/Animation.cpp.s
+class/Animacion.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animacion.cpp.s
+.PHONY : class/Animacion.cpp.s
 
 class/Block.o: class/Block.cpp.o
 
@@ -389,9 +389,9 @@ help:
 	@echo "... Pengo"
 	@echo "... edit_cache"
 	@echo "... libModulos"
-	@echo "... class/Animation.o"
-	@echo "... class/Animation.i"
-	@echo "... class/Animation.s"
+	@echo "... class/Animacion.o"
+	@echo "... class/Animacion.i"
+	@echo "... class/Animacion.s"
 	@echo "... class/Block.o"
 	@echo "... class/Block.i"
 	@echo "... class/Block.s"

@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Animation.h"
+#include "Animacion.h"
 #include "Map.h"
 
 
@@ -10,7 +10,7 @@ class Character {
         float speed;
         unsigned int row;
         unsigned int column;
-        Animation *animation;
+        Animacion *animation;
         sf::Sprite *body;
         bool isWalking;
         bool isPushing;

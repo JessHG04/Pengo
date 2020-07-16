@@ -4,7 +4,8 @@
 
 Pengo::Pengo(sf::Texture *texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
     lifes         = 3;
-    deadAnimation = new Animation(texture, coordPj, 0.2f, 2);
+    //deadAnimation = new Animation(texture, coordPj, 0.2f, 2);
+    deadAnimation = new Animacion(texture, coordPj, 0.2f, 2);
     isBlocked     = false;
     push          = false;
     godMode       = false;
@@ -46,7 +47,7 @@ void Pengo::Update(float deltaTime, Map* map) {
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
             isPushing = true;
             push      = true;
-            animation->setSwitchTime(0.13f);
+            animation->setTiempoCambio(0.13f);
             row = 1;
             auxClock.restart();
         }
@@ -83,14 +84,14 @@ void Pengo::Update(float deltaTime, Map* map) {
         }
 
         animation->Update(row, column, deltaTime);
-        body->setTextureRect(animation->getUVRect());
+        body->setTextureRect(animation->getUvRect());
 
     } else if (isPushing) {
 
         if (auxClock.getElapsedTime().asSeconds() >= 0.4f) {
             isPushing = false;
             row = 0;
-            animation->setSwitchTime(0.2f);
+            animation->setTiempoCambio(0.2f);
         }
 
         if (push) {
@@ -106,20 +107,20 @@ void Pengo::Update(float deltaTime, Map* map) {
         }
 
         animation->Update(row, column, deltaTime);
-        body->setTextureRect(animation->getUVRect());
+        body->setTextureRect(animation->getUvRect());
 
     } else if (isStunned) {
 
         if (auxClock.getElapsedTime().asSeconds() >= stunnedTime) {
             isStunned = false;
             animation->Update(0, 0, deltaTime);
-            body->setTextureRect(animation->getUVRect());
+            body->setTextureRect(animation->getUvRect());
             if (!godMode)
                 lifes--;
-            body->setTextureRect(animation->getUVRect());
+            body->setTextureRect(animation->getUvRect());
         } else {
             deadAnimation->Update(2, 0, deltaTime);
-            body->setTextureRect(deadAnimation->getUVRect());
+            body->setTextureRect(deadAnimation->getUvRect());
         }
 
     }
@@ -165,14 +166,14 @@ void Pengo::changeGodMode() {
     if (godMode) {
         godMode = false;
         stunnedTime = 2.5f;
-        animation->setCoordPj(sf::Vector2u(0, 0));
-        deadAnimation->setCoordPj(sf::Vector2u(0, 0));
+        animation->setCuadrante(sf::Vector2u(0, 0));
+        deadAnimation->setCuadrante(sf::Vector2u(0, 0));
         std::cout << "Modo Dios desactivado" << std::endl;
     } else {
         godMode = true;
         stunnedTime = 1.2f;
-        animation->setCoordPj(sf::Vector2u(2, 0));
-        deadAnimation->setCoordPj(sf::Vector2u(2, 0));
+        animation->setCuadrante(sf::Vector2u(2, 0));
+        deadAnimation->setCuadrante(sf::Vector2u(2, 0));
         std::cout << "Modo Dios activado" << std::endl;
     }
 }

@@ -4,7 +4,6 @@
 #include <iostream>
 #include "Block.h"
 #include "Character.h"
-#include "Animation.h"
 #include "IceBlock.h"
 #include "Pengo.h"
 #include "Map.h"

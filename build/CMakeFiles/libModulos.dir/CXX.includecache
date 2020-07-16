@@ -6,12 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/home/jess/Escritorio/Pengo2/class/Animation.cpp
-Animation.h
-/home/jess/Escritorio/Pengo2/class/Animation.h
+/home/jess/Escritorio/Pengo2/class/Animacion.cpp
+Animacion.h
+/home/jess/Escritorio/Pengo2/class/Animacion.h
 
-/home/jess/Escritorio/Pengo2/class/Animation.h
+/home/jess/Escritorio/Pengo2/class/Animacion.h
 SFML/Graphics.hpp
+-
+iostream
 -
 
 /home/jess/Escritorio/Pengo2/class/Block.cpp
@@ -29,8 +31,8 @@ Character.h
 /home/jess/Escritorio/Pengo2/class/Character.h
 SFML/Graphics.hpp
 -
-Animation.h
-/home/jess/Escritorio/Pengo2/class/Animation.h
+Animacion.h
+/home/jess/Escritorio/Pengo2/class/Animacion.h
 Map.h
 /home/jess/Escritorio/Pengo2/class/Map.h
 
@@ -47,8 +49,6 @@ Block.h
 /home/jess/Escritorio/Pengo2/class/Block.h
 Character.h
 /home/jess/Escritorio/Pengo2/class/Character.h
-Animation.h
-/home/jess/Escritorio/Pengo2/class/Animation.h
 IceBlock.h
 /home/jess/Escritorio/Pengo2/class/IceBlock.h
 Pengo.h

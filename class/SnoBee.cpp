@@ -124,7 +124,7 @@ void SnoBee::Update(float deltaTime, Map* map) {
         }
 
         animation->Update(row, column, deltaTime);
-        body->setTextureRect(animation->getUVRect());
+        body->setTextureRect(animation->getUvRect());
 
     } else if (bomb) {
         sf::Vector2f _displacement(0.0f, 0.0f);
@@ -156,7 +156,7 @@ void SnoBee::Update(float deltaTime, Map* map) {
             if (row != 4) {
                 row = 4;
                 animation->Update(row, column, deltaTime);
-                body->setTextureRect(animation->getUVRect());
+                body->setTextureRect(animation->getUvRect());
             }
 
             _position = bomb->getSprite()->getPosition();

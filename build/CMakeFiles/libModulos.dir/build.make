@@ -57,28 +57,28 @@ include CMakeFiles/libModulos.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/libModulos.dir/flags.make
 
-CMakeFiles/libModulos.dir/class/Animation.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/class/Animation.cpp.o: ../class/Animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/class/Animation.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Animation.cpp.o -c /home/jess/Escritorio/Pengo2/class/Animation.cpp
+CMakeFiles/libModulos.dir/class/Animacion.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/class/Animacion.cpp.o: ../class/Animacion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/class/Animacion.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Animacion.cpp.o -c /home/jess/Escritorio/Pengo2/class/Animacion.cpp
 
-CMakeFiles/libModulos.dir/class/Animation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Animation.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Animation.cpp > CMakeFiles/libModulos.dir/class/Animation.cpp.i
+CMakeFiles/libModulos.dir/class/Animacion.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Animacion.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Animacion.cpp > CMakeFiles/libModulos.dir/class/Animacion.cpp.i
 
-CMakeFiles/libModulos.dir/class/Animation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Animation.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Animation.cpp -o CMakeFiles/libModulos.dir/class/Animation.cpp.s
+CMakeFiles/libModulos.dir/class/Animacion.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Animacion.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Animacion.cpp -o CMakeFiles/libModulos.dir/class/Animacion.cpp.s
 
-CMakeFiles/libModulos.dir/class/Animation.cpp.o.requires:
+CMakeFiles/libModulos.dir/class/Animacion.cpp.o.requires:
 
-.PHONY : CMakeFiles/libModulos.dir/class/Animation.cpp.o.requires
+.PHONY : CMakeFiles/libModulos.dir/class/Animacion.cpp.o.requires
 
-CMakeFiles/libModulos.dir/class/Animation.cpp.o.provides: CMakeFiles/libModulos.dir/class/Animation.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animation.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/class/Animation.cpp.o.provides
+CMakeFiles/libModulos.dir/class/Animacion.cpp.o.provides: CMakeFiles/libModulos.dir/class/Animacion.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Animacion.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/class/Animacion.cpp.o.provides
 
-CMakeFiles/libModulos.dir/class/Animation.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Animation.cpp.o
+CMakeFiles/libModulos.dir/class/Animacion.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Animacion.cpp.o
 
 
 CMakeFiles/libModulos.dir/class/IceBlock.cpp.o: CMakeFiles/libModulos.dir/flags.make
@@ -251,7 +251,7 @@ CMakeFiles/libModulos.dir/class/Map.cpp.o.provides.build: CMakeFiles/libModulos.
 
 # Object files for target libModulos
 libModulos_OBJECTS = \
-"CMakeFiles/libModulos.dir/class/Animation.cpp.o" \
+"CMakeFiles/libModulos.dir/class/Animacion.cpp.o" \
 "CMakeFiles/libModulos.dir/class/IceBlock.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Block.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Character.cpp.o" \
@@ -263,7 +263,7 @@ libModulos_OBJECTS = \
 # External object files for target libModulos
 libModulos_EXTERNAL_OBJECTS =
 
-liblibModulos.a: CMakeFiles/libModulos.dir/class/Animation.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/class/Animacion.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/IceBlock.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Block.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Character.cpp.o
@@ -282,7 +282,7 @@ CMakeFiles/libModulos.dir/build: liblibModulos.a
 
 .PHONY : CMakeFiles/libModulos.dir/build
 
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Animation.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Animacion.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/IceBlock.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Block.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Character.cpp.o.requires

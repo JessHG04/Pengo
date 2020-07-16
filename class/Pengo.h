@@ -9,7 +9,8 @@ class Pengo : public Character {
     private:
         unsigned int lifes;
         sf::Clock auxClock;
-        Animation *deadAnimation;
+        //Animation *deadAnimation;
+        Animacion *deadAnimation;
         bool isBlocked;
         bool push;
         bool godMode;

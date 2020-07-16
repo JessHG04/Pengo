@@ -6,8 +6,8 @@
 },
 {
   "directory": "/home/jess/Escritorio/Pengo2/build",
-  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Animation.cpp.o -c /home/jess/Escritorio/Pengo2/class/Animation.cpp",
-  "file": "/home/jess/Escritorio/Pengo2/class/Animation.cpp"
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Animacion.cpp.o -c /home/jess/Escritorio/Pengo2/class/Animacion.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Animacion.cpp"
 },
 {
   "directory": "/home/jess/Escritorio/Pengo2/build",

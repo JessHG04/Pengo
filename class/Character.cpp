@@ -12,9 +12,10 @@ Character::Character(sf::Texture *texture, float speed, float switchTime, sf::Ve
     path           = 0.0f;
     this->position = position;
     body          = new sf::Sprite(*texture);
-    animation     = new Animation(texture, coordPj, switchTime, 2);
-    body->setTextureRect(animation->getUVRect());
-    body->setOrigin(animation->getOrigin());
+    animation     = new Animacion(texture, coordPj, switchTime, 2);
+    //animation = new Animacion(texture, coordPj, switchTime, 2);
+    body->setTextureRect(animation->getUvRect());
+    body->setOrigin(8,8);
     body->setPosition(16+position.y*16, 40+position.x*16);
 }
 
