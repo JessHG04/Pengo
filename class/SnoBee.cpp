@@ -19,8 +19,9 @@ void SnoBee::Update(float deltaTime, Mapa* mapa) {
     std::vector<sf::Vector2i> movimiento;
     std::vector<int> orientacion;
     int aux = -1;
-    int random;
-    int randomRomper;
+    int random = 0;
+    int randomRomper = 0;
+    bool daleBro = false;
     
     if(!caminando && !quieto && bloque == NULL) {
         if(mapa->comprobar(sf::Vector2i(posicion.x-1, posicion.y))){
@@ -53,11 +54,35 @@ void SnoBee::Update(float deltaTime, Mapa* mapa) {
             }else{//Buscamos otro sitio al que moverse
                 randomRomper = rand()%2; //Aleatoriamente elige o empujar el bloque(0) o buscar otra direccion (1)
                 if(randomRomper == 0){
-                    empujando = true;
-                    empujar = true;
-                    fila = 2;
-                    animacion->setTiempoCambio(0.13f);
-                    reloj.restart();
+                    if(direccion == 0){
+                        if(!mapa->comprobar(sf::Vector2i(posicion.x-2, posicion.y))){
+                            daleBro = true;
+                        }
+                    }
+                    if(direccion == 1){
+                        if(!mapa->comprobar(sf::Vector2i(posicion.x, posicion.y+2))){
+                            daleBro = true;
+                        }
+                    }
+                    if(direccion == 2){
+                        if(!mapa->comprobar(sf::Vector2i(posicion.x+2, posicion.y))){
+                            daleBro = true;
+                        }
+                    }
+                    if(direccion == 3){
+                        if(!mapa->comprobar(sf::Vector2i(posicion.x, posicion.y-2))){
+                            daleBro = true;
+                        }
+                    }
+
+                    if(daleBro){
+                        empujando = true;
+                        empujar = true;
+                        fila = 2;
+                        animacion->setTiempoCambio(0.13f);
+                        reloj.restart();
+                    }
+                    
                 }else{
                     random = rand()%movimiento.size();
                     aux = random;
