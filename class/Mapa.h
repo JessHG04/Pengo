@@ -15,7 +15,7 @@ class Mapa {
         void Update(float deltaTime);
         void Draw(sf::RenderWindow &);
         bool comprobar(sf::Vector2i );
-        void empujar(sf::Vector2i ,int ,bool );
+        void empujar(sf::Vector2i, int, bool, bool);
         sf::Vector2i getLibre();
         Bloque* getBloque(int x, int y)      {return bloques[x][y];};
 };

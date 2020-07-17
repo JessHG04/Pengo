@@ -77,13 +77,13 @@ void Pengo::Update(float deltaTime, Mapa* mapa) {
         }
         if(empujar){
             if(columna == 4){
-                mapa->empujar(sf::Vector2i(posicion.x-1, posicion.y), 0, true);
+                mapa->empujar(sf::Vector2i(posicion.x-1, posicion.y), 0, true, false);
             }else if (columna == 6){
-                mapa->empujar(sf::Vector2i(posicion.x, posicion.y+1), 1, true);
+                mapa->empujar(sf::Vector2i(posicion.x, posicion.y+1), 1, true, false);
             }else if (columna == 0){
-                mapa->empujar(sf::Vector2i(posicion.x+1, posicion.y), 2, true);
+                mapa->empujar(sf::Vector2i(posicion.x+1, posicion.y), 2, true, false);
             }else if (columna == 2){
-                mapa->empujar(sf::Vector2i(posicion.x, posicion.y-1), 3, true);
+                mapa->empujar(sf::Vector2i(posicion.x, posicion.y-1), 3, true, false);
             }
             empujar = false;
         }

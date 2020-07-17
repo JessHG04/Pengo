@@ -82,7 +82,7 @@ void Mapa::Update(float deltaTime) {
         for(int y = 0; y < 13; y++){
             if (bloques[x][y] != NULL) {
                 if (bloques[x][y]->getMovimiento()) {
-                    empujar(bloques[x][y]->getPosicion(), bloques[x][y]->getDireccion(), false);
+                    empujar(bloques[x][y]->getPosicion(), bloques[x][y]->getDireccion(), false, false);
                     bloques[x][y]->parar();
                 }
                 bloques[x][y]->Update(deltaTime);
@@ -117,7 +117,7 @@ bool Mapa::comprobar(sf::Vector2i pos) {
     return libre;
 }
 
-void Mapa::empujar(sf::Vector2i pos, int dir, bool romper) {
+void Mapa::empujar(sf::Vector2i pos, int dir, bool romper, bool ia) {
     if(!comprobar(pos) && pos.x >= 0 && pos.x < 15 && pos.y >= 0 && pos.y < 13) {
        sf::Vector2i siguiente = pos;
         if(dir == 0){
@@ -130,10 +130,10 @@ void Mapa::empujar(sf::Vector2i pos, int dir, bool romper) {
             siguiente.y--;
         }
 
-        if(comprobar(siguiente)){
+        if(comprobar(siguiente) && !ia){//La ia no puede empujar los bloques aunque tecnicamente se pueda, los debe romper directamente
             bloques[pos.x][pos.y]->setDireccion(dir);
         } else if (BRoto* roto = dynamic_cast<BRoto*>(bloques[pos.x][pos.y])) {
-            if (romper) {
+            if(romper) {
                 roto->romper();
                 restos.push_back(bloques[pos.x][pos.y]);
                 bloques[pos.x][pos.y] = NULL;
