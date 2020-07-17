@@ -37,22 +37,6 @@ void BRoto::Update(float deltaTime) {
                 recorrido += espacio;
                 movimiento = false;
             }
-            /*
-            switch (direccion) {
-                case 0:
-                    sprite->move(0, -espacio);
-                    break;
-                case 1:
-                    sprite->move(espacio, 0);
-                    break;
-                case 2:
-                    sprite->move(0, espacio);
-                    break;
-                case 3:
-                    sprite->move(-espacio, 0);
-                    break;
-            }
-            */
             if(direccion == 0){ //Arriba
                 sprite->move(0, -espacio);
             }else if(direccion == 1){ //Derecha
@@ -67,20 +51,6 @@ void BRoto::Update(float deltaTime) {
     }else if(rompiendo){
         if(reloj.getElapsedTime().asSeconds() > 0.05f) {
             sf::IntRect rotura = sprite->getTextureRect();
-            //Pasamos a la fila de roto
-            /*rotura.top =  48;
-            if(rotura.left == 144){
-                rotura.left = 0;
-            }else{
-                rotura.left += 16;
-            }
-            rotura.left = 0;
-            if(rotura.left <= 144){
-                sprite->setTextureRect(rotura);
-            }else{
-                rompiendo = false;
-                roto = true;
-            }*/
             rotura.left+= 16;
             if(rotura.left <= 160){
                 sprite->setTextureRect(rotura);

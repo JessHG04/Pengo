@@ -5,7 +5,7 @@ Personaje::Personaje(sf::Texture *texture, float vel, float tiempo, sf::Vector2u
     animacion = new Animacion(texture, cuadra, tiempo);
     sprite->setTextureRect(animacion->getUvRect());
     sprite->setOrigin(8,8);
-    sprite->setPosition(16+pos.y*16, 40+pos.x*16);
+    sprite->setPosition(24+pos.y*16, 48+pos.x*16);
     posicion = pos;
     velocidad = vel;
     recorrido = 0.0f;

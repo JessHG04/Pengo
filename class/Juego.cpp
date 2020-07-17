@@ -16,7 +16,7 @@ Juego::Juego() {
         std::cout << "Failed loading sprite sheet..." << std::endl;
         exit(0);
     }
-    if (!tileset.loadFromFile("resources/tileset2.png")) {
+    if (!tileset.loadFromFile("resources/Tileset.png")) {
         std::cout << "Failed loading tileset..." << std::endl;
         exit(0);
     }
@@ -33,7 +33,7 @@ Juego::Juego() {
 }
 
 void Juego::bucleJuego() {
-    while (ventana->isOpen()) {
+    while(ventana->isOpen()) {
         deltaTime = reloj.restart().asSeconds();
         bucleEventos();
         if(pengo->getMuerte()) {
@@ -45,9 +45,9 @@ void Juego::bucleJuego() {
             if(relojNivel.getElapsedTime().asSeconds() >= 2.45f){
                 reiniciar();
             }
-        } else if (!fin) {
-            if (nivelCompleto()) {
-                if (nivel == 1) {
+        }else if(!fin) {
+            if(nivelCompleto()) {
+                if(nivel == 1) {
                     nivel = 2;
                     reiniciar();
                 }else{
@@ -56,10 +56,10 @@ void Juego::bucleJuego() {
             }else{
                 pengo->Update(deltaTime, mapa);
                 comprobarColisiones();
-                if (pengo->getAturdido()  &&  pengo->getDios()  &&  relojNivel.getElapsedTime().asSeconds() >= 1.15f)
+                if(pengo->getAturdido() && pengo->getDios() && relojNivel.getElapsedTime().asSeconds() >= 1.15f)
                     pengo->reiniciarPosicion();
             }
-        } else {
+        }else{
             ventana->close();
         }
         Draw();
@@ -69,8 +69,8 @@ void Juego::bucleJuego() {
 }
 
 void Juego::bucleEventos() {
-    while (ventana->pollEvent(evento)) {
-        switch (evento.type) {
+    while(ventana->pollEvent(evento)) {
+        switch(evento.type) {
             case sf::Event::Closed:
                 ventana->close();
                 break;
@@ -85,13 +85,14 @@ void Juego::bucleEventos() {
 
                     case sf::Keyboard::X:
                         pengo->reiniciarVidas();
-                        this->reiniciar();
+                        reiniciar();
+                        std::cout << "Has reiniciado el nivel " << nivel << std::endl;
                         break;
 
                     case sf::Keyboard::N:
                         if (nivel < totalNiveles) {
                             nivel++;
-                            this->reiniciar();
+                            reiniciar();
                         }
                         break;
 
@@ -106,11 +107,8 @@ void Juego::bucleEventos() {
     }
 }
 
-
-
-
 void Juego::comprobarColisiones() {
-    Bloque* _block;
+    Bloque* bloquesito;
     mapa->Update(deltaTime);
     for(int x = 0; x < enemigos.size(); x++) {
         if(enemigos[x]  &&  !enemigos[x]->getMuerte()) {
@@ -121,14 +119,14 @@ void Juego::comprobarColisiones() {
             }
             for(int y = 0; y < 15; y++) {
                 for(int z = 0; z < 13; z++) {
-                    _block = mapa->getBloque(y, z);
-                    if(_block  &&  _block->getDireccion() > -1  &&  enemigos[x]->getLibre()){
-                           if(enemigos[x]->getSprite()->getGlobalBounds().intersects(_block->getSprite()->getGlobalBounds())){
-                                enemigos[x]->getEmpujado(_block);
+                    bloquesito = mapa->getBloque(y, z);
+                    if(bloquesito  &&  bloquesito->getDireccion() > -1  &&  enemigos[x]->getLibre()){
+                           if(enemigos[x]->getSprite()->getGlobalBounds().intersects(bloquesito->getSprite()->getGlobalBounds())){
+                                enemigos[x]->getEmpujado(bloquesito);
                                 suplirEnemigo();
                            }
                     }
-                    _block = NULL;
+                    bloquesito = NULL;
                 }
             }
         }
@@ -170,70 +168,70 @@ void Juego::suplirEnemigo() {
 }
 
 bool Juego::nivelCompleto() {
-    int _counter = 0;
+    int snobees = 0;
+    bool completado = false;
     if(enemigos.size() == totalEnemigos){
         for(int x = 0; x < enemigos.size(); x++){
             if(enemigos[x]  &&  enemigos[x]->getMuerte()){
-                _counter++;
+                snobees++;
             }
         }
     }
 
-    if(_counter == totalEnemigos) {
-        return true;
-    } else {
-        return false;
+    if(snobees == totalEnemigos) {
+        completado = true;
     }
+    return completado;
 }
 
 void Juego::reiniciar() {
     if(nivel == 1) {
-        this->anyadirEnemigos(nivel1);
+        anyadirEnemigos(nivel1);
         mapa1 = new Mapa(&tileset, nivel1);
         mapa = mapa1;
     }
     if(nivel == 2) {
-        this->anyadirEnemigos(nivel2);
+        anyadirEnemigos(nivel2);
         mapa2 = new Mapa(&tileset, nivel2);
         mapa = mapa2;
     }
     if(nivel == 3) {
-        this->anyadirEnemigos(nivel3);
+        anyadirEnemigos(nivel3);
         mapa3 = new Mapa(&tileset, nivel3);
         mapa = mapa3;
     }
     if(nivel == 4) {
-        this->anyadirEnemigos(nivel4);
+        anyadirEnemigos(nivel4);
         mapa4 = new Mapa(&tileset, nivel4);
         mapa = mapa4;
     }
     if(nivel == 5) {
-        this->anyadirEnemigos(nivel5);
+        anyadirEnemigos(nivel5);
         mapa5 = new Mapa(&tileset, nivel5);
         mapa = mapa5;
     }
     if(nivel == 6) {
-        this->anyadirEnemigos(nivel6);
+        anyadirEnemigos(nivel6);
         mapa6 = new Mapa(&tileset, nivel6);
         mapa = mapa6;
     }
     if(nivel == 7) {
-        this->anyadirEnemigos(nivel7);
+        anyadirEnemigos(nivel7);
         mapa7 = new Mapa(&tileset, nivel7);
         mapa = mapa7;
     }
     if(nivel == 8) {
-        this->anyadirEnemigos(nivel8);
+        anyadirEnemigos(nivel8);
         mapa8 = new Mapa(&tileset, nivel8);
         mapa = mapa8;
     }
     if(nivel == 9) {
-        this->anyadirEnemigos(nivel9);
+        anyadirEnemigos(nivel9);
         mapa9 = new Mapa(&tileset, nivel9);
         mapa = mapa9;
     }
     if(nivel == 10) {
-        this->anyadirEnemigos(nivel10);
+        anyadirEnemigos(nivel10);
         mapa10 = new Mapa(&tileset, nivel10);
         mapa = mapa10;
     }

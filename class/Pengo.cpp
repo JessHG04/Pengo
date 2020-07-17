@@ -60,8 +60,9 @@ void Pengo::Update(float deltaTime, Mapa* mapa) {
             aturdido = false;
             animacion->Update(0, 0, deltaTime);
             sprite->setTextureRect(animacion->getUvRect());
-            if (!dios)
+            if(!dios){
                 vidas--;
+            }
             sprite->setTextureRect(animacion->getUvRect());
         }else{
             animacionMuerte->Update(2, 0, deltaTime);
@@ -114,6 +115,18 @@ void Pengo::Update(float deltaTime, Mapa* mapa) {
     }
 }
 
+void Pengo::modoDios() {
+    if(dios){
+        dios = false;
+        tiempoAturdido = 2.5f;
+        std::cout << "Modo Dios desactivado" << std::endl;
+    }else{
+        dios = true;
+        tiempoAturdido = 1.2f;
+        std::cout << "Modo Dios activado" << std::endl;
+    }
+}
+
 void Pengo::reiniciarPosicion() {
     sprite->setPosition(16+posicion.y*16, 40+posicion.x*16);
     recorrido = 0.0f;
@@ -123,44 +136,28 @@ void Pengo::reiniciarPInicial() {
     posicion.x = 6;
     posicion.y = 6;
     recorrido = 0.0f;
-    sprite->setPosition(16+6*16, 40+6*16);
-}
-
-void Pengo::modoDios() {
-    if(dios){
-        dios = false;
-        tiempoAturdido = 2.5f;
-        animacion->setCuadrante(sf::Vector2u(0, 0));
-        animacionMuerte->setCuadrante(sf::Vector2u(0, 0));
-        std::cout << "Modo Dios desactivado" << std::endl;
-    }else{
-        dios = true;
-        tiempoAturdido = 1.2f;
-        animacion->setCuadrante(sf::Vector2u(2, 0));
-        animacionMuerte->setCuadrante(sf::Vector2u(2, 0));
-        std::cout << "Modo Dios activado" << std::endl;
-    }
+    sprite->setPosition(24+6*16, 48+6*16);
 }
 
 bool Pengo::perderVida() {
+    bool perder = false;
     if (vidas > 0) {
         reloj.restart();
         aturdido = true;
         caminando = false;
         empujando = false;
-        fila       = 0;
-        return true;
-    } else {
-        return false;
+        fila = 0;
+        perder = true;
     }
+    return perder;
 }
 
 bool Pengo::getMuerte() {
+    bool muerto = true;
     if(vidas > 0) {
-        return false;
-    } else {
-        return true;
+        muerto = false;
     }
+    return muerto;
 }
 
 

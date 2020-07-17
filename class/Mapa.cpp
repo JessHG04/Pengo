@@ -1,9 +1,9 @@
 #include "Mapa.h"
 
 Mapa::Mapa(sf::Texture* tileset, int level[15][13]) {
-    bordeI   = new sf::Sprite(*tileset);
-    bordeD  = new sf::Sprite(*tileset);
-    bordeA    = new sf::Sprite(*tileset);
+    /*bordeI = new sf::Sprite(*tileset);
+    bordeD = new sf::Sprite(*tileset);
+    bordeA = new sf::Sprite(*tileset);
     bordeAb = new sf::Sprite(*tileset);
     bordeI->setTextureRect(sf::IntRect(8, 16, 8, 256));
     bordeD->setTextureRect(sf::IntRect(8, 16, 8, 256));
@@ -18,8 +18,7 @@ Mapa::Mapa(sf::Texture* tileset, int level[15][13]) {
     bordeA->setOrigin(0, 4);
     bordeA->setScale(1, -1);
     bordeA->setOrigin(0, 8);
-    bordeAb->setPosition(0, 272);
-    golpeado = false; //Creo que se puede quitar
+    bordeAb->setPosition(0, 272);*/
 
     bloques = new Bloque**[15];
     for (int x = 0; x < 15; x++) {
@@ -73,7 +72,6 @@ Mapa::~Mapa() {
     }
     restos.clear();
 }
-
 
 void Mapa::Update(float deltaTime) {
     for(int x = 0; x < 15; x++){
@@ -163,10 +161,10 @@ sf::Vector2i Mapa::getLibre() {
 }
 
 void Mapa::Draw(sf::RenderWindow &ventana) {
-   ventana.draw(*bordeI);
+    /*ventana.draw(*bordeI);
     ventana.draw(*bordeD);
     ventana.draw(*bordeA);
-    ventana.draw(*bordeAb);
+    ventana.draw(*bordeAb);*/
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){

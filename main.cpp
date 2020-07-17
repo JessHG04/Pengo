@@ -5,5 +5,5 @@ int main() {
     srand(time(NULL));
     Juego* juego = Juego::getInstancia();
 
-    return EXIT_SUCCESS;
+    return 0;
 }
