@@ -5,14 +5,9 @@
 
 class Mapa {
     private:
-        sf::Sprite * bordeI;
-        sf::Sprite * bordeD;
-        sf::Sprite * bordeA;
-        sf::Sprite * bordeAb;
         Bloque ***bloques;
+        Bloque ***borde;
         std::vector<Bloque*> restos;
-        sf::Vector2u tam;
-        Bloque* borde [15][17];
 
     public:
         Mapa(sf::Texture* , int[15][13]);

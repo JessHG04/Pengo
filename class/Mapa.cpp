@@ -1,58 +1,40 @@
 #include "Mapa.h"
 
 Mapa::Mapa(sf::Texture* tileset, int level[15][13]) {
-    /*bordeI = new sf::Sprite(*tileset);
-    bordeD = new sf::Sprite(*tileset);
-    bordeA = new sf::Sprite(*tileset);
-    bordeAb = new sf::Sprite(*tileset);
-    bordeI->setTextureRect(sf::IntRect(8, 16, 8, 256));
-    bordeD->setTextureRect(sf::IntRect(8, 16, 8, 256));
-    bordeA->setTextureRect(sf::IntRect(0, 8, 224, 8));
-    bordeAb->setTextureRect(sf::IntRect(0, 8, 224, 8));
-    bordeI->setPosition(0, 24);
-    bordeI->setOrigin(4, 0);
-    bordeI->setScale(-1, 1);
-    bordeI->setOrigin(8, 0);
-    bordeD->setPosition(216, 24);
-    bordeA->setPosition(0, 24);
-    bordeA->setOrigin(0, 4);
-    bordeA->setScale(1, -1);
-    bordeA->setOrigin(0, 8);
-    bordeAb->setPosition(0, 272);*/
-
     bloques = new Bloque**[15];
     for (int x = 0; x < 15; x++) {
         bloques[x] = new Bloque*[13];
     }
     
-    for (int x = 0; x < 15; x++) {
+    for(int x = 0; x < 15; x++){
         for (int y = 0; y < 13; y++) {
             if (level[x][y] == 1) {
-                bloques[x][y] = new BRoto(tileset, y, x);
+                bloques[x][y] = new BRoto(tileset, y, x, false);
+                bloques[x][y]->setPosicion(sf::Vector2i(x, y));
             } else {
                 bloques[x][y] = NULL;
             }
         }
     }
 
-    for(int x = 0; x < 15; x++){
-        for(int y = 0; y < 13; y++){
-            if (bloques[x][y]){
-                bloques[x][y]->setPosicion(sf::Vector2i(x, y));
+    borde = new Bloque**[17];
+    for (int x = 0; x < 17; x++) {
+        borde[x] = new Bloque*[15];
+    }
+    
+    for (int x = 0; x < 17; x++) {
+        for (int y = 0; y < 15; y++) {
+            if(x == 0 || x == 16 || y == 0 || y == 14){
+                borde[x][y] = new BRoto(tileset, y, x, true);
+                borde[x][y]->setPosicion(sf::Vector2i(x, y));
+            } else {
+                borde[x][y] = NULL;
             }
         }
     }
 }
 
 Mapa::~Mapa() {
-    delete bordeI;
-    bordeI = NULL;
-    delete bordeD;
-    bordeD = NULL;
-    delete bordeA;
-    bordeA = NULL;
-    delete bordeAb;
-    bordeAb = NULL;
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if (bloques[x][y]){
@@ -63,6 +45,17 @@ Mapa::~Mapa() {
     }
     delete[] bloques;
     bloques = NULL;
+
+    for(int x = 0; x < 17; x++){
+        for(int y = 0; y < 15; y++){
+            if (borde[x][y]){
+                delete borde[x][y];
+            }
+        }
+        delete[] borde[x];
+    }
+    delete[] borde;
+    borde = NULL;
 
     for(int x = 0; x < restos.size(); x++){
         if(restos[x] != NULL){
@@ -161,19 +154,20 @@ sf::Vector2i Mapa::getLibre() {
 }
 
 void Mapa::Draw(sf::RenderWindow &ventana) {
-    /*ventana.draw(*bordeI);
-    ventana.draw(*bordeD);
-    ventana.draw(*bordeA);
-    ventana.draw(*bordeAb);*/
-
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
-            if (bloques[x][y]){
+            if(bloques[x][y]){
                 bloques[x][y]->Draw(ventana);
             }
         }
     }
-    
+    for(int x = 0; x < 17; x++){
+        for(int y = 0; y < 15; y++){
+            if(borde[x][y]){
+                borde[x][y]->Draw(ventana);
+            }
+        }
+    }
     BRoto *roto = NULL;
     for(int x = 0; x < restos.size(); x++){
         if(restos[x] != NULL){

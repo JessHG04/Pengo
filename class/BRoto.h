@@ -11,7 +11,7 @@ class BRoto : public Bloque {
         sf::Clock reloj;
 
     public:
-        BRoto(sf::Texture* , int, int);
+        BRoto(sf::Texture* , int, int, bool);
         ~BRoto();
         void Update(float deltaTime);
         void romper()           {rompiendo = true;};

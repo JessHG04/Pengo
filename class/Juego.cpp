@@ -111,7 +111,7 @@ void Juego::comprobarColisiones() {
     Bloque* bloquesito;
     mapa->Update(deltaTime);
     for(int x = 0; x < enemigos.size(); x++) {
-        if(enemigos[x]  &&  !enemigos[x]->getMuerte()) {
+        if(enemigos[x] && !enemigos[x]->getMuerte()) {
             enemigos[x]->Update(deltaTime, mapa);
             if(pengo->getSprite()->getGlobalBounds().intersects(enemigos[x]->getSprite()->getGlobalBounds())){
                 pengo->perderVida();
@@ -120,7 +120,7 @@ void Juego::comprobarColisiones() {
             for(int y = 0; y < 15; y++) {
                 for(int z = 0; z < 13; z++) {
                     bloquesito = mapa->getBloque(y, z);
-                    if(bloquesito  &&  bloquesito->getDireccion() > -1  &&  enemigos[x]->getLibre()){
+                    if(bloquesito && bloquesito->getDireccion() > -1  && enemigos[x]->getLibre()){
                            if(enemigos[x]->getSprite()->getGlobalBounds().intersects(bloquesito->getSprite()->getGlobalBounds())){
                                 enemigos[x]->getEmpujado(bloquesito);
                                 suplirEnemigo();
@@ -160,7 +160,6 @@ void Juego::anyadirEnemigos(int nivel[15][13]) {
 }
 
 void Juego::suplirEnemigo() {
-
     if(enemigos.size() < totalEnemigos) {
         sf::Vector2i _newPosition = mapa->getLibre();
         enemigos.push_back(new SnoBee(&sprites, 45.0f, 0.2f, sf::Vector2u(0, 2), _newPosition));

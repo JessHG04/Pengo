@@ -20,7 +20,6 @@ void SnoBee::Update(float deltaTime, Mapa* mapa) {
     std::vector<int> orientacion;
     int aux = -1;
     int random;
-    
 
     if (!caminando && !quieto && bloque == NULL) {
         if (mapa->comprobar(sf::Vector2i(posicion.x-1, posicion.y))) {
@@ -78,7 +77,7 @@ void SnoBee::Update(float deltaTime, Mapa* mapa) {
             caminando = false;
             quieto = false;
             recorrido = 0.0f;
-            sprite->setPosition(24+posicion.y*16, 48+posicion.x*16);
+            sprite->setPosition(48+posicion.y*16, 64+posicion.x*16);
         }else{
             recorrido += desplazamiento;
         }

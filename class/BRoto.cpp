@@ -1,6 +1,6 @@
 #include "BRoto.h"
 
-BRoto::BRoto(sf::Texture* texture, int x, int y) : Bloque(texture, x, y) {
+BRoto::BRoto(sf::Texture* texture, int x, int y, bool borde) : Bloque(texture, x, y, borde) {
     roto = false;
     rompiendo = false;
     recorrido = 0.0f;

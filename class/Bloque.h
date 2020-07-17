@@ -13,7 +13,7 @@ class Bloque {
         bool movimiento;
 
     public:
-        Bloque(sf::Texture* , int , int );
+        Bloque(sf::Texture* , int , int, bool);
         virtual ~Bloque()                       {};
         virtual void Update(float deltaTime)    {};
         void Draw(sf::RenderWindow &ventana)    {ventana.draw(*sprite);};
