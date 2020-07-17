@@ -21,8 +21,13 @@
 },
 {
   "directory": "/home/jess/Escritorio/Pengo2/build",
-  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Character.cpp.o -c /home/jess/Escritorio/Pengo2/class/Character.cpp",
-  "file": "/home/jess/Escritorio/Pengo2/class/Character.cpp"
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Mapa.cpp.o -c /home/jess/Escritorio/Pengo2/class/Mapa.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Mapa.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Personaje.cpp.o -c /home/jess/Escritorio/Pengo2/class/Personaje.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Personaje.cpp"
 },
 {
   "directory": "/home/jess/Escritorio/Pengo2/build",
@@ -31,17 +36,12 @@
 },
 {
   "directory": "/home/jess/Escritorio/Pengo2/build",
-  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Game.cpp.o -c /home/jess/Escritorio/Pengo2/class/Game.cpp",
-  "file": "/home/jess/Escritorio/Pengo2/class/Game.cpp"
-},
-{
-  "directory": "/home/jess/Escritorio/Pengo2/build",
   "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/SnoBee.cpp.o -c /home/jess/Escritorio/Pengo2/class/SnoBee.cpp",
   "file": "/home/jess/Escritorio/Pengo2/class/SnoBee.cpp"
 },
 {
   "directory": "/home/jess/Escritorio/Pengo2/build",
-  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Mapa.cpp.o -c /home/jess/Escritorio/Pengo2/class/Mapa.cpp",
-  "file": "/home/jess/Escritorio/Pengo2/class/Mapa.cpp"
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Juego.cpp.o -c /home/jess/Escritorio/Pengo2/class/Juego.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Juego.cpp"
 }
 ]

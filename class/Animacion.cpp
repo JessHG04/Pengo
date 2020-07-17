@@ -1,6 +1,6 @@
 #include "Animacion.h"
 
-Animacion::Animacion(sf::Texture* textura, sf::Vector2u img, float tiempo, int n) {
+Animacion::Animacion(sf::Texture* textura, sf::Vector2u img, float tiempo) {
     tiempoCambio = tiempo;
     cuadrante = img;
     uvRect.width = 16;
@@ -9,7 +9,7 @@ Animacion::Animacion(sf::Texture* textura, sf::Vector2u img, float tiempo, int n
     imgActual.y = 0;
     imgActual.x = 0;
     rango.x = 0;
-    rango.y = n-1;
+    rango.y = 1;
 }
 
 void Animacion::Update(int fila, int columna, float deltaTime) {

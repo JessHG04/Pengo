@@ -1,97 +1,97 @@
-#include "Game.h"
+#include "Juego.h"
 //alias do="cd build/ && make && mv Pengo .. && cd .. && ./Pengo"
-Game* Game::gameInstance = NULL;
+Juego* Juego::instancia = NULL;
 
-Game* Game::getInstance() {
-    if (gameInstance == NULL) {
-        gameInstance = new Game();
+Juego* Juego::getInstancia() {
+    if (instancia == NULL) {
+        instancia = new Juego();
     }
-    return gameInstance;
+    return instancia;
 }
 
-Game::Game() {
-    window = new sf::RenderWindow(sf::VideoMode(19*16, 22*16), "Pengo");
-    window->setFramerateLimit(60);
-    if (!spriteSheet.loadFromFile("resources/Character.png")) {
+Juego::Juego() {
+    ventana = new sf::RenderWindow(sf::VideoMode(19*16, 22*16), "Pengo");
+    ventana->setFramerateLimit(60);
+    if (!sprites.loadFromFile("resources/Character.png")) {
         std::cout << "Failed loading sprite sheet..." << std::endl;
         exit(0);
     }
-    if (!tileset.loadFromFile("resources/tileset.png")) {
+    if (!tileset.loadFromFile("resources/tileset2.png")) {
         std::cout << "Failed loading tileset..." << std::endl;
         exit(0);
     }
-    pengo = new Pengo(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
-    RandomMaps();
-    map = map1;
-    addEnemies(level1);
-    snoBeesPerLevel = 6;
-    endGame = false;
-    level = 1;
-    maxLevels = 10;
+    pengo = new Pengo(&sprites, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
+    mapasAleatorios();
+    mapa = mapa1;
+    anyadirEnemigos(nivel1);
+    totalEnemigos = 6;
+    fin = false;
+    nivel = 1;
+    totalNiveles = 10;
     Draw();
-    GameLoop();
+    bucleJuego();
 }
 
-void Game::GameLoop() {
-    while (window->isOpen()) {
-        deltaTime = clock.restart().asSeconds();
-        EventsLoop();
-        if(pengo->getDead()) {
-            level = 1;
-            restoreLevel();
-            pengo->restoreLifes();
-        }else if(pengo->getStunned() && !pengo->getGodMode()) {
-            pengo->Update(deltaTime, map);
-            if(levelClock.getElapsedTime().asSeconds() >= 2.45f){
-                restoreLevel();
+void Juego::bucleJuego() {
+    while (ventana->isOpen()) {
+        deltaTime = reloj.restart().asSeconds();
+        bucleEventos();
+        if(pengo->getMuerte()) {
+            nivel = 1;
+            reiniciar();
+            pengo->reiniciarVidas();
+        }else if(pengo->getAturdido() && !pengo->getDios()) {
+            pengo->Update(deltaTime, mapa);
+            if(relojNivel.getElapsedTime().asSeconds() >= 2.45f){
+                reiniciar();
             }
-        } else if (!endGame) {
-            if (levelCompleted()) {
-                if (level == 1) {
-                    level = 2;
-                    restoreLevel();
+        } else if (!fin) {
+            if (nivelCompleto()) {
+                if (nivel == 1) {
+                    nivel = 2;
+                    reiniciar();
                 }else{
-                    endGame = true;
+                    fin = true;
                 }
             }else{
-                pengo->Update(deltaTime, map);
-                GameFunctionality();
-                if (pengo->getStunned()  &&  pengo->getGodMode()  &&  levelClock.getElapsedTime().asSeconds() >= 1.15f)
-                    pengo->restartPosition();
+                pengo->Update(deltaTime, mapa);
+                comprobarColisiones();
+                if (pengo->getAturdido()  &&  pengo->getDios()  &&  relojNivel.getElapsedTime().asSeconds() >= 1.15f)
+                    pengo->reiniciarPosicion();
             }
         } else {
-            window->close();
+            ventana->close();
         }
         Draw();
     }
-    delete gameInstance;
-    gameInstance = NULL;
+    delete instancia;
+    instancia = NULL;
 }
 
-void Game::EventsLoop() {
-    while (window->pollEvent(event)) {
-        switch (event.type) {
+void Juego::bucleEventos() {
+    while (ventana->pollEvent(evento)) {
+        switch (evento.type) {
             case sf::Event::Closed:
-                window->close();
+                ventana->close();
                 break;
             case sf::Event::KeyPressed:
-                switch (event.key.code) {
+                switch (evento.key.code) {
                     case sf::Keyboard::Escape:
-                        window->close();
+                        ventana->close();
                         break;
                     case sf::Keyboard::G:
-                        pengo->changeGodMode();
+                        pengo->modoDios();
                         break;
 
                     case sf::Keyboard::X:
-                        pengo->restoreLifes();
-                        this->restoreLevel();
+                        pengo->reiniciarVidas();
+                        this->reiniciar();
                         break;
 
                     case sf::Keyboard::N:
-                        if (level < maxLevels) {
-                            level++;
-                            this->restoreLevel();
+                        if (nivel < totalNiveles) {
+                            nivel++;
+                            this->reiniciar();
                         }
                         break;
 
@@ -109,23 +109,23 @@ void Game::EventsLoop() {
 
 
 
-void Game::GameFunctionality() {
+void Juego::comprobarColisiones() {
     Bloque* _block;
-    map->Update(deltaTime);
-    for(int x = 0; x < enemies.size(); x++) {
-        if(enemies[x]  &&  !enemies[x]->getDead()) {
-            enemies[x]->Update(deltaTime, map);
-            if(pengo->getSprite()->getGlobalBounds().intersects(enemies[x]->getSprite()->getGlobalBounds())){
-                pengo->loseLife();
-                levelClock.restart();
+    mapa->Update(deltaTime);
+    for(int x = 0; x < enemigos.size(); x++) {
+        if(enemigos[x]  &&  !enemigos[x]->getMuerte()) {
+            enemigos[x]->Update(deltaTime, mapa);
+            if(pengo->getSprite()->getGlobalBounds().intersects(enemigos[x]->getSprite()->getGlobalBounds())){
+                pengo->perderVida();
+                relojNivel.restart();
             }
             for(int y = 0; y < 15; y++) {
                 for(int z = 0; z < 13; z++) {
-                    _block = map->getBloque(y, z);
-                    if(_block  &&  _block->getDireccion() > -1  &&  enemies[x]->getFree()){
-                           if(enemies[x]->getSprite()->getGlobalBounds().intersects(_block->getSprite()->getGlobalBounds())){
-                                enemies[x]->getSmashed(_block);
-                                this->addSnoBee();
+                    _block = mapa->getBloque(y, z);
+                    if(_block  &&  _block->getDireccion() > -1  &&  enemigos[x]->getLibre()){
+                           if(enemigos[x]->getSprite()->getGlobalBounds().intersects(_block->getSprite()->getGlobalBounds())){
+                                enemigos[x]->getEmpujado(_block);
+                                suplirEnemigo();
                            }
                     }
                     _block = NULL;
@@ -136,307 +136,314 @@ void Game::GameFunctionality() {
 
 }
 
-void Game::Draw() {
-    window->clear();
-    map->Draw(*window);
-    pengo->Draw(*window);
-    for(int x = 0; x < enemies.size(); x++){
-        if (enemies[x]  &&  !enemies[x]->getDead())
-            enemies[x]->Draw(*window);
+void Juego::Draw() {
+    ventana->clear();
+    mapa->Draw(*ventana);
+    pengo->Draw(*ventana);
+    for(int x = 0; x < enemigos.size(); x++){
+        if (enemigos[x]  &&  !enemigos[x]->getMuerte())
+            enemigos[x]->Draw(*ventana);
     }
-    window->display();
+    ventana->display();
 }
 
-void Game::addEnemies(int level[15][13]) {
-   for(int x = 0; x < enemies.size(); x++){
-        delete enemies[x];
+void Juego::anyadirEnemigos(int nivel[15][13]) {
+   for(int x = 0; x < enemigos.size(); x++){
+        delete enemigos[x];
     }
-    enemies.clear();
+    enemigos.clear();
     for (int x = 0; x < 15; x++) {
         for (int y = 0; y < 13; y++) {
-            if (level[x][y] == 2) {
-                enemies.push_back(new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0, 2), sf::Vector2i(x, y)));
+            if (nivel[x][y] == 2) {
+                enemigos.push_back(new SnoBee(&sprites, 45.0f, 0.2f, sf::Vector2u(0, 2), sf::Vector2i(x, y)));
             }
         }
     }
 }
 
-void Game::addSnoBee() {
+void Juego::suplirEnemigo() {
 
-    if(enemies.size() < snoBeesPerLevel) {
-        sf::Vector2i _newPosition = map->getLibre();
-
-        enemies.push_back(new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0, 2), _newPosition));
+    if(enemigos.size() < totalEnemigos) {
+        sf::Vector2i _newPosition = mapa->getLibre();
+        enemigos.push_back(new SnoBee(&sprites, 45.0f, 0.2f, sf::Vector2u(0, 2), _newPosition));
     }
 }
 
-bool Game::levelCompleted() {
+bool Juego::nivelCompleto() {
     int _counter = 0;
-    if(enemies.size() == snoBeesPerLevel){
-        for(int x = 0; x < enemies.size(); x++){
-            if(enemies[x]  &&  enemies[x]->getDead()){
+    if(enemigos.size() == totalEnemigos){
+        for(int x = 0; x < enemigos.size(); x++){
+            if(enemigos[x]  &&  enemigos[x]->getMuerte()){
                 _counter++;
             }
         }
     }
 
-    if(_counter == snoBeesPerLevel) {
+    if(_counter == totalEnemigos) {
         return true;
     } else {
         return false;
     }
 }
 
-void Game::restoreLevel() {
-    if(level == 1) {
-        this->addEnemies(level1);
-        map1 = new Mapa(&tileset, level1);
-        map = map1;
+void Juego::reiniciar() {
+    if(nivel == 1) {
+        this->anyadirEnemigos(nivel1);
+        mapa1 = new Mapa(&tileset, nivel1);
+        mapa = mapa1;
     }
-    if(level == 2) {
-        this->addEnemies(level2);
-        map2 = new Mapa(&tileset, level2);
-        map = map2;
+    if(nivel == 2) {
+        this->anyadirEnemigos(nivel2);
+        mapa2 = new Mapa(&tileset, nivel2);
+        mapa = mapa2;
     }
-    if(level == 3) {
-        this->addEnemies(level3);
-        map3 = new Mapa(&tileset, level3);
-        map = map3;
+    if(nivel == 3) {
+        this->anyadirEnemigos(nivel3);
+        mapa3 = new Mapa(&tileset, nivel3);
+        mapa = mapa3;
     }
-    if(level == 4) {
-        this->addEnemies(level4);
-        map4 = new Mapa(&tileset, level4);
-        map = map4;
+    if(nivel == 4) {
+        this->anyadirEnemigos(nivel4);
+        mapa4 = new Mapa(&tileset, nivel4);
+        mapa = mapa4;
     }
-    if(level == 5) {
-        this->addEnemies(level5);
-        map5 = new Mapa(&tileset, level5);
-        map = map5;
+    if(nivel == 5) {
+        this->anyadirEnemigos(nivel5);
+        mapa5 = new Mapa(&tileset, nivel5);
+        mapa = mapa5;
     }
-    if(level == 6) {
-        this->addEnemies(level6);
-        map6 = new Mapa(&tileset, level6);
-        map = map6;
+    if(nivel == 6) {
+        this->anyadirEnemigos(nivel6);
+        mapa6 = new Mapa(&tileset, nivel6);
+        mapa = mapa6;
     }
-    if(level == 7) {
-        this->addEnemies(level7);
-        map7 = new Mapa(&tileset, level7);
-        map = map7;
+    if(nivel == 7) {
+        this->anyadirEnemigos(nivel7);
+        mapa7 = new Mapa(&tileset, nivel7);
+        mapa = mapa7;
     }
-    if(level == 8) {
-        this->addEnemies(level8);
-        map8 = new Mapa(&tileset, level8);
-        map = map8;
+    if(nivel == 8) {
+        this->anyadirEnemigos(nivel8);
+        mapa8 = new Mapa(&tileset, nivel8);
+        mapa = mapa8;
     }
-    if(level == 9) {
-        this->addEnemies(level9);
-        map9 = new Mapa(&tileset, level9);
-        map = map9;
+    if(nivel == 9) {
+        this->anyadirEnemigos(nivel9);
+        mapa9 = new Mapa(&tileset, nivel9);
+        mapa = mapa9;
     }
-    if(level == 10) {
-        this->addEnemies(level10);
-        map10 = new Mapa(&tileset, level10);
-        map = map10;
+    if(nivel == 10) {
+        this->anyadirEnemigos(nivel10);
+        mapa10 = new Mapa(&tileset, nivel10);
+        mapa = mapa10;
     }
-    pengo->restartInitialPosition();
+    pengo->reiniciarPInicial();
 }
 
-void Game::RandomMaps(){
+void Juego::mapasAleatorios(){
     int num = rand()%2;
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level1[x][y] = 0;
+                //Huecos
+                nivel1[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level1[x][y] = 2;
+                //Enemigos
+                nivel1[x][y] = 2;
             }else{
-                //Blocks
-                level1[x][y] = num;
+                //Bloques
+                nivel1[x][y] = num;
             }
             
             num = rand()%2;
         }
     }
-    map1 = new Mapa(&tileset, level1);
+    mapa1 = new Mapa(&tileset, nivel1);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level2[x][y] = 0;
+                //Huecos
+                nivel2[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level2[x][y] = 2;
+                //Enemigos
+                nivel2[x][y] = 2;
             }else{
-                //Blocks
-                level2[x][y] = num;
+                //Bloques
+                nivel2[x][y] = num;
             }
             num = rand()%2;
         }
     }
-    map2 = new Mapa(&tileset, level2);
+    mapa2 = new Mapa(&tileset, nivel2);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level3[x][y] = 0;
+                //Huecos
+                nivel3[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level3[x][y] = 2;
+                //Enemigos
+                nivel3[x][y] = 2;
             }else{
-                //Blocks
-                level3[x][y] = num;
+                //Bloques
+                nivel3[x][y] = num;
             }
             num = rand()%2;
         }
     }
-    map3 = new Mapa(&tileset, level3);
+    mapa3 = new Mapa(&tileset, nivel3);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level4[x][y] = 0;
+                //Huecos
+                nivel4[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level4[x][y] = 2;
+                //Enemigos
+                nivel4[x][y] = 2;
             }else{
-                //Blocks
-                level4[x][y] = num;
+                //Bloques
+                nivel4[x][y] = num;
             }
             num = rand()%2;
         }
     }
-    map4 = new Mapa(&tileset, level4);
+    mapa4 = new Mapa(&tileset, nivel4);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level5[x][y] = 0;
+                //Huecos
+                nivel5[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level5[x][y] = 2;
+                //Enemigos
+                nivel5[x][y] = 2;
             }else{
-                //Blocks
-                level5[x][y] = num;
+                //Bloques
+                nivel5[x][y] = num;
             }
             num = rand()%2;
         }
     }
-    map5 = new Mapa(&tileset, level5);
+    mapa5 = new Mapa(&tileset, nivel5);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level6[x][y] = 0;
+                //Huecos
+                nivel6[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level6[x][y] = 2;
+                //Enemigos
+                nivel6[x][y] = 2;
             }else{
-                //Blocks
-                level6[x][y] = num;
+                //Bloques
+                nivel6[x][y] = num;
             }
             num = rand()%2;
         }
     }
-    map6 = new Mapa(&tileset, level6);
+    mapa6 = new Mapa(&tileset, nivel6);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level7[x][y] = 0;
+                //Huecos
+                nivel7[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level7[x][y] = 2;
+                //Enemigos
+                nivel7[x][y] = 2;
             }else{
-                //Blocks
-                level7[x][y] = num;
+                //Bloques
+                nivel7[x][y] = num;
             }
             num = rand()%2;
         }
     }
-    map7 = new Mapa(&tileset, level7);
+    mapa7 = new Mapa(&tileset, nivel7);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level8[x][y] = 0;
+                //Huecos
+                nivel8[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level8[x][y] = 2;
+                //Enemigos
+                nivel8[x][y] = 2;
             }else{
-                //Blocks
-                level8[x][y] = num;
+                //Bloques
+                nivel8[x][y] = num;
             }
             num = rand()%2;
         }
     }
-    map8 = new Mapa(&tileset, level8);
+    mapa8 = new Mapa(&tileset, nivel8);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level9[x][y] = 0;
+                //Huecos
+                nivel9[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level9[x][y] = 2;
+                //Enemigos
+                nivel9[x][y] = 2;
             }else{
-                //Blocks
-                level9[x][y] = num;
+                //Bloques
+                nivel9[x][y] = num;
             }
             num = rand()%2;
         }
     }
-    map9 = new Mapa(&tileset, level9);
+    mapa9 = new Mapa(&tileset, nivel9);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
-                //Empty blocks
-                level10[x][y] = 0;
+                //Huecos
+                nivel10[x][y] = 0;
             }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
-                //Enemies
-                level10[x][y] = 2;
+                //Enemigos
+                nivel10[x][y] = 2;
             }else{
-                //Blocks
-                level10[x][y] = num;
+                //Bloques
+                nivel10[x][y] = num;
             }
             num = rand()%2;
         }
     }
-    map10 = new Mapa(&tileset, level10);
+    mapa10 = new Mapa(&tileset, nivel10);
 }
 
-Game::~Game(){
+Juego::~Juego(){
     delete pengo;
-    for(int x = 0; x < enemies.size(); x++){
-        delete enemies[x];
+    for(int x = 0; x < enemigos.size(); x++){
+        delete enemigos[x];
     }
-    enemies.clear();
-    delete map1;
-    delete map2;
-    delete window;
-    delete gameInstance;
+    enemigos.clear();
+    delete mapa1;
+    delete mapa2;
+    delete mapa3;
+    delete mapa4;
+    delete mapa5;
+    delete mapa6;
+    delete mapa7;
+    delete mapa8;
+    delete mapa9;
+    delete mapa10;
+    delete ventana;
+    delete instancia;
     pengo = NULL;
-    map = NULL;
-    map1 = NULL;
-    map2 = NULL;
-    map3 = NULL;
-    map4 = NULL;
-    map5 = NULL;
-    map6 = NULL;
-    map7 = NULL;
-    map8 = NULL;
-    map9 = NULL;
-    map10 = NULL;
-    window = NULL;
-    gameInstance = NULL;
+    mapa = NULL;
+    mapa1 = NULL;
+    mapa2 = NULL;
+    mapa3 = NULL;
+    mapa4 = NULL;
+    mapa5 = NULL;
+    mapa6 = NULL;
+    mapa7 = NULL;
+    mapa8 = NULL;
+    mapa9 = NULL;
+    mapa10 = NULL;
+    ventana = NULL;
+    instancia = NULL;
 }

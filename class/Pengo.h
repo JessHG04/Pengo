@@ -1,32 +1,28 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "Character.h"
+#include "Personaje.h"
 
 
-class Pengo : public Character {
-    
+class Pengo : public Personaje {
     private:
-        unsigned int lifes;
-        sf::Clock auxClock;
-        //Animation *deadAnimation;
-        Animacion *deadAnimation;
-        bool isBlocked;
-        bool push;
-        bool godMode;
-        float stunnedTime;
+        int vidas;
+        Animacion *animacionMuerte;
+        sf::Clock reloj;
+        bool quieto;
+        bool empujar;
+        bool dios;
+        float tiempoAturdido;
 
-  
     public:
         Pengo(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~Pengo();
         void Update(float ,Mapa* );
-        bool loseLife();
-        bool getDead();
-        void restartInitialPosition();
-        void restoreLifes();
-        void changeGodMode();
-        bool getGodMode();
-        void restartPosition();
-  
+        void modoDios();
+        void reiniciarVidas()   {vidas = 3;};
+        void reiniciarPosicion();
+        void reiniciarPInicial();
+        bool perderVida();
+        bool getMuerte();
+        bool getDios()          {return dios;};  
 };

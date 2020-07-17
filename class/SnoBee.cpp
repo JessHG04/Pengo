@@ -1,53 +1,40 @@
 #include "SnoBee.h"
 
-
-
-SnoBee::SnoBee(sf::Texture* texture, float speed, float changeTime, sf::Vector2u coordPj, sf::Vector2i position) : Character(texture, speed, changeTime, coordPj, position) {
-
-  //  this->pengo = pengo;
-    direction = 2;
-    isStatic  = false;
-    bomb      = NULL;
-    isDead    = false;
+SnoBee::SnoBee(sf::Texture* texture, float vel, float tiempo, sf::Vector2u cuadra, sf::Vector2i pos) : Personaje(texture, vel, tiempo, cuadra, pos){
+    direccion = 2;
+    quieto = false;
+    muerto = false;
+    bloque = NULL;
 }
-
-
-
 
 SnoBee::~SnoBee() {
-    delete animation;
-    animation = NULL;
-    delete body;
-    body = NULL;
-    bomb = NULL;
+    delete animacion;
+    animacion = NULL;
+    delete sprite;
+    sprite = NULL;
+    bloque = NULL;
 }
 
-
-
-
-// IA SnoBees...
-void SnoBee::Update(float deltaTime, Mapa* map) {
+void SnoBee::Update(float deltaTime, Mapa* mapa) {
     std::vector<sf::Vector2i> _movement;
     std::vector<int> _orientation;
     int _index = -1, _random;
 
-    if (!isWalking  &&  !isStatic  &&  bomb == NULL) {
-
-        // Check avaliable positions
-        if (map->comprobar(sf::Vector2i(position.x-1, position.y))) {
-            _movement.push_back(sf::Vector2i(position.x-1, position.y));
+    if (!caminando && !quieto && bloque == NULL) {
+        if (mapa->comprobar(sf::Vector2i(posicion.x-1, posicion.y))) {
+            _movement.push_back(sf::Vector2i(posicion.x-1, posicion.y));
             _orientation.push_back(0);
         }
-        if (map->comprobar(sf::Vector2i(position.x, position.y+1))) {
-            _movement.push_back(sf::Vector2i(position.x, position.y+1));
+        if (mapa->comprobar(sf::Vector2i(posicion.x, posicion.y+1))) {
+            _movement.push_back(sf::Vector2i(posicion.x, posicion.y+1));
             _orientation.push_back(1);
         }
-        if (map->comprobar(sf::Vector2i(position.x+1, position.y))) {
-            _movement.push_back(sf::Vector2i(position.x+1, position.y));
+        if (mapa->comprobar(sf::Vector2i(posicion.x+1, posicion.y))) {
+            _movement.push_back(sf::Vector2i(posicion.x+1, posicion.y));
             _orientation.push_back(2);
         }
-        if (map->comprobar(sf::Vector2i(position.x, position.y-1))) {
-            _movement.push_back(sf::Vector2i(position.x, position.y-1));
+        if (mapa->comprobar(sf::Vector2i(posicion.x, posicion.y-1))) {
+            _movement.push_back(sf::Vector2i(posicion.x, posicion.y-1));
             _orientation.push_back(3);
         }
 
@@ -55,38 +42,38 @@ void SnoBee::Update(float deltaTime, Mapa* map) {
             
             // Follow your way...
             for (unsigned int i=0; i<_orientation.size(); i++) {
-                if (direction == _orientation[i]) {
+                if (direccion == _orientation[i]) {
                     _index = int(i);
-                    position = _movement[i];
+                    posicion = _movement[i];
                 }
             }
 
-            // Turn to one direction...
+            // Turn to one direccion...
             if (_index > -1) {
-                isStatic  = false;
-                isWalking = true;
+                quieto  = false;
+                caminando = true;
             } else {
                 _random = rand()%_movement.size();
                 _index = _random;
 
-                direction = _orientation[_index];
+                direccion = _orientation[_index];
                 switch (_orientation[_index]) {
                     case 0:
-                        column = 4;
+                        columna = 4;
                         break;
                     case 1:
-                        column = 6;
+                        columna = 6;
                         break;
                     case 2:
-                        column = 0;
+                        columna = 0;
                         break;
                     case 3:
-                        column = 2;
+                        columna = 2;
                         break;
                 }
 
-                isStatic  = true;
-                isWalking = false;
+                quieto  = true;
+                caminando = false;
             }
 
             _orientation.clear();
@@ -96,100 +83,89 @@ void SnoBee::Update(float deltaTime, Mapa* map) {
     }
 
 
-    if (isStatic  ||  isWalking) {
+    if (quieto  ||  caminando) {
 
         // Move Sno-Bee...
-        float _displacement = speed*deltaTime;
+        float _displacement = velocidad*deltaTime;
 
         // Calculate the displacement...
-        if (path+_displacement >= 16.0f) {
-            _displacement = 16.0f - path;
-            isWalking     = false;
-            isStatic      = false;
-            path          = 0.0f;
-            body->setPosition(16+position.y*16, 40+position.x*16);
+        if (recorrido+_displacement >= 16.0f) {
+            _displacement = 16.0f - recorrido;
+            caminando     = false;
+            quieto      = false;
+            recorrido          = 0.0f;
+            sprite->setPosition(16+posicion.y*16, 40+posicion.x*16);
         } else {
-            path += _displacement;
+            recorrido += _displacement;
         }
 
-        if (isWalking  &&  !isStatic) {
-            if (column == 4)
-                body->move(0, -_displacement);
-            else if (column == 6)
-                body->move(_displacement, 0);
-            else if (column == 0)
-                body->move(0, _displacement);
-            else if (column == 2)
-                body->move(-_displacement, 0);
+        if (caminando  &&  !quieto) {
+            if (columna == 4)
+                sprite->move(0, -_displacement);
+            else if (columna == 6)
+                sprite->move(_displacement, 0);
+            else if (columna == 0)
+                sprite->move(0, _displacement);
+            else if (columna == 2)
+                sprite->move(-_displacement, 0);
         }
 
-        animation->Update(row, column, deltaTime);
-        body->setTextureRect(animation->getUvRect());
+        animacion->Update(fila, columna, deltaTime);
+        sprite->setTextureRect(animacion->getUvRect());
 
-    } else if (bomb) {
+    } else if (bloque) {
         sf::Vector2f _displacement(0.0f, 0.0f);
-        sf::Vector2f _position;
+        sf::Vector2f _posicion;
 
         // Suffer the hit...
-        if (bomb->getDireccion() > -1) {
+        if (bloque->getDireccion() > -1) {
 
             // direction movement...
-            switch (bomb->getDireccion()) {
+            switch (bloque->getDireccion()) {
                 case 0:
-                    column = 0;
+                    columna = 0;
                     _displacement.y = -10;
                     break;
                 case 1:
-                    column = 2;
+                    columna = 2;
                     _displacement.x = +10;
                     break;
                 case 2:
-                    column = 4;
+                    columna = 4;
                     _displacement.y = +10;
                     break;
                 case 3:
-                    column = 6;
+                    columna = 6;
                     _displacement.x = -10;
                     break;
             }
 
-            if (row != 4) {
-                row = 4;
-                animation->Update(row, column, deltaTime);
-                body->setTextureRect(animation->getUvRect());
+            if (fila != 4) {
+                fila = 4;
+                animacion->Update(fila, columna, deltaTime);
+                sprite->setTextureRect(animacion->getUvRect());
             }
 
-            _position = bomb->getSprite()->getPosition();
-            body->setPosition(_position + _displacement);
+            _posicion = bloque->getSprite()->getPosition();
+            sprite->setPosition(_posicion + _displacement);
 
         } else {
-
-            isDead = true;
+            muerto = true;
         }
 
     }
 
 }
 
-
-
-void SnoBee::getSmashed(Bloque* block) {
-    bomb      = block;
-    isStatic  = false;
-    isWalking = false;
+void SnoBee::getEmpujado(Bloque* bloq) {
+    bloque = bloq;
+    quieto  = false;
+    caminando = false;
 }
 
-
-
-bool SnoBee::getFree() {
-    if (bomb)
+bool SnoBee::getLibre() {
+    if (bloque)
         return false;
     else
         return true;
-}
-
-
-
-bool SnoBee::getDead() {
-    return isDead;
 }

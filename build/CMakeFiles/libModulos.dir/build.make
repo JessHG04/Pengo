@@ -129,33 +129,57 @@ CMakeFiles/libModulos.dir/class/BRoto.cpp.o.provides: CMakeFiles/libModulos.dir/
 CMakeFiles/libModulos.dir/class/BRoto.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/BRoto.cpp.o
 
 
-CMakeFiles/libModulos.dir/class/Character.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Character.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libModulos.dir/class/Character.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Character.cpp.o -c /home/jess/Escritorio/Pengo2/class/Character.cpp
+CMakeFiles/libModulos.dir/class/Mapa.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/class/Mapa.cpp.o: ../class/Mapa.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libModulos.dir/class/Mapa.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Mapa.cpp.o -c /home/jess/Escritorio/Pengo2/class/Mapa.cpp
 
-CMakeFiles/libModulos.dir/class/Character.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Character.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Character.cpp > CMakeFiles/libModulos.dir/class/Character.cpp.i
+CMakeFiles/libModulos.dir/class/Mapa.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Mapa.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Mapa.cpp > CMakeFiles/libModulos.dir/class/Mapa.cpp.i
 
-CMakeFiles/libModulos.dir/class/Character.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Character.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Character.cpp -o CMakeFiles/libModulos.dir/class/Character.cpp.s
+CMakeFiles/libModulos.dir/class/Mapa.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Mapa.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Mapa.cpp -o CMakeFiles/libModulos.dir/class/Mapa.cpp.s
 
-CMakeFiles/libModulos.dir/class/Character.cpp.o.requires:
+CMakeFiles/libModulos.dir/class/Mapa.cpp.o.requires:
 
-.PHONY : CMakeFiles/libModulos.dir/class/Character.cpp.o.requires
+.PHONY : CMakeFiles/libModulos.dir/class/Mapa.cpp.o.requires
 
-CMakeFiles/libModulos.dir/class/Character.cpp.o.provides: CMakeFiles/libModulos.dir/class/Character.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Character.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/class/Character.cpp.o.provides
+CMakeFiles/libModulos.dir/class/Mapa.cpp.o.provides: CMakeFiles/libModulos.dir/class/Mapa.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Mapa.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/class/Mapa.cpp.o.provides
 
-CMakeFiles/libModulos.dir/class/Character.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Character.cpp.o
+CMakeFiles/libModulos.dir/class/Mapa.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Mapa.cpp.o
+
+
+CMakeFiles/libModulos.dir/class/Personaje.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/class/Personaje.cpp.o: ../class/Personaje.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libModulos.dir/class/Personaje.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Personaje.cpp.o -c /home/jess/Escritorio/Pengo2/class/Personaje.cpp
+
+CMakeFiles/libModulos.dir/class/Personaje.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Personaje.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Personaje.cpp > CMakeFiles/libModulos.dir/class/Personaje.cpp.i
+
+CMakeFiles/libModulos.dir/class/Personaje.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Personaje.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Personaje.cpp -o CMakeFiles/libModulos.dir/class/Personaje.cpp.s
+
+CMakeFiles/libModulos.dir/class/Personaje.cpp.o.requires:
+
+.PHONY : CMakeFiles/libModulos.dir/class/Personaje.cpp.o.requires
+
+CMakeFiles/libModulos.dir/class/Personaje.cpp.o.provides: CMakeFiles/libModulos.dir/class/Personaje.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Personaje.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/class/Personaje.cpp.o.provides
+
+CMakeFiles/libModulos.dir/class/Personaje.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Personaje.cpp.o
 
 
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Pengo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libModulos.dir/class/Pengo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/libModulos.dir/class/Pengo.cpp.o"
 	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Pengo.cpp.o -c /home/jess/Escritorio/Pengo2/class/Pengo.cpp
 
 CMakeFiles/libModulos.dir/class/Pengo.cpp.i: cmake_force
@@ -175,30 +199,6 @@ CMakeFiles/libModulos.dir/class/Pengo.cpp.o.provides: CMakeFiles/libModulos.dir/
 .PHONY : CMakeFiles/libModulos.dir/class/Pengo.cpp.o.provides
 
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Pengo.cpp.o
-
-
-CMakeFiles/libModulos.dir/class/Game.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/libModulos.dir/class/Game.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Game.cpp.o -c /home/jess/Escritorio/Pengo2/class/Game.cpp
-
-CMakeFiles/libModulos.dir/class/Game.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Game.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Game.cpp > CMakeFiles/libModulos.dir/class/Game.cpp.i
-
-CMakeFiles/libModulos.dir/class/Game.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Game.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Game.cpp -o CMakeFiles/libModulos.dir/class/Game.cpp.s
-
-CMakeFiles/libModulos.dir/class/Game.cpp.o.requires:
-
-.PHONY : CMakeFiles/libModulos.dir/class/Game.cpp.o.requires
-
-CMakeFiles/libModulos.dir/class/Game.cpp.o.provides: CMakeFiles/libModulos.dir/class/Game.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Game.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/class/Game.cpp.o.provides
-
-CMakeFiles/libModulos.dir/class/Game.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Game.cpp.o
 
 
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: CMakeFiles/libModulos.dir/flags.make
@@ -225,28 +225,28 @@ CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.provides: CMakeFiles/libModulos.dir
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
 
 
-CMakeFiles/libModulos.dir/class/Mapa.cpp.o: CMakeFiles/libModulos.dir/flags.make
-CMakeFiles/libModulos.dir/class/Mapa.cpp.o: ../class/Mapa.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/libModulos.dir/class/Mapa.cpp.o"
-	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Mapa.cpp.o -c /home/jess/Escritorio/Pengo2/class/Mapa.cpp
+CMakeFiles/libModulos.dir/class/Juego.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/class/Juego.cpp.o: ../class/Juego.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/libModulos.dir/class/Juego.cpp.o"
+	/usr/bin/g++-5   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Juego.cpp.o -c /home/jess/Escritorio/Pengo2/class/Juego.cpp
 
-CMakeFiles/libModulos.dir/class/Mapa.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Mapa.cpp.i"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Mapa.cpp > CMakeFiles/libModulos.dir/class/Mapa.cpp.i
+CMakeFiles/libModulos.dir/class/Juego.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Juego.cpp.i"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Juego.cpp > CMakeFiles/libModulos.dir/class/Juego.cpp.i
 
-CMakeFiles/libModulos.dir/class/Mapa.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Mapa.cpp.s"
-	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Mapa.cpp -o CMakeFiles/libModulos.dir/class/Mapa.cpp.s
+CMakeFiles/libModulos.dir/class/Juego.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Juego.cpp.s"
+	/usr/bin/g++-5  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Juego.cpp -o CMakeFiles/libModulos.dir/class/Juego.cpp.s
 
-CMakeFiles/libModulos.dir/class/Mapa.cpp.o.requires:
+CMakeFiles/libModulos.dir/class/Juego.cpp.o.requires:
 
-.PHONY : CMakeFiles/libModulos.dir/class/Mapa.cpp.o.requires
+.PHONY : CMakeFiles/libModulos.dir/class/Juego.cpp.o.requires
 
-CMakeFiles/libModulos.dir/class/Mapa.cpp.o.provides: CMakeFiles/libModulos.dir/class/Mapa.cpp.o.requires
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Mapa.cpp.o.provides.build
-.PHONY : CMakeFiles/libModulos.dir/class/Mapa.cpp.o.provides
+CMakeFiles/libModulos.dir/class/Juego.cpp.o.provides: CMakeFiles/libModulos.dir/class/Juego.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Juego.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/class/Juego.cpp.o.provides
 
-CMakeFiles/libModulos.dir/class/Mapa.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Mapa.cpp.o
+CMakeFiles/libModulos.dir/class/Juego.cpp.o.provides.build: CMakeFiles/libModulos.dir/class/Juego.cpp.o
 
 
 # Object files for target libModulos
@@ -254,11 +254,11 @@ libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/class/Animacion.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Bloque.cpp.o" \
 "CMakeFiles/libModulos.dir/class/BRoto.cpp.o" \
-"CMakeFiles/libModulos.dir/class/Character.cpp.o" \
+"CMakeFiles/libModulos.dir/class/Mapa.cpp.o" \
+"CMakeFiles/libModulos.dir/class/Personaje.cpp.o" \
 "CMakeFiles/libModulos.dir/class/Pengo.cpp.o" \
-"CMakeFiles/libModulos.dir/class/Game.cpp.o" \
 "CMakeFiles/libModulos.dir/class/SnoBee.cpp.o" \
-"CMakeFiles/libModulos.dir/class/Mapa.cpp.o"
+"CMakeFiles/libModulos.dir/class/Juego.cpp.o"
 
 # External object files for target libModulos
 libModulos_EXTERNAL_OBJECTS =
@@ -266,11 +266,11 @@ libModulos_EXTERNAL_OBJECTS =
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Animacion.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Bloque.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/BRoto.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/class/Character.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/class/Pengo.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/class/Game.cpp.o
-liblibModulos.a: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Mapa.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/class/Personaje.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/class/Pengo.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/class/Juego.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library liblibModulos.a"
@@ -285,11 +285,11 @@ CMakeFiles/libModulos.dir/build: liblibModulos.a
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Animacion.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Bloque.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/BRoto.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Character.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Pengo.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Game.cpp.o.requires
-CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Mapa.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Personaje.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Pengo.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/class/Juego.cpp.o.requires
 
 .PHONY : CMakeFiles/libModulos.dir/requires
 

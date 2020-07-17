@@ -217,59 +217,32 @@ class/Bloque.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Bloque.cpp.s
 .PHONY : class/Bloque.cpp.s
 
-class/Character.o: class/Character.cpp.o
+class/Juego.o: class/Juego.cpp.o
 
-.PHONY : class/Character.o
-
-# target to build an object file
-class/Character.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Character.cpp.o
-.PHONY : class/Character.cpp.o
-
-class/Character.i: class/Character.cpp.i
-
-.PHONY : class/Character.i
-
-# target to preprocess a source file
-class/Character.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Character.cpp.i
-.PHONY : class/Character.cpp.i
-
-class/Character.s: class/Character.cpp.s
-
-.PHONY : class/Character.s
-
-# target to generate assembly for a file
-class/Character.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Character.cpp.s
-.PHONY : class/Character.cpp.s
-
-class/Game.o: class/Game.cpp.o
-
-.PHONY : class/Game.o
+.PHONY : class/Juego.o
 
 # target to build an object file
-class/Game.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Game.cpp.o
-.PHONY : class/Game.cpp.o
+class/Juego.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Juego.cpp.o
+.PHONY : class/Juego.cpp.o
 
-class/Game.i: class/Game.cpp.i
+class/Juego.i: class/Juego.cpp.i
 
-.PHONY : class/Game.i
+.PHONY : class/Juego.i
 
 # target to preprocess a source file
-class/Game.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Game.cpp.i
-.PHONY : class/Game.cpp.i
+class/Juego.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Juego.cpp.i
+.PHONY : class/Juego.cpp.i
 
-class/Game.s: class/Game.cpp.s
+class/Juego.s: class/Juego.cpp.s
 
-.PHONY : class/Game.s
+.PHONY : class/Juego.s
 
 # target to generate assembly for a file
-class/Game.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Game.cpp.s
-.PHONY : class/Game.cpp.s
+class/Juego.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Juego.cpp.s
+.PHONY : class/Juego.cpp.s
 
 class/Mapa.o: class/Mapa.cpp.o
 
@@ -324,6 +297,33 @@ class/Pengo.s: class/Pengo.cpp.s
 class/Pengo.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Pengo.cpp.s
 .PHONY : class/Pengo.cpp.s
+
+class/Personaje.o: class/Personaje.cpp.o
+
+.PHONY : class/Personaje.o
+
+# target to build an object file
+class/Personaje.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Personaje.cpp.o
+.PHONY : class/Personaje.cpp.o
+
+class/Personaje.i: class/Personaje.cpp.i
+
+.PHONY : class/Personaje.i
+
+# target to preprocess a source file
+class/Personaje.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Personaje.cpp.i
+.PHONY : class/Personaje.cpp.i
+
+class/Personaje.s: class/Personaje.cpp.s
+
+.PHONY : class/Personaje.s
+
+# target to generate assembly for a file
+class/Personaje.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Personaje.cpp.s
+.PHONY : class/Personaje.cpp.s
 
 class/SnoBee.o: class/SnoBee.cpp.o
 
@@ -398,18 +398,18 @@ help:
 	@echo "... class/Bloque.o"
 	@echo "... class/Bloque.i"
 	@echo "... class/Bloque.s"
-	@echo "... class/Character.o"
-	@echo "... class/Character.i"
-	@echo "... class/Character.s"
-	@echo "... class/Game.o"
-	@echo "... class/Game.i"
-	@echo "... class/Game.s"
+	@echo "... class/Juego.o"
+	@echo "... class/Juego.i"
+	@echo "... class/Juego.s"
 	@echo "... class/Mapa.o"
 	@echo "... class/Mapa.i"
 	@echo "... class/Mapa.s"
 	@echo "... class/Pengo.o"
 	@echo "... class/Pengo.i"
 	@echo "... class/Pengo.s"
+	@echo "... class/Personaje.o"
+	@echo "... class/Personaje.i"
+	@echo "... class/Personaje.s"
 	@echo "... class/SnoBee.o"
 	@echo "... class/SnoBee.i"
 	@echo "... class/SnoBee.s"

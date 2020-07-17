@@ -1,9 +1,9 @@
 #include <SFML/Graphics.hpp>
-#include "class/Game.h"
+#include "class/Juego.h"
 
 int main() {
     srand(time(NULL));
-    Game* game = Game::getInstance();
+    Juego* juego = Juego::getInstancia();
 
     return EXIT_SUCCESS;
 }

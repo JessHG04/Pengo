@@ -13,7 +13,7 @@ class Animacion {
         sf::Vector2u rango;
 
     public:
-        Animacion(sf::Texture* ,sf::Vector2u ,float ,int );
+        Animacion(sf::Texture* ,sf::Vector2u ,float);
         void Update(int, int, float );
         ~Animacion()                    { };
         sf::IntRect getUvRect()         {return uvRect;};

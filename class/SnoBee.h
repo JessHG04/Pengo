@@ -1,23 +1,21 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Character.h"
+#include <iostream>
+#include "Personaje.h"
 #include "Pengo.h"
 
-
-class SnoBee : public Character {
-
+class SnoBee : public Personaje {
     private:
-        int direction; // 0:Up - 1:Right - 2:Down - 3:Left
-        bool isStatic;
-        bool isDead;
-        Bloque* bomb;
-
+        int direccion;
+        bool quieto;
+        bool muerto;
+        Bloque* bloque;
 
     public:
         SnoBee(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~SnoBee();
         void Update(float ,Mapa* );
-        void getSmashed(Bloque* );
-        bool getFree();
-        bool getDead();
+        void getEmpujado(Bloque* );
+        bool getMuerte()            {return muerto;};
+        bool getLibre();
 };
