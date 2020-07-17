@@ -23,7 +23,7 @@ Character::~Character() {
 
 }
 
-void Character::Update(float deltaTime, Map* map) {
+void Character::Update(float deltaTime, Mapa* map) {
     
 }
 

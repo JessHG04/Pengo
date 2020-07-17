@@ -24,7 +24,7 @@ Pengo::~Pengo() {
 
 
 
-void Pengo::Update(float deltaTime, Map* map) {
+void Pengo::Update(float deltaTime, Mapa* map) {
     sf::Vector2i _auxPosition = position;
     
     if (lifes > 0  &&  (!isWalking && !isPushing && !isStunned)) {
@@ -52,7 +52,7 @@ void Pengo::Update(float deltaTime, Map* map) {
             auxClock.restart();
         }
         
-        if (map->checkPosition(position)) {
+        if (map->comprobar(position)) {
             isBlocked = false;
         } else {
             isBlocked = true;
@@ -96,13 +96,13 @@ void Pengo::Update(float deltaTime, Map* map) {
 
         if (push) {
             if (column == 4)
-                map->pengoPush(sf::Vector2i(position.x-1, position.y), 0, true);
+                map->empujar(sf::Vector2i(position.x-1, position.y), 0, true);
             else if (column == 6)
-                map->pengoPush(sf::Vector2i(position.x, position.y+1), 1, true);
+                map->empujar(sf::Vector2i(position.x, position.y+1), 1, true);
             else if (column == 0)
-                map->pengoPush(sf::Vector2i(position.x+1, position.y), 2, true);
+                map->empujar(sf::Vector2i(position.x+1, position.y), 2, true);
             else if (column == 2)
-                map->pengoPush(sf::Vector2i(position.x, position.y-1), 3, true);
+                map->empujar(sf::Vector2i(position.x, position.y-1), 3, true);
             push = false;
         }
 

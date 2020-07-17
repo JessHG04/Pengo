@@ -271,32 +271,32 @@ class/Game.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Game.cpp.s
 .PHONY : class/Game.cpp.s
 
-class/Map.o: class/Map.cpp.o
+class/Mapa.o: class/Mapa.cpp.o
 
-.PHONY : class/Map.o
+.PHONY : class/Mapa.o
 
 # target to build an object file
-class/Map.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Map.cpp.o
-.PHONY : class/Map.cpp.o
+class/Mapa.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Mapa.cpp.o
+.PHONY : class/Mapa.cpp.o
 
-class/Map.i: class/Map.cpp.i
+class/Mapa.i: class/Mapa.cpp.i
 
-.PHONY : class/Map.i
+.PHONY : class/Mapa.i
 
 # target to preprocess a source file
-class/Map.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Map.cpp.i
-.PHONY : class/Map.cpp.i
+class/Mapa.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Mapa.cpp.i
+.PHONY : class/Mapa.cpp.i
 
-class/Map.s: class/Map.cpp.s
+class/Mapa.s: class/Mapa.cpp.s
 
-.PHONY : class/Map.s
+.PHONY : class/Mapa.s
 
 # target to generate assembly for a file
-class/Map.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Map.cpp.s
-.PHONY : class/Map.cpp.s
+class/Mapa.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/class/Mapa.cpp.s
+.PHONY : class/Mapa.cpp.s
 
 class/Pengo.o: class/Pengo.cpp.o
 
@@ -404,9 +404,9 @@ help:
 	@echo "... class/Game.o"
 	@echo "... class/Game.i"
 	@echo "... class/Game.s"
-	@echo "... class/Map.o"
-	@echo "... class/Map.i"
-	@echo "... class/Map.s"
+	@echo "... class/Mapa.o"
+	@echo "... class/Mapa.i"
+	@echo "... class/Mapa.s"
 	@echo "... class/Pengo.o"
 	@echo "... class/Pengo.i"
 	@echo "... class/Pengo.s"

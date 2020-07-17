@@ -121,7 +121,7 @@ void Game::GameFunctionality() {
             }
             for(int y = 0; y < 15; y++) {
                 for(int z = 0; z < 13; z++) {
-                    _block = map->getBlock(y, z);
+                    _block = map->getBloque(y, z);
                     if(_block  &&  _block->getDireccion() > -1  &&  enemies[x]->getFree()){
                            if(enemies[x]->getSprite()->getGlobalBounds().intersects(_block->getSprite()->getGlobalBounds())){
                                 enemies[x]->getSmashed(_block);
@@ -164,7 +164,7 @@ void Game::addEnemies(int level[15][13]) {
 void Game::addSnoBee() {
 
     if(enemies.size() < snoBeesPerLevel) {
-        sf::Vector2i _newPosition = map->getFreePosition();
+        sf::Vector2i _newPosition = map->getLibre();
 
         enemies.push_back(new SnoBee(&spriteSheet, 45.0f, 0.2f, sf::Vector2u(0, 2), _newPosition));
     }
@@ -190,52 +190,52 @@ bool Game::levelCompleted() {
 void Game::restoreLevel() {
     if(level == 1) {
         this->addEnemies(level1);
-        map1 = new Map(&tileset, level1);
+        map1 = new Mapa(&tileset, level1);
         map = map1;
     }
     if(level == 2) {
         this->addEnemies(level2);
-        map2 = new Map(&tileset, level2);
+        map2 = new Mapa(&tileset, level2);
         map = map2;
     }
     if(level == 3) {
         this->addEnemies(level3);
-        map3 = new Map(&tileset, level3);
+        map3 = new Mapa(&tileset, level3);
         map = map3;
     }
     if(level == 4) {
         this->addEnemies(level4);
-        map4 = new Map(&tileset, level4);
+        map4 = new Mapa(&tileset, level4);
         map = map4;
     }
     if(level == 5) {
         this->addEnemies(level5);
-        map5 = new Map(&tileset, level5);
+        map5 = new Mapa(&tileset, level5);
         map = map5;
     }
     if(level == 6) {
         this->addEnemies(level6);
-        map6 = new Map(&tileset, level6);
+        map6 = new Mapa(&tileset, level6);
         map = map6;
     }
     if(level == 7) {
         this->addEnemies(level7);
-        map7 = new Map(&tileset, level7);
+        map7 = new Mapa(&tileset, level7);
         map = map7;
     }
     if(level == 8) {
         this->addEnemies(level8);
-        map8 = new Map(&tileset, level8);
+        map8 = new Mapa(&tileset, level8);
         map = map8;
     }
     if(level == 9) {
         this->addEnemies(level9);
-        map9 = new Map(&tileset, level9);
+        map9 = new Mapa(&tileset, level9);
         map = map9;
     }
     if(level == 10) {
         this->addEnemies(level10);
-        map10 = new Map(&tileset, level10);
+        map10 = new Mapa(&tileset, level10);
         map = map10;
     }
     pengo->restartInitialPosition();
@@ -259,7 +259,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map1 = new Map(&tileset, level1);
+    map1 = new Mapa(&tileset, level1);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -276,7 +276,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map2 = new Map(&tileset, level2);
+    map2 = new Mapa(&tileset, level2);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -293,7 +293,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map3 = new Map(&tileset, level3);
+    map3 = new Mapa(&tileset, level3);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -310,7 +310,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map4 = new Map(&tileset, level4);
+    map4 = new Mapa(&tileset, level4);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -327,7 +327,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map5 = new Map(&tileset, level5);
+    map5 = new Mapa(&tileset, level5);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -344,7 +344,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map6 = new Map(&tileset, level6);
+    map6 = new Mapa(&tileset, level6);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -361,7 +361,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map7 = new Map(&tileset, level7);
+    map7 = new Mapa(&tileset, level7);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -378,7 +378,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map8 = new Map(&tileset, level8);
+    map8 = new Mapa(&tileset, level8);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -395,7 +395,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map9 = new Map(&tileset, level9);
+    map9 = new Mapa(&tileset, level9);
 
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
@@ -412,7 +412,7 @@ void Game::RandomMaps(){
             num = rand()%2;
         }
     }
-    map10 = new Map(&tileset, level10);
+    map10 = new Mapa(&tileset, level10);
 }
 
 Game::~Game(){

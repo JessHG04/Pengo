@@ -16,7 +16,7 @@ CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/BRoto.h
 CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Bloque.h
 CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Character.cpp
 CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Character.h
-CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Map.h
+CMakeFiles/libModulos.dir/class/Character.cpp.o: ../class/Mapa.h
 
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Animacion.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/BRoto.h
@@ -24,20 +24,20 @@ CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Bloque.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Character.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Game.cpp
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Game.h
-CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Map.h
+CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Mapa.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/Pengo.h
 CMakeFiles/libModulos.dir/class/Game.cpp.o: ../class/SnoBee.h
 
-CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/BRoto.h
-CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/Bloque.h
-CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/Map.cpp
-CMakeFiles/libModulos.dir/class/Map.cpp.o: ../class/Map.h
+CMakeFiles/libModulos.dir/class/Mapa.cpp.o: ../class/BRoto.h
+CMakeFiles/libModulos.dir/class/Mapa.cpp.o: ../class/Bloque.h
+CMakeFiles/libModulos.dir/class/Mapa.cpp.o: ../class/Mapa.cpp
+CMakeFiles/libModulos.dir/class/Mapa.cpp.o: ../class/Mapa.h
 
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Animacion.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/BRoto.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Bloque.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Character.h
-CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Map.h
+CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Mapa.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Pengo.cpp
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Pengo.h
 
@@ -45,7 +45,7 @@ CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Animacion.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/BRoto.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Bloque.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Character.h
-CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Map.h
+CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Mapa.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/Pengo.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/SnoBee.cpp
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/SnoBee.h

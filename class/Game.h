@@ -6,7 +6,7 @@
 #include "Character.h"
 #include "BRoto.h"
 #include "Pengo.h"
-#include "Map.h"
+#include "Mapa.h"
 #include "SnoBee.h"
 
 
@@ -32,17 +32,17 @@ class Game {
     private:
         static Game* gameInstance;
         sf::RenderWindow* window;
-        Map* map;
-        Map* map1;
-        Map* map2;
-        Map* map3;
-        Map* map4;
-        Map* map5;
-        Map* map6;
-        Map* map7;
-        Map* map8;
-        Map* map9;
-        Map* map10;
+        Mapa* map;
+        Mapa* map1;
+        Mapa* map2;
+        Mapa* map3;
+        Mapa* map4;
+        Mapa* map5;
+        Mapa* map6;
+        Mapa* map7;
+        Mapa* map8;
+        Mapa* map9;
+        Mapa* map10;
         Pengo* pengo;
         sf::Clock clock;
         sf::Clock levelClock;

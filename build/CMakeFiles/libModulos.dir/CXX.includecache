@@ -47,8 +47,8 @@ SFML/Graphics.hpp
 -
 Animacion.h
 /home/jess/Escritorio/Pengo2/class/Animacion.h
-Map.h
-/home/jess/Escritorio/Pengo2/class/Map.h
+Mapa.h
+/home/jess/Escritorio/Pengo2/class/Mapa.h
 
 /home/jess/Escritorio/Pengo2/class/Game.cpp
 Game.h
@@ -67,17 +67,19 @@ BRoto.h
 /home/jess/Escritorio/Pengo2/class/BRoto.h
 Pengo.h
 /home/jess/Escritorio/Pengo2/class/Pengo.h
-Map.h
-/home/jess/Escritorio/Pengo2/class/Map.h
+Mapa.h
+/home/jess/Escritorio/Pengo2/class/Mapa.h
 SnoBee.h
 /home/jess/Escritorio/Pengo2/class/SnoBee.h
 
-/home/jess/Escritorio/Pengo2/class/Map.cpp
-Map.h
-/home/jess/Escritorio/Pengo2/class/Map.h
+/home/jess/Escritorio/Pengo2/class/Mapa.cpp
+Mapa.h
+/home/jess/Escritorio/Pengo2/class/Mapa.h
 
-/home/jess/Escritorio/Pengo2/class/Map.h
+/home/jess/Escritorio/Pengo2/class/Mapa.h
 SFML/Graphics.hpp
+-
+iostream
 -
 BRoto.h
 /home/jess/Escritorio/Pengo2/class/BRoto.h

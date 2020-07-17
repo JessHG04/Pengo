@@ -20,7 +20,7 @@ class Pengo : public Character {
     public:
         Pengo(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~Pengo();
-        void Update(float ,Map* );
+        void Update(float ,Mapa* );
         bool loseLife();
         bool getDead();
         void restartInitialPosition();

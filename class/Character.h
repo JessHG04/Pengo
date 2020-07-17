@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Animacion.h"
-#include "Map.h"
+#include "Mapa.h"
 
 
 class Character {
@@ -22,7 +22,7 @@ class Character {
     public:
         Character(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         virtual ~Character();
-        virtual void Update(float ,Map* );
+        virtual void Update(float ,Mapa* );
         void Draw(sf::RenderWindow &);
         sf::Vector2i getPosition();
         sf::Sprite* getSprite();
