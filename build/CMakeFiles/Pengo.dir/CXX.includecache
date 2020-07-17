@@ -57,8 +57,8 @@ SFML/Graphics.hpp
 -
 iostream
 -
-Character.h
-/home/jess/Escritorio/Pengo2/class/Character.h
+Personaje.h
+/home/jess/Escritorio/Pengo2/class/Personaje.h
 
 /home/jess/Escritorio/Pengo2/class/Personaje.h
 SFML/Graphics.hpp
@@ -73,8 +73,10 @@ Mapa.h
 /home/jess/Escritorio/Pengo2/class/SnoBee.h
 SFML/Graphics.hpp
 -
-Character.h
-/home/jess/Escritorio/Pengo2/class/Character.h
+iostream
+-
+Personaje.h
+/home/jess/Escritorio/Pengo2/class/Personaje.h
 Pengo.h
 /home/jess/Escritorio/Pengo2/class/Pengo.h
 

@@ -102,6 +102,7 @@ void Mapa::Update(float deltaTime) {
             }
         }
     }
+    roto = NULL;
 }
 
 bool Mapa::comprobar(sf::Vector2i pos) {
@@ -179,4 +180,5 @@ void Mapa::Draw(sf::RenderWindow &ventana) {
            }
         }
     }
+    roto = NULL;
 }

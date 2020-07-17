@@ -17,6 +17,12 @@ class Juego {
     private:
         static Juego* instancia;
         sf::RenderWindow* ventana;
+        sf::Font fuente;
+        sf::Text dios;
+        sf::Text vidas;
+        sf::Text enem;
+        sf::Text lvl;
+        sf::Text nombre;
         Mapa* mapa;
         Mapa* mapa1;
         Mapa* mapa2;

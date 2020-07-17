@@ -27,8 +27,13 @@ CMakeFiles/libModulos.dir/class/Mapa.cpp.o
  /home/jess/Escritorio/Pengo2/class/Mapa.cpp
  /home/jess/Escritorio/Pengo2/class/Mapa.h
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o
+ /home/jess/Escritorio/Pengo2/class/Animacion.h
+ /home/jess/Escritorio/Pengo2/class/BRoto.h
+ /home/jess/Escritorio/Pengo2/class/Bloque.h
+ /home/jess/Escritorio/Pengo2/class/Mapa.h
  /home/jess/Escritorio/Pengo2/class/Pengo.cpp
  /home/jess/Escritorio/Pengo2/class/Pengo.h
+ /home/jess/Escritorio/Pengo2/class/Personaje.h
 CMakeFiles/libModulos.dir/class/Personaje.cpp.o
  /home/jess/Escritorio/Pengo2/class/Animacion.h
  /home/jess/Escritorio/Pengo2/class/BRoto.h
@@ -37,6 +42,11 @@ CMakeFiles/libModulos.dir/class/Personaje.cpp.o
  /home/jess/Escritorio/Pengo2/class/Personaje.cpp
  /home/jess/Escritorio/Pengo2/class/Personaje.h
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
+ /home/jess/Escritorio/Pengo2/class/Animacion.h
+ /home/jess/Escritorio/Pengo2/class/BRoto.h
+ /home/jess/Escritorio/Pengo2/class/Bloque.h
+ /home/jess/Escritorio/Pengo2/class/Mapa.h
  /home/jess/Escritorio/Pengo2/class/Pengo.h
+ /home/jess/Escritorio/Pengo2/class/Personaje.h
  /home/jess/Escritorio/Pengo2/class/SnoBee.cpp
  /home/jess/Escritorio/Pengo2/class/SnoBee.h

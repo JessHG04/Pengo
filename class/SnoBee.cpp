@@ -20,56 +20,91 @@ void SnoBee::Update(float deltaTime, Mapa* mapa) {
     std::vector<int> orientacion;
     int aux = -1;
     int random;
-
-    if (!caminando && !quieto && bloque == NULL) {
-        if (mapa->comprobar(sf::Vector2i(posicion.x-1, posicion.y))) {
+    int randomRomper;
+    
+    if(!caminando && !quieto && bloque == NULL) {
+        if(mapa->comprobar(sf::Vector2i(posicion.x-1, posicion.y))){
             movimiento.push_back(sf::Vector2i(posicion.x-1, posicion.y));
             orientacion.push_back(0);
         }
-        if (mapa->comprobar(sf::Vector2i(posicion.x, posicion.y+1))) {
+        if(mapa->comprobar(sf::Vector2i(posicion.x, posicion.y+1))){
             movimiento.push_back(sf::Vector2i(posicion.x, posicion.y+1));
             orientacion.push_back(1);
         }
-        if (mapa->comprobar(sf::Vector2i(posicion.x+1, posicion.y))) {
+        if(mapa->comprobar(sf::Vector2i(posicion.x+1, posicion.y))){
             movimiento.push_back(sf::Vector2i(posicion.x+1, posicion.y));
             orientacion.push_back(2);
         }
-        if (mapa->comprobar(sf::Vector2i(posicion.x, posicion.y-1))) {
+        if(mapa->comprobar(sf::Vector2i(posicion.x, posicion.y-1))){
             movimiento.push_back(sf::Vector2i(posicion.x, posicion.y-1));
             orientacion.push_back(3);
         }
 
-        if (movimiento.size() > 0) {
-            for (int x = 0; x<orientacion.size(); x++) {
-                if (direccion == orientacion[x]) {
+        if(movimiento.size() > 0) {
+            for(int x = 0; x<orientacion.size(); x++){
+                if (direccion == orientacion[x]){
                     aux = x;
                     posicion = movimiento[x];
                 }
             }
-            if(aux > -1) {
+            if(aux != -1){ //Se va a mover en esa direccion
                 quieto = false;
                 caminando = true;
-            }else{
-                random = rand()%movimiento.size();
-                aux = random;
-                direccion = orientacion[aux];
-                if(direccion == 0){
-                    columna = 4;
-                }else if(direccion == 1){
-                    columna = 6;
-                }else if(direccion == 2){
-                    columna = 0;
-                }else if(direccion == 3){
-                    columna = 2;
+            }else{//Buscamos otro sitio al que moverse
+                randomRomper = rand()%2; //Aleatoriamente elige o empujar el bloque(0) o buscar otra direccion (1)
+                if(randomRomper == 0){
+                    empujando = true;
+                    empujar = true;
+                    fila = 2;
+                    animacion->setTiempoCambio(0.13f);
+                    reloj.restart();
+                }else{
+                    random = rand()%movimiento.size();
+                    aux = random;
+                    direccion = orientacion[aux];
+                    if(direccion == 0){
+                        columna = 4;
+                    }else if(direccion == 1){
+                        columna = 6;
+                    }else if(direccion == 2){
+                        columna = 0;
+                    }else if(direccion == 3){
+                        columna = 2;
+                    }
+                    quieto  = true;
+                    caminando = false;
                 }
-                quieto  = true;
-                caminando = false;
+                
             }
             orientacion.clear();
             movimiento.clear();
         }
     }
-
+    if(empujando){
+        if(reloj.getElapsedTime().asSeconds() >= 0.4f){
+            empujando = false;
+            fila = 1;
+            animacion->setTiempoCambio(0.2f);
+        }
+        if(empujar){
+            if(direccion == 0){
+                mapa->empujar(sf::Vector2i(posicion.x-1, posicion.y), 0, true);
+                columna = 4;
+            }else if (direccion == 1){
+                mapa->empujar(sf::Vector2i(posicion.x, posicion.y+1), 1, true);
+                columna = 6;
+            }else if (direccion == 2){
+                mapa->empujar(sf::Vector2i(posicion.x+1, posicion.y), 2, true);
+                columna = 0;
+            }else if (direccion == 3){
+                mapa->empujar(sf::Vector2i(posicion.x, posicion.y-1), 3, true);
+                columna = 2;
+            }
+            empujar = false;
+        }
+        animacion->Update(fila, columna, deltaTime);
+        sprite->setTextureRect(animacion->getUvRect());
+    }
     if(quieto || caminando) {
         float desplazamiento = velocidad*deltaTime;
         if(recorrido+desplazamiento >= 16.0f) {
@@ -96,7 +131,7 @@ void SnoBee::Update(float deltaTime, Mapa* mapa) {
         animacion->Update(fila, columna, deltaTime);
         sprite->setTextureRect(animacion->getUvRect());
 
-    }else if(bloque) {
+    }else if(bloque){ //Si existe es porque esta siendo empujado por el mismo
         sf::Vector2f desplazamiento(0.0f, 0.0f);
         sf::Vector2f posicion;
         if(bloque->getDireccion() > -1) {
@@ -113,7 +148,7 @@ void SnoBee::Update(float deltaTime, Mapa* mapa) {
                 columna = 6;
                 desplazamiento.x = -10;
             }
-            if (fila != 4) {
+            if(fila != 4) {
                 fila = 4;
                 animacion->Update(fila, columna, deltaTime);
                 sprite->setTextureRect(animacion->getUvRect());

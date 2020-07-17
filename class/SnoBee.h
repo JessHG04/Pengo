@@ -8,9 +8,11 @@ class SnoBee : public Personaje {
     private:
         int direccion;
         bool quieto;
+        bool empujar;
         bool muerto;
         Bloque* bloque;
-
+        sf::Clock reloj;
+        
     public:
         SnoBee(sf::Texture*, float, float, sf::Vector2u, sf::Vector2i);
         ~SnoBee();

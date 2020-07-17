@@ -25,4 +25,5 @@ class Pengo : public Personaje {
         bool perderVida();
         bool getMuerte();
         bool getDios()          {return dios;};  
+        int getVidas()          {return vidas;};
 };

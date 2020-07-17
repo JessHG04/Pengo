@@ -75,8 +75,8 @@ void Pengo::Update(float deltaTime, Mapa* mapa) {
             fila = 0;
             animacion->setTiempoCambio(0.2f);
         }
-        if(empujar) {
-            if (columna == 4){
+        if(empujar){
+            if(columna == 4){
                 mapa->empujar(sf::Vector2i(posicion.x-1, posicion.y), 0, true);
             }else if (columna == 6){
                 mapa->empujar(sf::Vector2i(posicion.x, posicion.y+1), 1, true);
@@ -115,7 +115,7 @@ void Pengo::Update(float deltaTime, Mapa* mapa) {
     }
 }
 
-void Pengo::modoDios() {
+void Pengo::modoDios(){
     if(dios){
         dios = false;
         tiempoAturdido = 2.5f;
@@ -127,16 +127,18 @@ void Pengo::modoDios() {
     }
 }
 
-void Pengo::reiniciarPosicion() {
-    sprite->setPosition(16+posicion.y*16, 40+posicion.x*16);
+//Cuando estamos en modo Dios, si nos tocan nos aturdirán igualmente, pero nos levantaremos donde estabamos asi que reiniciamos en esa posicion
+void Pengo::reiniciarPosicion(){
+    sprite->setPosition(48+posicion.y*16, 64+posicion.x*16);
     recorrido = 0.0f;
 }
 
-void Pengo::reiniciarPInicial() {
+//Si nos aturden, reiniciaremos el nivel y Pengo vuelve a su posicion inicial
+void Pengo::reiniciarPInicial(){
     posicion.x = 6;
     posicion.y = 6;
     recorrido = 0.0f;
-    sprite->setPosition(24+6*16, 48+6*16);
+    sprite->setPosition(48+6*16, 64+6*16);
 }
 
 bool Pengo::perderVida() {

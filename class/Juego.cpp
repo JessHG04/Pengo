@@ -3,7 +3,7 @@
 Juego* Juego::instancia = NULL;
 
 Juego* Juego::getInstancia() {
-    if (instancia == NULL) {
+    if(instancia == NULL) {
         instancia = new Juego();
     }
     return instancia;
@@ -12,21 +12,47 @@ Juego* Juego::getInstancia() {
 Juego::Juego() {
     ventana = new sf::RenderWindow(sf::VideoMode(19*16, 22*16), "Pengo");
     ventana->setFramerateLimit(60);
-    if (!sprites.loadFromFile("resources/Character.png")) {
-        std::cout << "Failed loading sprite sheet..." << std::endl;
+    if(!sprites.loadFromFile("resources/Character.png")){
+        std::cout << "Error cargando los personajes" << std::endl;
         exit(0);
     }
-    if (!tileset.loadFromFile("resources/Tileset.png")) {
-        std::cout << "Failed loading tileset..." << std::endl;
+    if(!tileset.loadFromFile("resources/Tileset.png")){
+        std::cout << "Error cargando el tileset" << std::endl;
         exit(0);
     }
+    if(!fuente.loadFromFile("resources/Fuente.ttf")){
+        std::cout << "Error cargando la fuente" << std::endl;
+        exit(0);
+    }
+    dios.setFont(fuente);
+    dios.setCharacterSize(16);
+    dios.setColor(sf::Color::White);
+    dios.setPosition(0,0);
+    vidas.setFont(fuente);
+    vidas.setCharacterSize(16);
+    vidas.setColor(sf::Color::White);
+    vidas.setPosition(0,16);
+    enem.setFont(fuente);
+    enem.setCharacterSize(16);
+    enem.setColor(sf::Color::White);
+    enem.setPosition(230,16);
+    lvl.setFont(fuente);
+    lvl.setCharacterSize(16);
+    lvl.setColor(sf::Color::White);
+    lvl.setPosition(243,0);
+    nombre.setFont(fuente);
+    nombre.setCharacterSize(16);
+    nombre.setColor(sf::Color::White);
+    nombre.setPosition(50, 331);
+    nombre.setString("Jessica Hernandez Gomez");
     pengo = new Pengo(&sprites, 45.0f, 0.2f, sf::Vector2u(0,0), sf::Vector2i(6,6));
     mapasAleatorios();
     mapa = mapa1;
     anyadirEnemigos(nivel1);
-    totalEnemigos = 6;
+    totalEnemigos = 7;
     fin = false;
     nivel = 1;
+    std::cout << "Nivel: 1" << std::endl;
     totalNiveles = 10;
     Draw();
     bucleJuego();
@@ -36,19 +62,19 @@ void Juego::bucleJuego() {
     while(ventana->isOpen()) {
         deltaTime = reloj.restart().asSeconds();
         bucleEventos();
-        if(pengo->getMuerte()) {
+        if(pengo->getMuerte()){ //Si morimos, volvemos al primer nivel
             nivel = 1;
             reiniciar();
             pengo->reiniciarVidas();
-        }else if(pengo->getAturdido() && !pengo->getDios()) {
+        }else if(pengo->getAturdido() && !pengo->getDios()) { //Si estamos aturdidos es que hemos perdido una vida, reiniciamos el nivel
             pengo->Update(deltaTime, mapa);
-            if(relojNivel.getElapsedTime().asSeconds() >= 2.45f){
+            if(relojNivel.getElapsedTime().asSeconds() >= 2.45f){ //El tiempo del reloj es debido a que eso es lo que dura la animacion del aturdimiento, para que no se reinicie todo hasta que la animacion no acabe
                 reiniciar();
             }
-        }else if(!fin) {
-            if(nivelCompleto()) {
-                if(nivel == 1) {
-                    nivel = 2;
+        }else if(!fin){
+            if(nivelCompleto()){ //Paso de nivel
+                if(nivel < totalNiveles){
+                    nivel++;
                     reiniciar();
                 }else{
                     fin = true;
@@ -56,57 +82,65 @@ void Juego::bucleJuego() {
             }else{
                 pengo->Update(deltaTime, mapa);
                 comprobarColisiones();
-                if(pengo->getAturdido() && pengo->getDios() && relojNivel.getElapsedTime().asSeconds() >= 1.15f)
+                if(pengo->getAturdido() && pengo->getDios() && relojNivel.getElapsedTime().asSeconds() >= 1.15f){ //Si estamos aturdidos pero estamos en modo dios, nos levantamos donde estábamos, el reloj es para lo mismo que antes
                     pengo->reiniciarPosicion();
+                }
+                    
             }
         }else{
-            ventana->close();
+            ventana->close(); //Al finalizar el juego, se cierra la ventana
         }
+        
+        if(pengo->getDios()){
+            dios.setString("Modo Dios activado");
+        }else{
+            dios.setString("Modo Dios desactivado");
+        }
+        vidas.setString("Vidas: " + std::to_string(pengo->getVidas()));
+        enem.setString("Huevos: " + std::to_string(totalEnemigos - enemigos.size()));
+        lvl.setString("Nivel: " + std::to_string(nivel));
         Draw();
     }
     delete instancia;
     instancia = NULL;
 }
 
-void Juego::bucleEventos() {
-    while(ventana->pollEvent(evento)) {
-        switch(evento.type) {
+void Juego::bucleEventos(){
+    while(ventana->pollEvent(evento)){
+        switch(evento.type){
             case sf::Event::Closed:
                 ventana->close();
                 break;
             case sf::Event::KeyPressed:
-                switch (evento.key.code) {
+                switch (evento.key.code){
                     case sf::Keyboard::Escape:
                         ventana->close();
-                        break;
+                    break;
                     case sf::Keyboard::G:
                         pengo->modoDios();
-                        break;
-
+                    break;
                     case sf::Keyboard::X:
                         pengo->reiniciarVidas();
                         reiniciar();
                         std::cout << "Has reiniciado el nivel " << nivel << std::endl;
-                        break;
-
+                    break;
                     case sf::Keyboard::N:
                         if (nivel < totalNiveles) {
                             nivel++;
                             reiniciar();
+                        }else{
+                            fin = true;
                         }
-                        break;
-
-                    default:
-                        break;
+                    break;
                 }
-                break;
-
-            default:
-                break;
+            break;
         }
     }
 }
-
+/*
+Comprobamos las colisiones de los enemigos, primero con Pengo para saber si este pierde una vida.
+Despues comprobamos si lso enemigos colisionan con los bloques que estan en movimiento (direccion distinta a -1), si es asi, pasamos el bloque por el cual esta siendo empujado para que ya en el update del enemigo, se vea bien y posteriormente muera.
+*/
 void Juego::comprobarColisiones() {
     Bloque* bloquesito;
     mapa->Update(deltaTime);
@@ -120,22 +154,26 @@ void Juego::comprobarColisiones() {
             for(int y = 0; y < 15; y++) {
                 for(int z = 0; z < 13; z++) {
                     bloquesito = mapa->getBloque(y, z);
-                    if(bloquesito && bloquesito->getDireccion() > -1  && enemigos[x]->getLibre()){
-                           if(enemigos[x]->getSprite()->getGlobalBounds().intersects(bloquesito->getSprite()->getGlobalBounds())){
-                                enemigos[x]->getEmpujado(bloquesito);
-                                suplirEnemigo();
-                           }
+                    if(bloquesito && bloquesito->getDireccion() != -1  && enemigos[x]->getLibre()){
+                        if(enemigos[x]->getSprite()->getGlobalBounds().intersects(bloquesito->getSprite()->getGlobalBounds())){
+                            enemigos[x]->getEmpujado(bloquesito);
+                            suplirEnemigo();
+                        }
                     }
                     bloquesito = NULL;
                 }
             }
         }
     }
-
 }
 
 void Juego::Draw() {
     ventana->clear();
+    ventana->draw(dios);
+    ventana->draw(vidas);
+    ventana->draw(enem);
+    ventana->draw(lvl);
+    ventana->draw(nombre);
     mapa->Draw(*ventana);
     pengo->Draw(*ventana);
     for(int x = 0; x < enemigos.size(); x++){
@@ -161,8 +199,8 @@ void Juego::anyadirEnemigos(int nivel[15][13]) {
 
 void Juego::suplirEnemigo() {
     if(enemigos.size() < totalEnemigos) {
-        sf::Vector2i _newPosition = mapa->getLibre();
-        enemigos.push_back(new SnoBee(&sprites, 45.0f, 0.2f, sf::Vector2u(0, 2), _newPosition));
+        sf::Vector2i nuevaPos = mapa->getLibre();
+        enemigos.push_back(new SnoBee(&sprites, 45.0f, 0.2f, sf::Vector2u(0, 2), nuevaPos));
     }
 }
 
@@ -234,6 +272,7 @@ void Juego::reiniciar() {
         mapa10 = new Mapa(&tileset, nivel10);
         mapa = mapa10;
     }
+    std::cout << "Nivel: " << nivel << std::endl;
     pengo->reiniciarPInicial();
 }
 
@@ -244,7 +283,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel1[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel1[x][y] = 2;
             }else{
@@ -262,7 +301,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel2[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel2[x][y] = 2;
             }else{
@@ -279,7 +318,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel3[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel3[x][y] = 2;
             }else{
@@ -296,7 +335,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel4[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel4[x][y] = 2;
             }else{
@@ -313,7 +352,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel5[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel5[x][y] = 2;
             }else{
@@ -330,7 +369,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel6[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel6[x][y] = 2;
             }else{
@@ -347,7 +386,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel7[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel7[x][y] = 2;
             }else{
@@ -364,7 +403,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel8[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel8[x][y] = 2;
             }else{
@@ -381,7 +420,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel9[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel9[x][y] = 2;
             }else{
@@ -398,7 +437,7 @@ void Juego::mapasAleatorios(){
             if((x == 0 &&  y == 2) || (x == 0 &&  y == 4) || (x == 1 &&  y == 3) || (x == 2 &&  y == 9) || (x == 3 &&  y == 8) || (x == 3 &&  y == 10) || (x == 4 &&  y == 9) || (x == 6 &&  y == 0) || (x == 6 &&  y == 5) || (x == 6 &&  y == 6) || (x == 6 &&  y == 12) || (x == 7 &&  y == 1) || (x == 7 &&  y == 4) || (x == 7 &&  y == 6) || (x == 8 &&  y == 0) || (x == 8 &&  y == 5) || (x == 8 &&  y == 12) || (x == 10 &&  y == 9) ||  (x == 11 &&  y == 8) || (x == 11 &&  y == 10) || (x == 12 &&  y == 9) || (x == 13 &&  y == 3) || (x == 14 &&  y == 2) || (x == 14 &&  y == 4)){
                 //Huecos
                 nivel10[x][y] = 0;
-            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0) /*|| (x == 14 &&  y == 3) || (x == 11 &&  y == 9) || (x == 7 &&  y == 5)*/){
+            }else if((x == 0 &&  y == 3) || (x == 3 &&  y == 9) || (x == 7 &&  y == 0)){
                 //Enemigos
                 nivel10[x][y] = 2;
             }else{
