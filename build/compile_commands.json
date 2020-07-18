@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/Pengo.dir/main.cpp.o -c /home/jess/Escritorio/Pengo2/main.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/main.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Animacion.cpp.o -c /home/jess/Escritorio/Pengo2/class/Animacion.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Animacion.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Bloque.cpp.o -c /home/jess/Escritorio/Pengo2/class/Bloque.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Bloque.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/BRoto.cpp.o -c /home/jess/Escritorio/Pengo2/class/BRoto.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/BRoto.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Mapa.cpp.o -c /home/jess/Escritorio/Pengo2/class/Mapa.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Mapa.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Personaje.cpp.o -c /home/jess/Escritorio/Pengo2/class/Personaje.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Personaje.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Pengo.cpp.o -c /home/jess/Escritorio/Pengo2/class/Pengo.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Pengo.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/SnoBee.cpp.o -c /home/jess/Escritorio/Pengo2/class/SnoBee.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/SnoBee.cpp"
+},
+{
+  "directory": "/home/jess/Escritorio/Pengo2/build",
+  "command": "/usr/bin/g++-5    -I/home/jess/Escritorio/Pengo2/class   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/class/Juego.cpp.o -c /home/jess/Escritorio/Pengo2/class/Juego.cpp",
+  "file": "/home/jess/Escritorio/Pengo2/class/Juego.cpp"
+}
+]

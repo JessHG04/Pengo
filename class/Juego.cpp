@@ -97,9 +97,8 @@ void Juego::bucleJuego(){
             vidas.setString("Vidas: " + std::to_string(pengo->getVidas()));
             enem.setString("Huevos: " + std::to_string(totalEnemigos - enemigos.size()));
             lvl.setString("Nivel: " + std::to_string(nivel));
-            Draw();
         }
-        
+        Draw();
     }
     delete instancia;
     instancia = NULL;
