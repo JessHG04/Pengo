@@ -51,8 +51,8 @@ void SnoBee::Update(float deltaTime, Mapa* mapa) {
                 quieto = false;
                 caminando = true;
             }else{//Buscamos otro sitio al que moverse
-                randomRomper = rand()%2; //Aleatoriamente elige o empujar el bloque(0) o buscar otra direccion (1)
-                if(randomRomper == 0){
+                randomRomper = rand()%10; //Aleatoriamente elige o empujar el bloque(rand>=7) o buscar otra direccion (rand<7), lo mas probable sera que busque otra direccion para que no destruyan muchos bloques del mapa 
+                if(randomRomper >=7){
                     empujando = true;
                     empujar = true;
                     fila = 2;
@@ -116,7 +116,6 @@ void SnoBee::Update(float deltaTime, Mapa* mapa) {
         }else{
             recorrido += desplazamiento;
         }
-
         if (caminando && !quieto) {
             if (columna == 4){
                 sprite->move(0, -desplazamiento);
