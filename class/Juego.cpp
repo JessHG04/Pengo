@@ -84,10 +84,6 @@ void Juego::bucleJuego(){
                 }else{
                     pengo->Update(deltaTime, mapa);
                     comprobarColisiones();
-                    if(pengo->getAturdido() && pengo->getDios() && relojNivel.getElapsedTime().asSeconds() >= 1.15f){ //Si estamos aturdidos pero estamos en modo dios, nos levantamos donde estábamos, el reloj es para lo mismo que antes
-                        pengo->reiniciarPosicion();
-                    }
-                        
                 }
             }else{
                 ventana->close(); //Al finalizar el juego, se cierra la ventana
@@ -143,7 +139,7 @@ void Juego::bucleEventos(){
     }
 }
 /*
-Comprobamos las colisiones de los enemigos, primero con Pengo para saber si este pierde una vida.
+Comprobamos las colisiones de los enemigos, primero con Pengo(si no esta en modo dios) para saber si este pierde una vida.
 Despues comprobamos si lso enemigos colisionan con los bloques que estan en movimiento (direccion distinta a -1), si es asi, pasamos el bloque por el cual esta siendo empujado para que ya en el update del enemigo, se vea bien y posteriormente muera.
 */
 void Juego::comprobarColisiones(){
@@ -152,10 +148,13 @@ void Juego::comprobarColisiones(){
     for(int x = 0; x < enemigos.size(); x++) {
         if(enemigos[x] && !enemigos[x]->getMuerte()) {
             enemigos[x]->Update(deltaTime, mapa);
-            if(pengo->getSprite()->getGlobalBounds().intersects(enemigos[x]->getSprite()->getGlobalBounds())){
-                pengo->perderVida();
-                relojNivel.restart();
+            if(!pengo->getDios()){
+                if(pengo->getSprite()->getGlobalBounds().intersects(enemigos[x]->getSprite()->getGlobalBounds())){
+                    pengo->perderVida();
+                    relojNivel.restart();
+                }
             }
+            
             for(int y = 0; y < 15; y++) {
                 for(int z = 0; z < 13; z++) {
                     bloquesito = mapa->getBloque(y, z);

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jessica/Desktop/Pengo2
+CMAKE_SOURCE_DIR = /home/jess/Escritorio/Pengo2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jessica/Desktop/Pengo2/build
+CMAKE_BINARY_DIR = /home/jess/Escritorio/Pengo2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/libModulos.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/libModulos.dir/flags.make
 
 CMakeFiles/libModulos.dir/class/Animacion.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/Animacion.cpp.o: ../class/Animacion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/class/Animacion.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Animacion.cpp.o -c /home/jessica/Desktop/Pengo2/class/Animacion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/class/Animacion.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Animacion.cpp.o -c /home/jess/Escritorio/Pengo2/class/Animacion.cpp
 
 CMakeFiles/libModulos.dir/class/Animacion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Animacion.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jessica/Desktop/Pengo2/class/Animacion.cpp > CMakeFiles/libModulos.dir/class/Animacion.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Animacion.cpp > CMakeFiles/libModulos.dir/class/Animacion.cpp.i
 
 CMakeFiles/libModulos.dir/class/Animacion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Animacion.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jessica/Desktop/Pengo2/class/Animacion.cpp -o CMakeFiles/libModulos.dir/class/Animacion.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Animacion.cpp -o CMakeFiles/libModulos.dir/class/Animacion.cpp.s
 
 CMakeFiles/libModulos.dir/class/Animacion.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/libModulos.dir/class/Animacion.cpp.o.provides.build: CMakeFiles/libMo
 
 CMakeFiles/libModulos.dir/class/Bloque.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/Bloque.cpp.o: ../class/Bloque.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/class/Bloque.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Bloque.cpp.o -c /home/jessica/Desktop/Pengo2/class/Bloque.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/class/Bloque.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Bloque.cpp.o -c /home/jess/Escritorio/Pengo2/class/Bloque.cpp
 
 CMakeFiles/libModulos.dir/class/Bloque.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Bloque.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jessica/Desktop/Pengo2/class/Bloque.cpp > CMakeFiles/libModulos.dir/class/Bloque.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Bloque.cpp > CMakeFiles/libModulos.dir/class/Bloque.cpp.i
 
 CMakeFiles/libModulos.dir/class/Bloque.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Bloque.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jessica/Desktop/Pengo2/class/Bloque.cpp -o CMakeFiles/libModulos.dir/class/Bloque.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Bloque.cpp -o CMakeFiles/libModulos.dir/class/Bloque.cpp.s
 
 CMakeFiles/libModulos.dir/class/Bloque.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/libModulos.dir/class/Bloque.cpp.o.provides.build: CMakeFiles/libModul
 
 CMakeFiles/libModulos.dir/class/BRoto.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/BRoto.cpp.o: ../class/BRoto.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/libModulos.dir/class/BRoto.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/BRoto.cpp.o -c /home/jessica/Desktop/Pengo2/class/BRoto.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/libModulos.dir/class/BRoto.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/BRoto.cpp.o -c /home/jess/Escritorio/Pengo2/class/BRoto.cpp
 
 CMakeFiles/libModulos.dir/class/BRoto.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/BRoto.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jessica/Desktop/Pengo2/class/BRoto.cpp > CMakeFiles/libModulos.dir/class/BRoto.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/BRoto.cpp > CMakeFiles/libModulos.dir/class/BRoto.cpp.i
 
 CMakeFiles/libModulos.dir/class/BRoto.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/BRoto.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jessica/Desktop/Pengo2/class/BRoto.cpp -o CMakeFiles/libModulos.dir/class/BRoto.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/BRoto.cpp -o CMakeFiles/libModulos.dir/class/BRoto.cpp.s
 
 CMakeFiles/libModulos.dir/class/BRoto.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/libModulos.dir/class/BRoto.cpp.o.provides.build: CMakeFiles/libModulo
 
 CMakeFiles/libModulos.dir/class/Mapa.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/Mapa.cpp.o: ../class/Mapa.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libModulos.dir/class/Mapa.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Mapa.cpp.o -c /home/jessica/Desktop/Pengo2/class/Mapa.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libModulos.dir/class/Mapa.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Mapa.cpp.o -c /home/jess/Escritorio/Pengo2/class/Mapa.cpp
 
 CMakeFiles/libModulos.dir/class/Mapa.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Mapa.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jessica/Desktop/Pengo2/class/Mapa.cpp > CMakeFiles/libModulos.dir/class/Mapa.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Mapa.cpp > CMakeFiles/libModulos.dir/class/Mapa.cpp.i
 
 CMakeFiles/libModulos.dir/class/Mapa.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Mapa.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jessica/Desktop/Pengo2/class/Mapa.cpp -o CMakeFiles/libModulos.dir/class/Mapa.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Mapa.cpp -o CMakeFiles/libModulos.dir/class/Mapa.cpp.s
 
 CMakeFiles/libModulos.dir/class/Mapa.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/libModulos.dir/class/Mapa.cpp.o.provides.build: CMakeFiles/libModulos
 
 CMakeFiles/libModulos.dir/class/Personaje.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/Personaje.cpp.o: ../class/Personaje.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libModulos.dir/class/Personaje.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Personaje.cpp.o -c /home/jessica/Desktop/Pengo2/class/Personaje.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libModulos.dir/class/Personaje.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Personaje.cpp.o -c /home/jess/Escritorio/Pengo2/class/Personaje.cpp
 
 CMakeFiles/libModulos.dir/class/Personaje.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Personaje.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jessica/Desktop/Pengo2/class/Personaje.cpp > CMakeFiles/libModulos.dir/class/Personaje.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Personaje.cpp > CMakeFiles/libModulos.dir/class/Personaje.cpp.i
 
 CMakeFiles/libModulos.dir/class/Personaje.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Personaje.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jessica/Desktop/Pengo2/class/Personaje.cpp -o CMakeFiles/libModulos.dir/class/Personaje.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Personaje.cpp -o CMakeFiles/libModulos.dir/class/Personaje.cpp.s
 
 CMakeFiles/libModulos.dir/class/Personaje.cpp.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/libModulos.dir/class/Personaje.cpp.o.provides.build: CMakeFiles/libMo
 
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o: ../class/Pengo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/libModulos.dir/class/Pengo.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Pengo.cpp.o -c /home/jessica/Desktop/Pengo2/class/Pengo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/libModulos.dir/class/Pengo.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Pengo.cpp.o -c /home/jess/Escritorio/Pengo2/class/Pengo.cpp
 
 CMakeFiles/libModulos.dir/class/Pengo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Pengo.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jessica/Desktop/Pengo2/class/Pengo.cpp > CMakeFiles/libModulos.dir/class/Pengo.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Pengo.cpp > CMakeFiles/libModulos.dir/class/Pengo.cpp.i
 
 CMakeFiles/libModulos.dir/class/Pengo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Pengo.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jessica/Desktop/Pengo2/class/Pengo.cpp -o CMakeFiles/libModulos.dir/class/Pengo.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Pengo.cpp -o CMakeFiles/libModulos.dir/class/Pengo.cpp.s
 
 CMakeFiles/libModulos.dir/class/Pengo.cpp.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/libModulos.dir/class/Pengo.cpp.o.provides.build: CMakeFiles/libModulo
 
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o: ../class/SnoBee.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/libModulos.dir/class/SnoBee.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/SnoBee.cpp.o -c /home/jessica/Desktop/Pengo2/class/SnoBee.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/libModulos.dir/class/SnoBee.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/SnoBee.cpp.o -c /home/jess/Escritorio/Pengo2/class/SnoBee.cpp
 
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/SnoBee.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jessica/Desktop/Pengo2/class/SnoBee.cpp > CMakeFiles/libModulos.dir/class/SnoBee.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/SnoBee.cpp > CMakeFiles/libModulos.dir/class/SnoBee.cpp.i
 
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/SnoBee.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jessica/Desktop/Pengo2/class/SnoBee.cpp -o CMakeFiles/libModulos.dir/class/SnoBee.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/SnoBee.cpp -o CMakeFiles/libModulos.dir/class/SnoBee.cpp.s
 
 CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/libModulos.dir/class/SnoBee.cpp.o.provides.build: CMakeFiles/libModul
 
 CMakeFiles/libModulos.dir/class/Juego.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/class/Juego.cpp.o: ../class/Juego.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/libModulos.dir/class/Juego.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Juego.cpp.o -c /home/jessica/Desktop/Pengo2/class/Juego.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/libModulos.dir/class/Juego.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/class/Juego.cpp.o -c /home/jess/Escritorio/Pengo2/class/Juego.cpp
 
 CMakeFiles/libModulos.dir/class/Juego.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/class/Juego.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jessica/Desktop/Pengo2/class/Juego.cpp > CMakeFiles/libModulos.dir/class/Juego.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jess/Escritorio/Pengo2/class/Juego.cpp > CMakeFiles/libModulos.dir/class/Juego.cpp.i
 
 CMakeFiles/libModulos.dir/class/Juego.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/class/Juego.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jessica/Desktop/Pengo2/class/Juego.cpp -o CMakeFiles/libModulos.dir/class/Juego.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jess/Escritorio/Pengo2/class/Juego.cpp -o CMakeFiles/libModulos.dir/class/Juego.cpp.s
 
 CMakeFiles/libModulos.dir/class/Juego.cpp.o.requires:
 
@@ -273,7 +273,7 @@ liblibModulos.a: CMakeFiles/libModulos.dir/class/SnoBee.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/class/Juego.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library liblibModulos.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library liblibModulos.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libModulos.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libModulos.dir/link.txt --verbose=$(VERBOSE)
 
@@ -298,6 +298,6 @@ CMakeFiles/libModulos.dir/clean:
 .PHONY : CMakeFiles/libModulos.dir/clean
 
 CMakeFiles/libModulos.dir/depend:
-	cd /home/jessica/Desktop/Pengo2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jessica/Desktop/Pengo2 /home/jessica/Desktop/Pengo2 /home/jessica/Desktop/Pengo2/build /home/jessica/Desktop/Pengo2/build /home/jessica/Desktop/Pengo2/build/CMakeFiles/libModulos.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jess/Escritorio/Pengo2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jess/Escritorio/Pengo2 /home/jess/Escritorio/Pengo2 /home/jess/Escritorio/Pengo2/build /home/jess/Escritorio/Pengo2/build /home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/libModulos.dir/depend
 

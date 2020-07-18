@@ -6,109 +6,109 @@
 
 #IncludeRegexTransform: 
 
-/home/jessica/Desktop/Pengo2/class/Animacion.cpp
+/home/jess/Escritorio/Pengo2/class/Animacion.cpp
 Animacion.h
-/home/jessica/Desktop/Pengo2/class/Animacion.h
+/home/jess/Escritorio/Pengo2/class/Animacion.h
 
-/home/jessica/Desktop/Pengo2/class/Animacion.h
+/home/jess/Escritorio/Pengo2/class/Animacion.h
 SFML/Graphics.hpp
 -
 iostream
 -
 
-/home/jessica/Desktop/Pengo2/class/BRoto.cpp
+/home/jess/Escritorio/Pengo2/class/BRoto.cpp
 BRoto.h
-/home/jessica/Desktop/Pengo2/class/BRoto.h
+/home/jess/Escritorio/Pengo2/class/BRoto.h
 
-/home/jessica/Desktop/Pengo2/class/BRoto.h
+/home/jess/Escritorio/Pengo2/class/BRoto.h
 SFML/Graphics.hpp
 -
 iostream
 -
 Bloque.h
-/home/jessica/Desktop/Pengo2/class/Bloque.h
+/home/jess/Escritorio/Pengo2/class/Bloque.h
 
-/home/jessica/Desktop/Pengo2/class/Bloque.cpp
+/home/jess/Escritorio/Pengo2/class/Bloque.cpp
 Bloque.h
-/home/jessica/Desktop/Pengo2/class/Bloque.h
+/home/jess/Escritorio/Pengo2/class/Bloque.h
 
-/home/jessica/Desktop/Pengo2/class/Bloque.h
+/home/jess/Escritorio/Pengo2/class/Bloque.h
 SFML/Graphics.hpp
 -
 iostream
 -
 
-/home/jessica/Desktop/Pengo2/class/Juego.cpp
+/home/jess/Escritorio/Pengo2/class/Juego.cpp
 Juego.h
-/home/jessica/Desktop/Pengo2/class/Juego.h
+/home/jess/Escritorio/Pengo2/class/Juego.h
 
-/home/jessica/Desktop/Pengo2/class/Juego.h
+/home/jess/Escritorio/Pengo2/class/Juego.h
 SFML/Graphics.hpp
 -
 iostream
 -
 Bloque.h
-/home/jessica/Desktop/Pengo2/class/Bloque.h
+/home/jess/Escritorio/Pengo2/class/Bloque.h
 Personaje.h
-/home/jessica/Desktop/Pengo2/class/Personaje.h
+/home/jess/Escritorio/Pengo2/class/Personaje.h
 BRoto.h
-/home/jessica/Desktop/Pengo2/class/BRoto.h
+/home/jess/Escritorio/Pengo2/class/BRoto.h
 Pengo.h
-/home/jessica/Desktop/Pengo2/class/Pengo.h
+/home/jess/Escritorio/Pengo2/class/Pengo.h
 Mapa.h
-/home/jessica/Desktop/Pengo2/class/Mapa.h
+/home/jess/Escritorio/Pengo2/class/Mapa.h
 SnoBee.h
-/home/jessica/Desktop/Pengo2/class/SnoBee.h
+/home/jess/Escritorio/Pengo2/class/SnoBee.h
 
-/home/jessica/Desktop/Pengo2/class/Mapa.cpp
+/home/jess/Escritorio/Pengo2/class/Mapa.cpp
 Mapa.h
-/home/jessica/Desktop/Pengo2/class/Mapa.h
+/home/jess/Escritorio/Pengo2/class/Mapa.h
 
-/home/jessica/Desktop/Pengo2/class/Mapa.h
+/home/jess/Escritorio/Pengo2/class/Mapa.h
 SFML/Graphics.hpp
 -
 iostream
 -
 BRoto.h
-/home/jessica/Desktop/Pengo2/class/BRoto.h
+/home/jess/Escritorio/Pengo2/class/BRoto.h
 
-/home/jessica/Desktop/Pengo2/class/Pengo.cpp
+/home/jess/Escritorio/Pengo2/class/Pengo.cpp
 Pengo.h
-/home/jessica/Desktop/Pengo2/class/Pengo.h
+/home/jess/Escritorio/Pengo2/class/Pengo.h
 
-/home/jessica/Desktop/Pengo2/class/Pengo.h
+/home/jess/Escritorio/Pengo2/class/Pengo.h
 SFML/Graphics.hpp
 -
 iostream
 -
 Personaje.h
-/home/jessica/Desktop/Pengo2/class/Personaje.h
+/home/jess/Escritorio/Pengo2/class/Personaje.h
 
-/home/jessica/Desktop/Pengo2/class/Personaje.cpp
+/home/jess/Escritorio/Pengo2/class/Personaje.cpp
 Personaje.h
-/home/jessica/Desktop/Pengo2/class/Personaje.h
+/home/jess/Escritorio/Pengo2/class/Personaje.h
 
-/home/jessica/Desktop/Pengo2/class/Personaje.h
+/home/jess/Escritorio/Pengo2/class/Personaje.h
 SFML/Graphics.hpp
 -
 iostream
 -
 Animacion.h
-/home/jessica/Desktop/Pengo2/class/Animacion.h
+/home/jess/Escritorio/Pengo2/class/Animacion.h
 Mapa.h
-/home/jessica/Desktop/Pengo2/class/Mapa.h
+/home/jess/Escritorio/Pengo2/class/Mapa.h
 
-/home/jessica/Desktop/Pengo2/class/SnoBee.cpp
+/home/jess/Escritorio/Pengo2/class/SnoBee.cpp
 SnoBee.h
-/home/jessica/Desktop/Pengo2/class/SnoBee.h
+/home/jess/Escritorio/Pengo2/class/SnoBee.h
 
-/home/jessica/Desktop/Pengo2/class/SnoBee.h
+/home/jess/Escritorio/Pengo2/class/SnoBee.h
 SFML/Graphics.hpp
 -
 iostream
 -
 Personaje.h
-/home/jessica/Desktop/Pengo2/class/Personaje.h
+/home/jess/Escritorio/Pengo2/class/Personaje.h
 Pengo.h
-/home/jessica/Desktop/Pengo2/class/Pengo.h
+/home/jess/Escritorio/Pengo2/class/Pengo.h
 

@@ -20,7 +20,6 @@ class Pengo : public Personaje {
         void Update(float ,Mapa* );
         void modoDios();
         void reiniciarVidas()   {vidas = 3;};
-        void reiniciarPosicion();
         void reiniciarPInicial();
         bool perderVida();
         bool getMuerte();
