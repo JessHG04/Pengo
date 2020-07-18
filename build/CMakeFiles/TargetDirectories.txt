@@ -1,6 +1,6 @@
-/home/jess/Escritorio/Pengo2/build/CMakeFiles/rebuild_cache.dir
-/home/jess/Escritorio/Pengo2/build/CMakeFiles/Pengo.dir
-/home/jess/Escritorio/Pengo2/build/CMakeFiles/edit_cache.dir
-/home/jess/Escritorio/Pengo2/build/CMakeFiles/libModulos.dir
-/home/jess/Escritorio/Pengo2/build/class/CMakeFiles/edit_cache.dir
-/home/jess/Escritorio/Pengo2/build/class/CMakeFiles/rebuild_cache.dir
+/home/jessica/Desktop/Pengo2/build/CMakeFiles/rebuild_cache.dir
+/home/jessica/Desktop/Pengo2/build/CMakeFiles/Pengo.dir
+/home/jessica/Desktop/Pengo2/build/CMakeFiles/edit_cache.dir
+/home/jessica/Desktop/Pengo2/build/CMakeFiles/libModulos.dir
+/home/jessica/Desktop/Pengo2/build/class/CMakeFiles/edit_cache.dir
+/home/jessica/Desktop/Pengo2/build/class/CMakeFiles/rebuild_cache.dir

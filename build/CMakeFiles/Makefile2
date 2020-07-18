@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jess/Escritorio/Pengo2
+CMAKE_SOURCE_DIR = /home/jessica/Desktop/Pengo2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jess/Escritorio/Pengo2/build
+CMAKE_BINARY_DIR = /home/jessica/Desktop/Pengo2/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/Pengo.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/jess/Escritorio/Pengo2/build
 CMakeFiles/Pengo.dir/all: CMakeFiles/libModulos.dir/all
 	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/depend
 	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=1,2 "Built target Pengo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=1,2 "Built target Pengo"
 .PHONY : CMakeFiles/Pengo.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/Pengo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Pengo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jess/Escritorio/Pengo2/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jessica/Desktop/Pengo2/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Pengo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jess/Escritorio/Pengo2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jessica/Desktop/Pengo2/build/CMakeFiles 0
 .PHONY : CMakeFiles/Pengo.dir/rule
 
 # Convenience name for target.
@@ -103,7 +103,7 @@ clean: CMakeFiles/Pengo.dir/clean
 CMakeFiles/libModulos.dir/all:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/depend
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jess/Escritorio/Pengo2/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11 "Built target libModulos"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jessica/Desktop/Pengo2/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11 "Built target libModulos"
 .PHONY : CMakeFiles/libModulos.dir/all
 
 # Include target in all.
@@ -113,9 +113,9 @@ all: CMakeFiles/libModulos.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/libModulos.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jess/Escritorio/Pengo2/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jessica/Desktop/Pengo2/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libModulos.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jess/Escritorio/Pengo2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jessica/Desktop/Pengo2/build/CMakeFiles 0
 .PHONY : CMakeFiles/libModulos.dir/rule
 
 # Convenience name for target.

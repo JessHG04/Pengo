@@ -129,16 +129,20 @@ void Pengo::modoDios(){
 
 //Cuando estamos en modo Dios, si nos tocan nos aturdirán igualmente, pero nos levantaremos donde estabamos asi que reiniciamos en esa posicion
 void Pengo::reiniciarPosicion(){
+    std::cout<< "Posicion antes X " << sprite->getPosition().x << " " << sprite->getPosition().y << std::endl;
     sprite->setPosition(48+posicion.y*16, 64+posicion.x*16);
+    std::cout<< "Posicion despues X " << sprite->getPosition().x << " " << sprite->getPosition().y << std::endl;
     recorrido = 0.0f;
 }
 
 //Si nos aturden, reiniciaremos el nivel y Pengo vuelve a su posicion inicial
 void Pengo::reiniciarPInicial(){
+    std::cout<< "Posicion antes X " << sprite->getPosition().x << " " << sprite->getPosition().y << std::endl;
     posicion.x = 6;
     posicion.y = 6;
     recorrido = 0.0f;
     sprite->setPosition(48+6*16, 64+6*16);
+    std::cout<< "Posicion despues X " << sprite->getPosition().x << " " << sprite->getPosition().y << std::endl;
 }
 
 bool Pengo::perderVida() {
