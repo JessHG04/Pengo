@@ -69,8 +69,8 @@ Mapa::~Mapa() {
 void Mapa::Update(float deltaTime) {
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
-            if(bloques[x][y] != NULL && bloques[x][y]->getMovimiento()) {
-                if(x != bloques[x][y]->getPosicion().x || y != bloques[x][y]->getPosicion().y) {
+            if(bloques[x][y] != NULL && bloques[x][y]->getMovimiento()){
+                if(x != bloques[x][y]->getPosicion().x || y != bloques[x][y]->getPosicion().y){
                     bloques[bloques[x][y]->getPosicion().x][bloques[x][y]->getPosicion().y] = bloques[x][y];
                     bloques[x][y] = NULL;
                 }
@@ -80,8 +80,8 @@ void Mapa::Update(float deltaTime) {
     }
     for(int x = 0; x < 15; x++){
         for(int y = 0; y < 13; y++){
-            if (bloques[x][y] != NULL) {
-                if (bloques[x][y]->getMovimiento()) {
+            if(bloques[x][y] != NULL){
+                if(bloques[x][y]->getMovimiento()){
                     empujar(bloques[x][y]->getPosicion(), bloques[x][y]->getDireccion(), false, false);
                     bloques[x][y]->parar();
                 }
@@ -132,13 +132,16 @@ void Mapa::empujar(sf::Vector2i pos, int dir, bool romper, bool ia) {
 
         if(comprobar(siguiente) && !ia){//La ia no puede empujar los bloques aunque tecnicamente se pueda, los debe romper directamente
             bloques[pos.x][pos.y]->setDireccion(dir);
-        } else if (BRoto* roto = dynamic_cast<BRoto*>(bloques[pos.x][pos.y])) {
-            if(romper) {
+        }else if(BRoto* roto = dynamic_cast<BRoto*>(bloques[pos.x][pos.y])) {
+            if(romper){
                 roto->romper();
                 restos.push_back(bloques[pos.x][pos.y]);
                 bloques[pos.x][pos.y] = NULL;
-            } else {
+            }else{
                 bloques[pos.x][pos.y]->setDireccion(-1);
+                /*sf::IntRect rotura = bloques[pos.x][pos.y]->getSprite()->getTextureRect();
+                rotura.left = 0;
+                bloques[pos.x][pos.y]->getSprite()->setTextureRect(rotura);*/
             }
         }
     }

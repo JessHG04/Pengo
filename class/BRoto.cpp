@@ -15,7 +15,7 @@ BRoto::~BRoto() {
 
 void BRoto::Update(float deltaTime) {
     float espacio = 0.0f;
-    if(!roto &&  !rompiendo){
+    if(!roto && !rompiendo){
         if(direccion > -1){
             espacio = velocidad*deltaTime;
             if(espacio+recorrido >= 16.0f){
@@ -49,7 +49,7 @@ void BRoto::Update(float deltaTime) {
         }
     //Rompemos el bloque
     }else if(rompiendo){
-        if(reloj.getElapsedTime().asSeconds() > 0.05f) {
+        if(reloj.getElapsedTime().asSeconds() > 0.05f){
             sf::IntRect rotura = sprite->getTextureRect();
             rotura.left+= 16;
             if(rotura.left <= 160){
