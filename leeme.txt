@@ -1,1 +1,0 @@
-Hola Fidel, a veces una esquina de Pengo te detecta la colision con el SnoBee; las colisiones van bien pero lo dicho, a veces si el SnoBee está por arriba el intersect te detecta la colisión. También a veces la animación del bloque roto no se ve, es decir se rompe el bloque pero no aparece la animación de hacerse añicos.
